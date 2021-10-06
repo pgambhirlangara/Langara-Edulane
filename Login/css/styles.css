@@ -1,0 +1,59 @@
+:root {
+  --lightBg: #f4f4f4;
+  --mediumBlue: #9da8c0;
+  --hoverMedium: #939db4;
+  --darkBlue: #4e69a1;
+  --hoverDark:#476093;
+}
+
+body {
+  background-color: var(--lightBg);
+}
+
+footer {
+  text-align:center;
+  font-size: 0.8em;
+}
+
+.valid, .error {
+  display: none;
+}
+
+.container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+}
+
+#username, #password, #login, #newaccount {
+  width: 100%;
+  margin: 10px 0;
+  height: 40px;
+  border-radius: 5px;
+  border: solid 1px var(--mediumBlue);
+  padding: 0 5px;
+}
+
+#login {
+  background-color: var(--mediumBlue);
+  color:#fff;
+  cursor: pointer;
+}
+
+#newaccount{
+  background-color: var(--darkBlue);
+  color:#fff;
+  cursor: pointer;
+}
+
+#login:hover {
+  background-color: var(--hoverMedium);
+  color: #fff;
+}
+
+#newaccount:hover {
+  background-color: var(--hoverDark);
+}
