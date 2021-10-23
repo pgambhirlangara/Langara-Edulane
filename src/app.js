@@ -1,5 +1,6 @@
 //---------- Firebase configuration starts from here
-import * as firebase from 'firebase'
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
 const firebaseConfig = {
   apiKey: "AIzaSyAK10RzRApaDyJZfrs4NN-YSxaQvRZyOxg",
   authDomain: "langara-edulane.firebaseapp.com",
