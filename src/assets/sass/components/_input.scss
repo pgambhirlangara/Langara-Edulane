@@ -1,0 +1,6 @@
+input {
+    @include setInput(258px, 50px, $white);
+    ::placeholder { 
+        color: $light;
+    }
+}

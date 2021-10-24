@@ -4,10 +4,9 @@ const concat = require('gulp-concat');
 
 gulp.task("sass", () => {
   return gulp
-    .src("src/assets/sass/**/*.scss")
+    .src("./src/assets/sass/_main.scss")
     .pipe(sass())
-    .pipe(concat('style.css'))
+    // .pipe(concat('style.css'))
     .on("error", sass.logError)
-    .pipe(gulp.dest("src/assets/css"))
+    .pipe(gulp.dest("./src/assets/css"))
 });
-
