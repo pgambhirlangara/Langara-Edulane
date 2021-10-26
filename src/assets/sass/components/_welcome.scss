@@ -1,41 +1,85 @@
-.welcome-bg {
-    @include setGradient(linear-gradient(33.58deg, #F15523 26%, #2B3C98 95%));
-    position: relative;
+// .welcome-bg {
+//     @include setGradient(linear-gradient(33.58deg, #F15523 26%, #2B3C98 95%));
+//     position: relative;
+// }
+
+// .welcome-bg img {
+//     mix-blend-mode: multiply;
+//     width: 100%;
+// }
+
+// img.edulane-logo {
+//     position: absolute;
+//     top: 40%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     -ms-transform: translate(-50%, -50%);
+//     width: 60%;
+//     z-index:999;
+// }
+
+
+// .welcome-btns {
+//     display: flex;
+// }
+ 
+* {
+    margin:0;
 }
 
-.welcome-bg img {
-    mix-blend-mode: multiply;
-    width: 100%;
+a {
+    text-decoration: none;
 }
 
-img.edulane-logo {
+.container-welcome {
+    position:relative;
+    height: 100vh;
+    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../images/welcome-mob.jpg);
+    background-size: cover;
+    background-position: top left;
+}
+
+.edulane-logo img{
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    width: 60%;
-    z-index:999;
+    width: 50%;
 }
 
-// to be added on _mixins and _buttons
-.primary-btn{
+.btns-welcome {
+    position: absolute;
+    top:75%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    min-width:600px;
+    text-align:center;
+}
+
+
+.primary-btn, .tertiary-btn{
     border: none;
     border-radius: 20px;
-    z-index: 999;
-    font-size: 18px;
     cursor: pointer;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+.primary-btn a{
+    color: $primary-color;
+}
+
+.tertiary-btn a{
+    color: $white;
 }
 
 .primary-btn:hover {
-    background-color: $primary-color;
-    color: $white;
+    background-color: $light;
 }
+
+.tertiary-btn:hover {
+    background-color:#0A1B89;    
+}
+
 
 
 

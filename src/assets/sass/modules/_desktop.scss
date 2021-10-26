@@ -1,8 +1,19 @@
-img.edulane-logo {
-    top:55%;
-    width: 20%;
-
+.container-welcome {
+    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../../../src/images/welcome.jpeg);
 }
+
+.edulane-logo img {
+    width: 20%;
+}
+
+.btns-welcome {
+    top: 80%;
+}
+
+.tertiary-btn {
+    margin-right: 10px;
+}
+
 .primary-btn {
-    top: 60%;
+    margin-left: 10px;
 }
