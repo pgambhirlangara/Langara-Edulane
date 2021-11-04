@@ -1,0 +1,45 @@
+.main-bg{
+    @include setGradient(linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%));
+    height: 100%;
+}
+
+.logo{    
+width: 249px;
+height: 79px;
+top: 190px;
+}
+
+.logo-container{
+text-align: center;
+
+}
+
+.text-container{
+    text-align: center;
+    color: $white;
+}
+
+label{
+    color:$white;
+}
+
+.box-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.box-container1{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-container2{
+    display: flex;
+    flex-direction: column;
+}
+p{  
+    text-align: center;
+    color:$white;
+}
