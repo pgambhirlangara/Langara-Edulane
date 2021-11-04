@@ -4,7 +4,10 @@
   height: 48px;
   color: #F15523;
   background-color: white;
-  font-size: 22px;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
 }
 
 .secondary-btn {
@@ -12,7 +15,21 @@
   height: 48px;
   color: #0E23AD;
   background-color: white;
-  font-size: 22px;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.tertiary-btn {
+  width: 145px;
+  height: 48px;
+  color: white;
+  background-color: #0E23AD;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
 }
 
 input {
@@ -32,6 +49,42 @@ input ::placeholder {
 
 .login-bg {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+}
+
+/* Styling for Password Reset Modal */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 264px;
+  width: 265px;
+  border: 1px solid #717171;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  font-family: proxima-nova, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal p {
+  margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  color: #717171;
+}
+
+.modal a {
+  text-align: center;
+  display: inline-block;
+  line-height: 48px;
+  text-decoration: none;
+  width: 90%;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 
 /* Tablet */

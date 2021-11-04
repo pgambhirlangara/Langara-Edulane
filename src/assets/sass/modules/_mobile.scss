@@ -1,7 +1,46 @@
 .reset-bg {
-    @include setGradient(linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%));
+  @include setGradient(
+    linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%)
+  );
 }
 
 .login-bg {
-    @include setGradient(linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%));
+  @include setGradient(
+    linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%)
+  );
+}
+
+/* Styling for Password Reset Modal */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 264px;
+  width: 265px;
+  border: 1px solid #717171;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.3);
+  background-color: rgba($color: #fff, $alpha: 0.8);
+  font-family: proxima-nova, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    margin-top: 0;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    color: #717171;
+  }
+  a {
+    text-align: center;
+    display: inline-block;
+    line-height: 48px;
+    text-decoration: none;
+    width: 90%;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
 }
