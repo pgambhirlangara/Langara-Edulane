@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "node-sass sass/main.scss css/styles.css -w --output-style expanded"
+    "compile:sass": "node-sass src/assets/sass/_main.scss src/assets/css/style.css --output-style expanded"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/pgambhirlangara/Langara-Edulane#readme",
   "devDependencies": {
-    "node-sass": "^6.0.1"
-  },
-  "keywords": []
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
+    "sass": "^1.43.2"
+  }
 }

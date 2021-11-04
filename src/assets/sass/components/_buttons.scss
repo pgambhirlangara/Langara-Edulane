@@ -1,0 +1,9 @@
+.primary-btn {
+    @include setButton(145px, 48px, $primary-color, $white);
+    font-size: 22px;
+}
+
+.secondary-btn {
+    @include setButton(235px, 48px, $secondary-color, $white);
+    font-size: 22px;
+}

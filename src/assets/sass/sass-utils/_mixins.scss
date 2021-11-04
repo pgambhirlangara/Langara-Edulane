@@ -1,0 +1,20 @@
+@mixin setButton($width, $height, $color, $background) {
+    width: $width;
+    height: $height;
+    color: $color;
+    background-color: $background;
+}
+
+@mixin setGradient($background) {
+    background: $background;
+}
+
+@mixin setBackground($background) {
+    background: $background;
+}
+
+@mixin setInput($width, $height, $background) {
+    width: $width;
+    height: $height;
+    background: $background;
+}
