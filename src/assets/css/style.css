@@ -1,0 +1,149 @@
+/* Proxima Nova Adobe Font */
+/* ADOBE LINK - PROXIMA NOVA */
+@import url("https://use.typekit.net/zil0rks.css");
+/* Components */
+.primary-btn {
+  width: 145px;
+  height: 48px;
+  color: #F15523;
+  background-color: white;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.secondary-btn {
+  width: 235px;
+  height: 48px;
+  color: #0E23AD;
+  background-color: white;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.tertiary-btn {
+  width: 145px;
+  height: 48px;
+  color: white;
+  background-color: #0E23AD;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+}
+
+input {
+  width: 258px;
+  height: 50px;
+  background: white;
+}
+
+input ::placeholder {
+  color: #C4C4C4;
+}
+
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-welcome {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../images/welcome-mob.jpg);
+  background-size: cover;
+  background-position: top left;
+}
+
+.edulane-logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+.btns-welcome {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 600px;
+  text-align: center;
+}
+
+.primary-btn, .tertiary-btn {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.primary-btn a {
+  color: #F15523;
+}
+
+.tertiary-btn a {
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #C4C4C4;
+}
+
+.tertiary-btn:hover {
+  background-color: #0A1B89;
+}
+
+/* Mobile */
+.reset-bg {
+  background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+}
+
+.login-bg {
+  background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .container-welcome {
+    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../../../src/images/welcome-tabl.jpg);
+  }
+  .edulane-logo img {
+    width: 20%;
+  }
+  .btns-welcome {
+    top: 80%;
+  }
+  .tertiary-btn {
+    margin-right: 10px;
+  }
+  .primary-btn {
+    margin-left: 10px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  .container-welcome {
+    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../../../src/images/welcome.jpeg);
+  }
+  .edulane-logo img {
+    width: 20%;
+  }
+  .btns-welcome {
+    top: 80%;
+  }
+  .tertiary-btn {
+    margin-right: 10px;
+  }
+  .primary-btn {
+    margin-left: 10px;
+  }
+}
