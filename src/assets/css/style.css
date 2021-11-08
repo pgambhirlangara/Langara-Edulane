@@ -11,12 +11,17 @@ a {
   text-decoration: none;
 }
 
+.back {
+  color: #0E23AD;
+}
+
 /* Components */
 .primary-btn {
   width: 145px;
   height: 48px;
   color: #F15523;
   background-color: white;
+  border: none;
 }
 
 .secondary-btn {
@@ -24,6 +29,7 @@ a {
   height: 48px;
   color: #0E23AD;
   background-color: white;
+  border: none;
 }
 
 .tertiary-btn {
@@ -31,13 +37,21 @@ a {
   height: 48px;
   color: white;
   background-color: #0E23AD;
+  border: none;
 }
 
-.primary-btn, .secondary-btn, .tertiary-btn {
+.accent-btn {
+  width: 145px;
+  height: 48px;
+  color: #0E23AD;
+  background-color: white;
+  border: 1px solid #0E23AD;
+}
+
+.primary-btn, .secondary-btn, .tertiary-btn, .accent-btn {
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
-  border: none;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -91,6 +105,69 @@ input ::placeholder {
 
 .tertiary-btn:hover {
   background-color: #0A1B89;
+}
+
+.first-login-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(218, 218, 218, 0.37);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.first-login-container .first-login-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.first-login-container .first-login-title h2 {
+  color: #F15523;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.first-login-container .first-login-title span {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.first-login-container .first-login-logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.first-login-container .first-login-logo-container span {
+  width: 30px;
+  text-align: center;
+}
+
+.first-login-container .first-login-logo-container img {
+  width: 150px;
+  height: 50px;
+  margin: auto;
+}
+
+.first-login-container .first-login-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.first-login-container .set-profile-btn {
+  width: 255px;
+}
+
+.first-login-container .first-login-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #F15523;
 }
 
 /* Mobile */

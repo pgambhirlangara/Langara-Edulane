@@ -1,0 +1,62 @@
+.first-login-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(218, 218, 218, 0.37);
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .first-login-title {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        h2 {
+            color: $primary-color;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        span {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    }
+
+    .first-login-logo-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        span {
+            width: 30px;
+            text-align: center;
+        }
+        
+        img {
+            width: 150px;
+            height: 50px;
+            margin: auto;
+        }
+    }
+
+    .first-login-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .set-profile-btn {
+        width: 255px;
+    }
+
+    .first-login-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: $primary-color;
+    }
+}
