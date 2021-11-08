@@ -141,7 +141,7 @@ input ::placeholder {
   width: 100%;
 }
 
-.first-login-container .first-login-logo-container span {
+.first-login-container .first-login-logo-container a {
   width: 30px;
   text-align: center;
 }
@@ -168,6 +168,77 @@ input ::placeholder {
   height: 250px;
   border-radius: 50%;
   background-color: #F15523;
+}
+
+.add-drop-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #F15523;
+  margin-bottom: 20px;
+}
+
+.add-drop-title h2 {
+  color: #F15523;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.add-course-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-course-container .add-course-sub-container {
+  display: flex;
+  gap: 20px;
+}
+
+.course-btn {
+  width: 255px;
+}
+
+.delete-btn {
+  width: 50px;
+}
+
+.search-courses-btn {
+  border-bottom: 1px solid #F15523;
+  color: #F15523;
+}
+
+.add-course-bottom-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.add-course-logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.add-course-logo-container a {
+  width: 30px;
+  text-align: center;
+}
+
+.add-course-logo-container img {
+  width: 150px;
+  height: 50px;
+  margin: auto;
+}
+
+.add-drop-container {
+  background-color: rgba(218, 218, 218, 0.37);
+  height: 100%;
 }
 
 /* Mobile */
