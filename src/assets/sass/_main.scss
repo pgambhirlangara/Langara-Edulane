@@ -1,3 +1,4 @@
+@import "sass-utils/typography";
 @import "sass-utils/variables";
 @import "sass-utils/mixins";
 @import "_base.scss";
@@ -5,6 +6,7 @@
 /* Components */
 @import "components/buttons";
 @import "components/input";
+@import "components/welcome";
 
 /* Mobile */
 @import "modules/mobile";
