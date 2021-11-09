@@ -6,6 +6,7 @@
 /* Components */
 @import "components/buttons";
 @import "components/input";
+@import "components/reset-pass";
 @import "components/welcome";
 
 /* Mobile */
@@ -20,3 +21,4 @@
 @media (min-width:1280px) {
     @import "modules/desktop";
 }
+
