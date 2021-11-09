@@ -93,11 +93,12 @@ html {
 }
 
 .first-login-info-container .first-login-form input {
-  width: 258px;
+  width: 238px;
   height: 48px;
   background: white;
   border-radius: 15px;
   border-color: transparent;
+  padding-left: 20px;
 }
 
 .first-login-info-container .first-login-form .submitButton {

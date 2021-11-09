@@ -61,9 +61,10 @@ html {
       margin: 26px 0 9px;
     }
     input {
-      @include setInput(258px, 48px, white);
+      @include setInput(238px, 48px, white);
       border-radius: 15px;
       border-color: transparent;
+      padding-left: 20px;
     }
     .submitButton {
       text-align: center;
