@@ -1,9 +1,21 @@
 .primary-btn {
     @include setButton(145px, 48px, $primary-color, $white);
-    font-size: 22px;
 }
 
 .secondary-btn {
     @include setButton(235px, 48px, $secondary-color, $white);
-    font-size: 22px;
 }
+
+.tertiary-btn {
+    @include setButton(145px, 48px, $white,  $secondary-color);
+}
+
+.primary-btn, .secondary-btn, .tertiary-btn {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+

@@ -5,10 +5,6 @@
     background-color: $background;
 }
 
-@mixin setGradient($background) {
-    background: $background;
-}
-
 @mixin setBackground($background) {
     background: $background;
 }
