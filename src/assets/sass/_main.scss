@@ -5,16 +5,17 @@
 /* Components */
 @import "components/buttons";
 @import "components/input";
+@import "components/firstTimeLoginInfo.scss";
 
 /* Mobile */
 @import "modules/mobile";
 
 /* Tablet */
-@media (min-width:600px) {
-    @import "modules/tablet";
+@media (min-width: 600px) {
+  @import "modules/tablet";
 }
 
 /* Desktop */
-@media (min-width:1280px) {
-    @import "modules/desktop";
+@media (min-width: 1280px) {
+  @import "modules/desktop";
 }

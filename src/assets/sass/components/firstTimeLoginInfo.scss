@@ -1,0 +1,78 @@
+body,
+html {
+  margin: 0;
+  background-color: rgba(218, 218, 218, 0.37);
+  font-family: proxima-nova, sans-serif;
+}
+
+.first-login-info-container {
+  height: 100%;
+
+  .first-login-info-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    h2 {
+      color: $primary-color;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+
+  .logo-container {
+    text-align: center;
+    padding-top: 8px;
+    img {
+      width: 150px;
+      height: 50px;
+      margin: auto;
+    }
+  }
+
+  .first-login-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .set-profile-btn {
+    width: 255px;
+  }
+
+  .first-login-img {
+    margin: 25px auto 17px;
+    width: 153px;
+    height: 153px;
+    border-radius: 50%;
+    background-color: #636567;
+  }
+
+  .first-login-form {
+    width: 258px;
+    margin: 0 auto;
+    label {
+      color: $primary-color;
+      font-weight: bold;
+      display: inline-block;
+      margin: 26px 0 9px;
+    }
+    input {
+      @include setInput(258px, 48px, white);
+      border-radius: 15px;
+      border-color: transparent;
+    }
+    .submitButton {
+      text-align: center;
+      button {
+        @include setButton(141px, 48px, white, $secondary-color);
+        font-size: 16px;
+        margin-top: 38px;
+        border-radius: 15px;
+      }
+    }
+  }
+}

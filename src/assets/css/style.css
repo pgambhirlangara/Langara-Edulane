@@ -1,0 +1,127 @@
+/* Components */
+.primary-btn {
+  width: 145px;
+  height: 48px;
+  color: #F15523;
+  background-color: white;
+  font-size: 22px;
+}
+
+.secondary-btn {
+  width: 235px;
+  height: 48px;
+  color: #0E23AD;
+  background-color: white;
+  font-size: 22px;
+}
+
+input {
+  width: 258px;
+  height: 50px;
+  background: white;
+}
+
+input ::placeholder {
+  color: #C4C4C4;
+}
+
+body,
+html {
+  margin: 0;
+  background-color: rgba(218, 218, 218, 0.37);
+  font-family: proxima-nova, sans-serif;
+}
+
+.first-login-info-container {
+  height: 100%;
+}
+
+.first-login-info-container .first-login-info-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.first-login-info-container .first-login-info-title h2 {
+  color: #F15523;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.first-login-info-container .logo-container {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.first-login-info-container .logo-container img {
+  width: 150px;
+  height: 50px;
+  margin: auto;
+}
+
+.first-login-info-container .first-login-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.first-login-info-container .set-profile-btn {
+  width: 255px;
+}
+
+.first-login-info-container .first-login-img {
+  margin: 25px auto 17px;
+  width: 153px;
+  height: 153px;
+  border-radius: 50%;
+  background-color: #636567;
+}
+
+.first-login-info-container .first-login-form {
+  width: 258px;
+  margin: 0 auto;
+}
+
+.first-login-info-container .first-login-form label {
+  color: #F15523;
+  font-weight: bold;
+  display: inline-block;
+  margin: 26px 0 9px;
+}
+
+.first-login-info-container .first-login-form input {
+  width: 258px;
+  height: 48px;
+  background: white;
+  border-radius: 15px;
+  border-color: transparent;
+}
+
+.first-login-info-container .first-login-form .submitButton {
+  text-align: center;
+}
+
+.first-login-info-container .first-login-form .submitButton button {
+  width: 141px;
+  height: 48px;
+  color: white;
+  background-color: #0E23AD;
+  font-size: 16px;
+  margin-top: 38px;
+  border-radius: 15px;
+}
+
+/* Mobile */
+.reset-bg {
+  background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+}
+
+.login-bg {
+  background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+}
+
+/* Tablet */
+/* Desktop */
