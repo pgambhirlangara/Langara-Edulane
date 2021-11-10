@@ -1,6 +1,10 @@
 /* Proxima Nova Adobe Font */
 /* ADOBE LINK - PROXIMA NOVA */
 @import url("https://use.typekit.net/zil0rks.css");
+html, body {
+  height: 100%;
+}
+
 * {
   font-family: proxima-nova, sans-serif;
   margin: 0;
@@ -11,12 +15,22 @@ a {
   text-decoration: none;
 }
 
+.back {
+  color: #0E23AD;
+}
+
+.main-bg {
+  background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+  height: 100%;
+}
+
 /* Components */
 .primary-btn {
   width: 145px;
   height: 48px;
   color: #F15523;
   background-color: white;
+  border: none;
 }
 
 .secondary-btn {
@@ -24,6 +38,7 @@ a {
   height: 48px;
   color: #0E23AD;
   background-color: white;
+  border: none;
 }
 
 .tertiary-btn {
@@ -31,15 +46,24 @@ a {
   height: 48px;
   color: white;
   background-color: #0E23AD;
+  border: none;
+}
+
+.accent-btn {
+  width: 145px;
+  height: 48px;
+  color: #0E23AD;
+  background-color: white;
+  border: 1px solid #0E23AD;
 }
 
 .primary-btn,
 .secondary-btn,
-.tertiary-btn {
+.tertiary-btn,
+.accent-btn {
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
-  border: none;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -48,10 +72,71 @@ input {
   width: 258px;
   height: 50px;
   background: white;
+  border-radius: 20px;
+  border: none;
 }
 
-input ::placeholder {
+input::placeholder {
   color: #C4C4C4;
+  padding-left: 12px;
+}
+
+.logo {
+  width: 249px;
+  height: 79px;
+  top: 190px;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.text-container {
+  text-align: center;
+  color: white;
+}
+
+.text-container p {
+  border-bottom: 1px solid white;
+  padding-bottom: 8px;
+  border-bottom-width: thin;
+}
+
+label {
+  color: white;
+}
+
+.reset-pass-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.reset-pass-sub-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+p {
+  text-align: center;
+  color: white;
+  max-width: 260px;
+  margin-top: 18px;
+}
+
+.reset-pass-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.reset-pass-login {
+  margin-top: 35px;
 }
 
 .container-welcome {
@@ -93,6 +178,67 @@ input ::placeholder {
 
 .tertiary-btn:hover {
   background-color: #0A1B89;
+}
+
+.first-login-profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(218, 218, 218, 0.37);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.first-login-profile-container .first-login-profile-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.first-login-profile-container .first-login-profile-title h2 {
+  color: #F15523;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.first-login-profile-container .first-login-profile-title span {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.first-login-profile-container .first-login-profile-logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.first-login-profile-container .first-login-profile-logo-container a {
+  width: 30px;
+  text-align: center;
+}
+
+.first-login-profile-container .first-login-profile-logo-container img {
+  width: 150px;
+  height: 50px;
+  margin: auto;
+}
+
+.first-login-profile-container .first-login-profile-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.first-login-profile-container .set-profile-btn {
+  width: 255px;
+}
+
+.first-login-profile-container .first-login-profile-img img {
+  width: 250px;
+  height: 250px;
 }
 
 /* Mobile */
@@ -157,5 +303,11 @@ input ::placeholder {
 @media (min-width: 1280px) {
   .container-welcome {
     background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../assets/images/welcome.jpeg);
+  }
+  .reset-pass-container .reset-pass-info {
+    max-width: 400px;
+  }
+  .reset-pass-container input {
+    width: 400px;
   }
 }

@@ -1,22 +1,30 @@
 .primary-btn {
   @include setButton(145px, 48px, $primary-color, $white);
+  border: none;
 }
 
 .secondary-btn {
   @include setButton(235px, 48px, $secondary-color, $white);
+  border: none;
 }
 
 .tertiary-btn {
   @include setButton(145px, 48px, $white, $secondary-color);
+  border: none;
+}
+
+.accent-btn {
+  @include setButton(145px, 48px, $secondary-color, $white);
+  border: 1px solid $secondary-color;
 }
 
 .primary-btn,
 .secondary-btn,
-.tertiary-btn {
+.tertiary-btn,
+.accent-btn {
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
-  border: none;
   border-radius: 20px;
   cursor: pointer;
 }
