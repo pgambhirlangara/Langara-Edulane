@@ -19,11 +19,6 @@ a {
   color: #0E23AD;
 }
 
-input {
-  border-radius: 20px;
-  border: none;
-}
-
 .main-bg {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
   height: 100%;
@@ -62,7 +57,10 @@ input {
   border: 1px solid #0E23AD;
 }
 
-.primary-btn, .secondary-btn, .tertiary-btn, .accent-btn {
+.primary-btn,
+.secondary-btn,
+.tertiary-btn,
+.accent-btn {
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
@@ -74,10 +72,13 @@ input {
   width: 258px;
   height: 50px;
   background: white;
+  border-radius: 20px;
+  border: none;
 }
 
-input ::placeholder {
+input::placeholder {
   color: #C4C4C4;
+  padding-left: 12px;
 }
 
 .logo {
@@ -98,6 +99,7 @@ input ::placeholder {
 .text-container p {
   border-bottom: 1px solid white;
   padding-bottom: 8px;
+  border-bottom-width: thin;
 }
 
 label {
@@ -130,6 +132,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .reset-pass-login {
@@ -177,78 +180,114 @@ p {
   background-color: #0A1B89;
 }
 
-.first-login-container {
+.first-login-profile-container {
   display: flex;
   flex-direction: column;
   background-color: rgba(218, 218, 218, 0.37);
   height: 100%;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
-.first-login-container .first-login-title {
+.first-login-profile-container .first-login-profile-title {
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
 }
 
-.first-login-container .first-login-title h2 {
+.first-login-profile-container .first-login-profile-title h2 {
   color: #F15523;
   font-size: 32px;
   font-weight: bold;
 }
 
-.first-login-container .first-login-title span {
+.first-login-profile-container .first-login-profile-title span {
   font-weight: bold;
   font-size: 24px;
 }
 
-.first-login-container .first-login-logo-container {
+.first-login-profile-container .first-login-profile-logo-container {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.first-login-container .first-login-logo-container span {
+.first-login-profile-container .first-login-profile-logo-container a {
   width: 30px;
   text-align: center;
 }
 
-.first-login-container .first-login-logo-container img {
+.first-login-profile-container .first-login-profile-logo-container img {
   width: 150px;
   height: 50px;
   margin: auto;
 }
 
-.first-login-container .first-login-btn {
+.first-login-profile-container .first-login-profile-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.first-login-container .set-profile-btn {
+.first-login-profile-container .set-profile-btn {
   width: 255px;
 }
 
-.first-login-container .first-login-img {
+.first-login-profile-container .first-login-profile-img img {
   width: 250px;
   height: 250px;
-  border-radius: 50%;
-  background-color: #F15523;
 }
 
 /* Mobile */
-.reset-bg, .login-bg {
+.reset-bg,
+.login-bg {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+}
+
+/* Styling for Password Reset Modal */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 264px;
+  width: 265px;
+  border: 1px solid #717171;
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-family: proxima-nova, sans-serif;
+}
+
+.modal p {
+  margin-top: 41px;
+  font-size: 24px;
+  line-height: 29.23px;
+  color: #717171;
+}
+
+.modal p.reset-password-message-large {
+  display: none;
+}
+
+.modal a {
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  line-height: 48px;
+  text-decoration: none;
+  width: 235px;
+  border-radius: 10px;
+  margin: 24px auto 0;
 }
 
 /* Tablet */
 @media (min-width: 600px) {
   .container-welcome {
-    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../assets/images/welcome-tabl.jpg);
+    background-image: linear-gradient(33.58deg, #f1552399, #2b3c9899), url(../../assets/images/welcome-tabl.jpg);
   }
   .edulane-logo img {
     width: 20%;
@@ -267,6 +306,35 @@ p {
 /* Desktop */
 @media (min-width: 1280px) {
   .container-welcome {
-    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../assets/images/welcome.jpeg);
+    background-image: linear-gradient(33.58deg, #f1552399, #2b3c9899), url(../../assets/images/welcome.jpeg);
+  }
+  .reset-pass-container .reset-pass-info {
+    max-width: 400px;
+  }
+  .reset-pass-container input {
+    width: 400px;
+  }
+  /* Styling for Password Reset Modal */
+  .modal {
+    width: 41%;
+    height: 302px;
+  }
+  .modal p.reset-password-message-small {
+    display: none;
+  }
+  .modal p.reset-password-message-large {
+    display: block;
+    font-size: 28px;
+    line-height: 40px;
+    max-width: 100%;
+    margin: 48px auto 35px;
+  }
+  .modal a {
+    height: 78px;
+    width: 86%;
+    font-size: 28px;
+    line-height: 78px;
+    border-radius: 25px;
+    margin-top: 0;
   }
 }
