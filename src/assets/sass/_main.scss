@@ -6,8 +6,10 @@
 /* Components */
 @import "components/buttons";
 @import "components/input";
+@import "components/reset-pass";
 @import "components/welcome";
 @import "components/incorrect-pass-window";
+@import "components/first-login";
 
 /* Mobile */
 @import "modules/mobile";
@@ -21,3 +23,4 @@
 @media (min-width:1280px) {
     @import "modules/desktop";
 }
+

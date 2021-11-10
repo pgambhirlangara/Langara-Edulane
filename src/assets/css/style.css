@@ -1,6 +1,10 @@
 /* Proxima Nova Adobe Font */
 /* ADOBE LINK - PROXIMA NOVA */
 @import url("https://use.typekit.net/zil0rks.css");
+html, body {
+  height: 100%;
+}
+
 * {
   font-family: proxima-nova, sans-serif;
   margin: 0;
@@ -11,12 +15,27 @@ a {
   text-decoration: none;
 }
 
+.back {
+  color: #0E23AD;
+}
+
+input {
+  border-radius: 20px;
+  border: none;
+}
+
+.main-bg {
+  background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
+  height: 100%;
+}
+
 /* Components */
 .primary-btn {
   width: 145px;
   height: 48px;
   color: #F15523;
   background-color: white;
+  border: none;
 }
 
 .secondary-btn {
@@ -24,6 +43,7 @@ a {
   height: 48px;
   color: #0E23AD;
   background-color: white;
+  border: none;
 }
 
 .tertiary-btn {
@@ -31,13 +51,21 @@ a {
   height: 48px;
   color: white;
   background-color: #0E23AD;
+  border: none;
 }
 
-.primary-btn, .secondary-btn, .tertiary-btn {
+.accent-btn {
+  width: 145px;
+  height: 48px;
+  color: #0E23AD;
+  background-color: white;
+  border: 1px solid #0E23AD;
+}
+
+.primary-btn, .secondary-btn, .tertiary-btn, .accent-btn {
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
-  border: none;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -50,6 +78,62 @@ input {
 
 input ::placeholder {
   color: #C4C4C4;
+}
+
+.logo {
+  width: 249px;
+  height: 79px;
+  top: 190px;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.text-container {
+  text-align: center;
+  color: white;
+}
+
+.text-container p {
+  border-bottom: 1px solid white;
+  padding-bottom: 8px;
+}
+
+label {
+  color: white;
+}
+
+.reset-pass-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.reset-pass-sub-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+p {
+  text-align: center;
+  color: white;
+  max-width: 260px;
+  margin-top: 18px;
+}
+
+.reset-pass-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-pass-login {
+  margin-top: 35px;
 }
 
 .container-welcome {
@@ -91,6 +175,69 @@ input ::placeholder {
 
 .tertiary-btn:hover {
   background-color: #0A1B89;
+}
+
+.first-login-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(218, 218, 218, 0.37);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.first-login-container .first-login-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.first-login-container .first-login-title h2 {
+  color: #F15523;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.first-login-container .first-login-title span {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.first-login-container .first-login-logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.first-login-container .first-login-logo-container span {
+  width: 30px;
+  text-align: center;
+}
+
+.first-login-container .first-login-logo-container img {
+  width: 150px;
+  height: 50px;
+  margin: auto;
+}
+
+.first-login-container .first-login-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.first-login-container .set-profile-btn {
+  width: 255px;
+}
+
+.first-login-container .first-login-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #F15523;
 }
 
 /* Mobile */
