@@ -38,7 +38,7 @@ a {
   font-style: normal;
   font-size: 16px;
   border: none;
-  border-radius: 20px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
@@ -46,6 +46,9 @@ input {
   width: 258px;
   height: 50px;
   background: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0 10px;
 }
 
 input ::placeholder {
@@ -93,6 +96,59 @@ input ::placeholder {
   background-color: #0A1B89;
 }
 
+.container-login {
+  background: linear-gradient(33.58deg, #F15523, #2B3C98);
+  height: 100vh;
+}
+
+.container-login .sub-container-login {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container-login .sub-container-login form p {
+  margin-top: 20px;
+}
+
+.container-login .sub-container-login #username, .container-login .sub-container-login #password, .container-login .sub-container-login #remember-me {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: white;
+}
+
+.container-login .sub-container-login #checkbox-remember-me {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.container-login .sub-container-login #checkbox-area {
+  display: flex;
+  align-items: center;
+}
+
+.container-login .sub-container-login #click-areas {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container-login .sub-container-login #click-areas .primary-btn.login-area {
+  width: 100%;
+  margin-left: 0;
+}
+
+.container-login .sub-container-login #click-areas #forgot-password {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 10px;
+}
+
 /* Mobile */
 .reset-bg, .login-bg {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
@@ -121,5 +177,24 @@ input ::placeholder {
 @media (min-width: 1280px) {
   .container-welcome {
     background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../assets/images/welcome.jpeg);
+  }
+  input {
+    width: 500px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 10px;
+  }
+  input ::placeholder {
+    color: #C4C4C4;
+  }
+  .container-login .sub-container-login #click-areas {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .container-login .sub-container-login #click-areas .primary-btn.login-area {
+    width: 30%;
+    margin-right: 20px;
   }
 }
