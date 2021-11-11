@@ -7,7 +7,7 @@
 @import "components/buttons";
 @import "components/input";
 @import "components/welcome";
-@import "components/firstTimeLoginInfo.scss";
+@import "components/firstTimeLoginInfo-mobile";
 
 /* Mobile */
 @import "modules/mobile";
@@ -20,4 +20,5 @@
 /* Desktop */
 @media (min-width: 1280px) {
   @import "modules/desktop";
+  @import "components/firstTimeLoginInfo-desktop";
 }
