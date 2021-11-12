@@ -6,8 +6,12 @@
 /* Components */
 @import "components/buttons";
 @import "components/input";
+@import "components/reset-pass";
 @import "components/welcome";
 @import "components/firstTimeLoginInfo-mobile";
+@import "components/incorrect-pass-window";
+@import "components/first-login";
+@import "components/login";
 
 /* Mobile */
 @import "modules/mobile";

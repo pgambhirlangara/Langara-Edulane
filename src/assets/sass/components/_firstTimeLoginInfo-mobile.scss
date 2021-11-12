@@ -73,10 +73,7 @@ html {
         margin: 26px 0 9px;
       }
       input {
-        @include setInput(238px, 48px, white);
-        border-radius: 15px;
-        border-color: transparent;
-        padding-left: 20px;
+        @include setInput(238px, 48px, white, none, 15px, 0 0 0 20px);
       }
       .form-required-circle {
         position: absolute;

@@ -1,0 +1,56 @@
+// ---------------------------------------
+//   Incorrect password pop-up
+// ---------------------------------------
+
+.window {
+    margin: 0.5rem auto;
+    min-width: 18rem;
+    padding: 0;
+    width: 17rem;
+    height: 17rem;
+    border: 2px solid #2B3C98;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+
+    &__inner {
+        margin: 0 auto;
+        text-align: center;
+        color: #717171;
+
+        h3 {
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        p {
+            display: block;
+            margin-bottom: 2.3rem;
+        }
+
+        hr {
+            display: block;
+            height: 2px;
+            border: 0;
+            border-top: 1px solid #0E23AD;
+            padding: 0;
+        }
+
+        input {
+            margin: 0;
+            color: #717171;
+            font-size: 24px;
+            font-weight: 800;
+
+        }
+    }
+}
+
+.container-password {
+    width: 14rem;
+    height: 14rem;
+    display: flex;
+    align-items: center;
+}
