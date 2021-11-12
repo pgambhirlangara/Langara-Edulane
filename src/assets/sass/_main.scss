@@ -6,19 +6,24 @@
 /* Components */
 @import "components/buttons";
 @import "components/input";
+@import "components/reset-pass";
 @import "components/welcome";
+@import "components/firstTimeLoginInfo-mobile";
+@import "components/incorrect-pass-window";
 @import "components/first-login";
 @import "components/add-drop-course";
+@import "components/login";
 
 /* Mobile */
 @import "modules/mobile";
 
 /* Tablet */
-@media (min-width:600px) {
-    @import "modules/tablet";
+@media (min-width: 600px) {
+  @import "modules/tablet";
 }
 
 /* Desktop */
-@media (min-width:1280px) {
-    @import "modules/desktop";
+@media (min-width: 1280px) {
+  @import "modules/desktop";
+  @import "components/firstTimeLoginInfo-desktop";
 }

@@ -1,3 +1,7 @@
+html,body {
+    height: 100%;
+}
+
 * {
     font-family: proxima-nova, sans-serif;
     margin: 0;
@@ -10,4 +14,8 @@ a {
 
 .back {
     color: $secondary-color;
+}
+.main-bg {
+    @include setBackground(linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%));
+    height: 100%;
 }
