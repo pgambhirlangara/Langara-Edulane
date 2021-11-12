@@ -1,62 +1,70 @@
 .first-login-profile-container {
+  background-color: rgba(218, 218, 218, 0.37);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  .first-login-profile-title {
     display: flex;
     flex-direction: column;
-    background-color: rgba(218, 218, 218, 0.37);
-    height: 100%;
+    gap: 10px;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
+    margin: 65px 0 40px;
 
-    .first-login-profile-title {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-
-        h2 {
-            color: $primary-color;
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        span {
-            font-weight: bold;
-            font-size: 24px;
-        }
+    h2 {
+      color: $primary-color;
+      font-size: 32px;
+      font-weight: bold;
     }
 
-    .first-login-profile-logo-container {
-        display: flex;
-        align-items: center;
-        width: 100%;
+    span {
+      font-weight: bold;
+      font-size: 24px;
+    }
+  }
 
-        a {
-            width: 30px;
-            text-align: center;
-        }
-
-        img {
-            width: 150px;
-            height: 50px;
-            margin: auto;
-        }
+  .first-login-profile-logo-container {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    a {
+      width: 30px;
+      text-align: center;
+      position: absolute;
+      top: 37px;
+      left: 37px;
+      font-size: 25px;
+      font-weight: bold;
     }
 
-    .first-login-profile-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+    img {
+      width: 150px;
+      height: 50px;
+      margin: auto;
     }
+  }
 
-    .set-profile-btn {
-        width: 255px;
+  .first-login-profile-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    .accent-btn {
+      margin-bottom: 31px;
     }
+  }
 
-    .first-login-profile-img {
-       img {
-        width: 250px;
-        height: 250px;
-       }
+  .set-profile-btn {
+    width: 255px;
+  }
+
+  .first-login-profile-img {
+    text-align: center;
+    img {
+      width: 283px;
+      height: 283px;
     }
+    margin-bottom: 33px;
+  }
 }
