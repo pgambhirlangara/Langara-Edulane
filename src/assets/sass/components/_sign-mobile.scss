@@ -1,0 +1,99 @@
+body,
+html {
+  margin: 0;
+  background-color: rgba(218, 218, 218, 0.37);
+  font-family: proxima-nova, sans-serif;
+  height: 100%;
+}
+
+.first-login-info-container {
+  height: 100%;
+
+  .first-login-info-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    h2 {
+      color: $primary-color;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+
+  .first-login-info-header {
+    text-align: center;
+    padding-top: 8px;
+    img {
+      width: 150px;
+      height: 50px;
+      margin: auto;
+    }
+    .userName-container {
+      display: none;
+    }
+  }
+
+  .first-login-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .set-profile-btn {
+    width: 255px;
+  }
+  .profile-header-image-container {
+    display: none;
+  }
+  .first-login-img-container {
+    text-align: center;
+    margin: 25px 0 17px;
+    img {
+      width: 153px;
+      height: 153px;
+    }
+    p {
+      display: none;
+    }
+  }
+
+  .first-login-form {
+    width: 258px;
+    margin: 0 auto;
+    .first-login-form-row {
+      position: relative;
+      label {
+        color: $primary-color;
+        font-weight: bold;
+        display: inline-block;
+        margin: 26px 0 9px;
+      }
+      input {
+        @include setInput(238px, 48px, white, none, 15px, 0 0 0 20px);
+      }
+      .form-required-circle {
+        position: absolute;
+        bottom: 21px;
+        right: 18px;
+        width: 6px;
+        height: 6px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .submitButton {
+      text-align: center;
+      button {
+        @include setButton(141px, 48px, white, $secondary-color);
+        font-size: 16px;
+        margin-top: 38px;
+        border-radius: 15px;
+      }
+    }
+  }
+}

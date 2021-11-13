@@ -19,3 +19,7 @@ a {
     @include setBackground(linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%));
     height: 100%;
 }
+
+.reset-pass-info {
+    font-size: 12px;
+}
