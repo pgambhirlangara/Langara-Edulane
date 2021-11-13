@@ -24,6 +24,10 @@ a {
   height: 100%;
 }
 
+.reset-pass-info {
+  font-size: 12px;
+}
+
 /* Components */
 .primary-btn {
   width: 145px;
@@ -70,14 +74,9 @@ input {
   width: 258px;
   height: 50px;
   background: white;
-<<<<<<< HEAD
-  border-radius: 20px;
-  border: none;
-=======
   border: none;
   border-radius: 12px;
   padding: 0 10px;
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
 }
 
 input::placeholder {
@@ -124,11 +123,12 @@ label {
   gap: 10px;
 }
 
-p {
-  text-align: center;
+.reset-pass-info {
+  text-align: left;
   color: white;
   max-width: 260px;
   margin-top: 18px;
+  font-size: 12px;
 }
 
 .reset-pass-container {
@@ -184,8 +184,6 @@ p {
   background-color: #0A1B89;
 }
 
-<<<<<<< HEAD
-=======
 body,
 html {
   margin: 0;
@@ -306,14 +304,12 @@ html {
   border-radius: 15px;
 }
 
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
 .window {
   margin: 0.5rem auto;
   min-width: 18rem;
   padding: 0;
   width: 17rem;
   height: 17rem;
-<<<<<<< HEAD
   border: 2px solid #2b3c98;
   border-radius: 20px;
   display: flex;
@@ -325,12 +321,6 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-=======
-  border: 2px solid #2B3C98;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
 }
 
 .window__inner {
@@ -340,22 +330,17 @@ html {
 }
 
 .window__inner h3 {
-<<<<<<< HEAD
   color: #717171;
-=======
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
   display: block;
   margin-bottom: 1rem;
-  font-size: 24px;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
 .window__inner p {
-<<<<<<< HEAD
   color: #717171;
-=======
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
   display: block;
+  font-size: 1rem;
   margin-bottom: 2.3rem;
 }
 
@@ -363,11 +348,69 @@ html {
   display: block;
   height: 2px;
   border: 0;
-<<<<<<< HEAD
   border-top: 1px solid #0e23ad;
-=======
-  border-top: 1px solid #0E23AD;
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
+  padding: 0;
+}
+
+.window__inner input {
+  margin: 0;
+  color: #717171;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.container-password {
+  width: 14rem;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+}
+
+.window {
+  margin: 0.5rem auto;
+  min-width: 18rem;
+  padding: 0;
+  width: 17rem;
+  height: 17rem;
+  border: 2px solid #2b3c98;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.window__inner {
+  margin: 0 auto;
+  text-align: center;
+  color: #717171;
+}
+
+.window__inner h3 {
+  color: #717171;
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.window__inner p {
+  color: #717171;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 2.3rem;
+}
+
+.window__inner hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #0e23ad;
   padding: 0;
 }
 
@@ -444,8 +487,6 @@ html {
 .first-login-profile-container .first-login-profile-img img {
   width: 250px;
   height: 250px;
-<<<<<<< HEAD
-=======
 }
 
 .container-login {
@@ -499,7 +540,6 @@ html {
   text-decoration: underline;
   cursor: pointer;
   margin: 10px;
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
 }
 
 /* Mobile */
@@ -524,12 +564,25 @@ html {
   .primary-btn {
     margin-left: 10px;
   }
+  .window {
+    width: 25rem;
+    height: 20rem;
+  }
+  .window__inner h3 {
+    font-size: 1.5rem;
+  }
+  .window__inner p {
+    font-size: 1.2rem;
+  }
+  .container-password {
+    width: 20rem;
+  }
 }
 
 /* Desktop */
 @media (min-width: 1280px) {
   .container-welcome {
-    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../assets/images/welcome.jpeg);
+    background-image: linear-gradient(33.58deg, #f1552399, #2b3c9899), url(../../assets/images/welcome.jpeg);
   }
   .reset-pass-container .reset-pass-info {
     max-width: 400px;
@@ -537,8 +590,6 @@ html {
   .reset-pass-container input {
     width: 400px;
   }
-<<<<<<< HEAD
-=======
   .container-login .sub-container-login #click-areas {
     flex-direction: row;
     justify-content: center;
@@ -546,6 +597,19 @@ html {
   .container-login .sub-container-login #click-areas .primary-btn.login-area {
     width: 30%;
     margin-right: 20px;
+  }
+  .window {
+    width: 35rem;
+    height: 20rem;
+  }
+  .window__inner h3 {
+    font-size: 1.6rem;
+  }
+  .window__inner p {
+    font-size: 1.3rem;
+  }
+  .container-password {
+    width: 30rem;
   }
   .first-login-info-container {
     position: relative;
@@ -628,10 +692,4 @@ html {
   .first-login-info-container .first-login-form .first-login-form-row input::placeholder {
     font-size: 22px;
   }
-  .first-login-info-container .first-login-form .submitButton button {
-    width: 230px;
-    height: 78px;
-    font-size: 22px;
-  }
->>>>>>> 57136d94a429ea20fb09c975840b90a01673fe37
 }
