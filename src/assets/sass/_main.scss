@@ -8,7 +8,7 @@
 @import "components/input";
 @import "components/reset-pass";
 @import "components/welcome";
-@import "components/firstTimeLoginInfo-mobile";
+@import "components/sign-mobile";
 @import "components/incorrect-pass-window";
 @import "components/first-login";
 @import "components/login";
@@ -24,5 +24,5 @@
 /* Desktop */
 @media (min-width: 1280px) {
   @import "modules/desktop";
-  @import "components/firstTimeLoginInfo-desktop";
+  @import "components/signup-desktop";
 }
