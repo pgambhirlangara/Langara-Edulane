@@ -9,8 +9,11 @@
     background: $background;
 }
 
-@mixin setInput($width, $height, $background) {
+@mixin setInput($width, $height, $background, $border, $border-radius, $padding) {
     width: $width;
     height: $height;
     background: $background;
+    border: $border;
+    border-radius: $border-radius;
+    padding:$padding;
 }

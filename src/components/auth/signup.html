@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="first-login-info-container">
+        <div class="first-login-info-header">
+            <img src="../../images/edulane_horizontal_color_trimmed.svg">
+            <!-- <div class="userName-container">
+                <img src="../../images/notification-symbol.svg" alt="">
+                <p class="userNameInHeader">James Stephenson</p>
+            </div> -->
+        </div>
+        <div class="profile-header-image-container">
+        </div>
+        <!-- <div class="first-login-img-container">
+            <a href="#"><img src="../../images/firstTimeLoginImage-placeholder.svg" alt="Change Picture"></a>
+            <p>Hi James!</p>
+        </div> -->
+        <div class="first-login-info-title">
+            <h2>Personal Information</h2>
+        </div>
+        <form class="first-login-form" onsubmit="register(event)">
+            <div class="first-login-form-row">
+                <label for="studentName">Name</label>
+                <input type="text" name="studentName" id="studentName" placeholder="Required" 
+                required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="studentNickName">Nick name</label>
+                <input type="text" name="studentNickName" id="studentNickName" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="studentEmail">Email</label>
+                <input type="email" name="studentEmail" id="studentEmail" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="studentId">Student ID</label>
+                <input type="number" name="studentId" id="studentId" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="studentPassword">Password</label>
+                <input type="password" name="studentPassword" id="studentPassword" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="studentDepartment">Department</label>
+                <input type="text" name="studentDepartment" id="studentDepartment" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="submitButton">
+                <button class="primary-btn" type="submit">Sign up</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="../../services/firebase.js"></script>
+    <script src="../../services/auth.js"></script>
+</body>
+</html>

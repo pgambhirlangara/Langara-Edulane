@@ -37,11 +37,12 @@ label {
     gap: 10px;
 }
 
-p {  
-    text-align: center;
+.reset-pass-info {  
+    text-align: left;
     color: $white;
     max-width: 260px;
     margin-top: 18px;
+    font-size: 12px;
 }
 
 .reset-pass-container {
