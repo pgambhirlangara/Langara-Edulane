@@ -5,36 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Add or Drop Course</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Search Course</title>
 </head>
 
 <body>
-    <div class="add-drop-container">
-        <div class="add-course-logo-container">
+    <div class="search-course-container">
+
+        <div class="search-course-logo-container">
             <a href="#" class="back"> <span>
                     < </span></a>
-            <img src="../images/edulane_horizontal_color_trimmed.svg" alt="logo">
+            <img src="../assets/images/edulane_horizontal_color.svg" alt="logo">
         </div>
 
-        <div class="add-drop-title">
-            <h2>Add / Drop Courses</h2>
+        <div class="search-course-title">
+            <h2>Add Courses!</h2>
         </div>
 
-        <div id="addCourseContainer" class="add-course-container">
+        <div class="search-course-bar">
+            <input type="text" placeholder="Enter your CRN number" onchange="searchCourses(event)">
+        </div>
+
+        <div id="searchCourseContainer">
 
         </div>
 
-        <div class="add-course-bottom-action">
-            <button class="tertiary-btn">Add courses</button>
-            <a href="search-course.html" class="search-courses-btn"><span>Search Courses</span></a>
-        </div>
+    </div>
+    <div class="search-course-bottom-action">
+        <button class="tertiary-btn" onclick="submitCourseList()">Submit</button>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="../services/firebase.js"></script>
     <script src="../services/auth.js"></script>
+    <script src="../services/search-course.js"></script>
 </body>
 
 </html>
