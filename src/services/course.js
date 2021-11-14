@@ -1,3 +1,5 @@
+let courseList = [];
+let tempCourseList = [];
 const addCourseToCollege = (e) => {
     e.preventDefault();
       return db.collection("courses").doc().set({
@@ -16,7 +18,9 @@ const addCourseToCollege = (e) => {
 
 const getCourseList = (e) => {
     db.collection('courses').get().then(snapshot => {
-        generateSearchCourseHTML(snapshot.docs);
+        courseList = snapshot.docs.map((item) => item.data());
+        tempCourseList = courseList;
+        generateSearchCourseHTML(courseList);
     });
 }
 
@@ -43,6 +47,7 @@ const generateAddDropCourseHTML = (data) => {
 
 
 const generateSearchCourseHTML = (data) => {
+    searchCourseContainer.innerHTML = "";
     data.forEach((val) => {
         let courseSubContainer = document.createElement('div');
         let searchCourseImageContainer = document.createElement('div');
@@ -70,7 +75,7 @@ const generateSearchCourseHTML = (data) => {
         courseSubContainer.appendChild(searchCourseImageContainer);
         courseSubContainer.appendChild(searchCourseContent);
 
-        courseTitle.textContent = val.data().name;
+        courseTitle.textContent = `${val.crn} ${val.name}`;
         searchCourseNameContainer.appendChild(courseTitle);
         searchCourseNameContainer.appendChild(checkBox);
 
@@ -83,11 +88,19 @@ const generateSearchCourseHTML = (data) => {
         searchCourseImage.setAttribute('src', "../assets/images/profile-placeholder.svg");
         searchCourseImageContainer.appendChild(searchCourseImage);
 
-
-        description.textContent = val.data().description;
+        description.textContent = val.description;
 
         searchCourseContainer.appendChild(courseSubContainer);
     });
+}
+
+const searchCourses = (event) => {
+    if (event.target.value.length === 0 ) {
+        courseList = tempCourseList;
+    } else {
+        courseList = courseList.filter((item) => item.crn === event.target.value);
+    }
+    generateSearchCourseHTML(courseList);
 }
 
 // Fetch all the course list that exists

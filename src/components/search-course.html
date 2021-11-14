@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="search-course-container" id="searchCourseContainer">
+    <div class="search-course-container">
 
         <div class="search-course-logo-container">
             <a href="#" class="back"> <span>
@@ -23,7 +23,11 @@
         </div>
 
         <div class="search-course-bar">
-            <input type="text" placeholder="Enter your CRN number">
+            <input type="text" placeholder="Enter your CRN number" onchange="searchCourses(event)">
+        </div>
+
+        <div id="searchCourseContainer">
+
         </div>
 
     </div>
