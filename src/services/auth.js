@@ -1,55 +1,38 @@
+
+
+  
 const register = (e) => {
     e.preventDefault();
-
-    auth.createUserWithEmailAndPassword(studentEmail.value, studentPassword.value)
-    .then(() => {
-        const user = auth.currentUser;
-
-        // Add to firebase
-        const databaseRef = database.ref();
-
-        // Create User data
-        const userData = {
-            name: studentName.value,
-            email: studentEmail.value,
-            studentId: studentId.value,
-            nickName: studentNickName.value,
-            department: studentDepartment.value,
-            lastLogin: Date.now(),
-        }
-
-        databaseRef.child('users/' + user.uid).set(userData);
+    // sign up the user & add firestore data
+    auth.createUserWithEmailAndPassword(studentEmail.value, studentPassword.value).then(cred => {
+      return db.collection("users").doc(cred.user.uid).set({
+        name: studentName.value,
+        email: studentEmail.value,
+        studentId: studentId.value,
+        nickName: studentNickName.value,
+        department: studentDepartment.value,
+      });
+    }).then(() => {
         alert("Account succesfully Created");
         window.location = "login.html";
-    })
-    .catch((error) => {
-        alert(error.message);
-    })
+    });
 
 }
 
 const login = (event) => {
     event.preventDefault();
-    auth.signInWithEmailAndPassword(studentEmail.value, studentPassword.value)
-    .then(() => {
-        const user = auth.currentUser;
-
-        // Add to firebase
-        const databaseRef = database.ref();
-
-        // Create User data
-        const userData = {
-            lastLogin: Date.now(),
-        }
-
-        databaseRef.child('users/' + user.uid).update(userData);
+  auth.signInWithEmailAndPassword(studentEmail.value, studentPassword.value).then((cred) => {
         alert("User Logged In!");
         window.location = "../home.html";
-    })
-    .catch((error) => {
-        alert(error.message);
-    })
+  });
 }
+
+const logout = () => {
+    auth.signOut();
+    alert("User Logged Out!");
+    window.location = "login.html";
+}
+
 
 const validateEmail = (email) => {
     let expression = /^[^@]+@\w+(\.\w+)+\w$/;
