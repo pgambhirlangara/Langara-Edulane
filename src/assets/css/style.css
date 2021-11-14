@@ -24,6 +24,10 @@ a {
   height: 100%;
 }
 
+.reset-pass-info {
+  font-size: 12px;
+}
+
 /* Components */
 .primary-btn {
   width: 145px;
@@ -119,11 +123,12 @@ label {
   gap: 10px;
 }
 
-p {
-  text-align: center;
+.reset-pass-info {
+  text-align: left;
   color: white;
   max-width: 260px;
   margin-top: 18px;
+  font-size: 12px;
 }
 
 .reset-pass-container {
@@ -470,6 +475,55 @@ html {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
 }
 
+.find-my-friends .find-my-friends-header {
+  margin: 44px 0 31px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.find-my-friends .find-my-friends-header h2 {
+  margin-left: 34px;
+  font-size: 32px;
+  color: #F15523;
+}
+
+.find-my-friends .find-my-friends-header img {
+  height: 32px;
+  width: 32px;
+  margin: 8px 32px 0 0;
+}
+
+.find-my-friends .map-section .map-header {
+  border-radius: 24px 24px 0;
+  background-color: #fff;
+  height: 120px;
+  padding-top: 20px;
+}
+
+.find-my-friends .map-section .map-header p.map-header-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 33px;
+}
+
+.find-my-friends .map-section .map-header img {
+  width: 12px;
+  height: auto;
+  margin: 4px 4px 0 36px;
+}
+
+.find-my-friends .map-section .map-header p.friend-name {
+  display: inline-block;
+}
+
+.find-my-friends #map-area {
+  background-color: #fff;
+  border-radius: 24px 24px 0;
+  width: 100%;
+  height: 600px;
+  transform: translateY(-46px);
+}
+
 /* Tablet */
 @media (min-width: 600px) {
   .container-welcome {
@@ -587,11 +641,6 @@ html {
 
 @media (min-width: 1280px) {
   .first-login-info-container .first-login-form .first-login-form-row input::placeholder {
-    font-size: 22px;
-  }
-  .first-login-info-container .first-login-form .submitButton button {
-    width: 230px;
-    height: 78px;
     font-size: 22px;
   }
 }
