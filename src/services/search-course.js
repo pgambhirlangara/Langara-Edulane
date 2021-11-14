@@ -1,5 +1,7 @@
 let courseList = [];
 let tempCourseList = [];
+let selectedCourses = [];
+
 const addCourseToCollege = (e) => {
     e.preventDefault();
       return db.collection("courses").doc().set({
@@ -12,7 +14,6 @@ const addCourseToCollege = (e) => {
         description: courseDescription.value
     }).then(() => {
         alert("Course succesfully Created");
-        // window.location = "login.html";
     });
 }
 
@@ -24,6 +25,8 @@ const getCourseList = (e) => {
     });
 }
 
+
+// Move to its suitable file (TODO)
 const generateAddDropCourseHTML = (data) => {
     let courseSubContainer = document.createElement('div');
    
@@ -55,14 +58,18 @@ const generateSearchCourseHTML = (data) => {
         let searchCourseContent = document.createElement('div');
         let courseTitle = document.createElement('h4');
         let searchCourseNameContainer = document.createElement('div');
-        let checkBox = document.createElement('input');
+        // let checkBox = document.createElement('input');
         let searchCourseDescriptionContainer = document.createElement('div');
         let description = document.createElement('span');
         let plusContainer = document.createElement('div');
         let plusIcon = document.createElement('i');
 
-        checkBox.type = "checkbox";
+        // checkBox.type = "checkbox";
         plusIcon.classList.add('fas', 'fa-plus');
+
+        // checkBox.setAttribute('id', val.crn);
+        let checkBox = `<input type='checkbox' onclick='selectCourse(${val.crn})'/>`;
+
 
         courseSubContainer.classList.add('search-course-sub-container');
         searchCourseImageContainer.classList.add('search-course-img');
@@ -77,7 +84,8 @@ const generateSearchCourseHTML = (data) => {
 
         courseTitle.textContent = `${val.crn} ${val.name}`;
         searchCourseNameContainer.appendChild(courseTitle);
-        searchCourseNameContainer.appendChild(checkBox);
+        searchCourseNameContainer.innerHTML += checkBox;
+        // searchCourseNameContainer.appendChild(checkBox);
 
         searchCourseDescriptionContainer.appendChild(description);
         plusContainer.appendChild(plusIcon);
@@ -101,6 +109,39 @@ const searchCourses = (event) => {
         courseList = courseList.filter((item) => item.crn === event.target.value);
     }
     generateSearchCourseHTML(courseList);
+}
+
+
+const addCourseToUser = (courses) => {
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            db.collection(user.uid).doc().set({
+                courses
+            }).then(() => {
+                alert("Courses added to user succesfully");
+            }).catch(err => {
+                console.log(err.message);
+            })
+        }
+        else {
+            // console.log('user is not signed in to add todos');
+        }
+    })
+}
+
+const selectCourse = (courseCrn) => {
+  const index = selectedCourses.findIndex((crn) => crn == courseCrn);
+  if (index === -1) {
+      selectedCourses.push(courseCrn);
+  } else {
+      selectedCourses.splice(index, 1);
+  }
+
+  console.log(selectedCourses);
+};
+
+const submitCourseList = () => {
+    addCourseToUser(selectedCourses);
 }
 
 // Fetch all the course list that exists
