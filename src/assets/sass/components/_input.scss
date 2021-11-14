@@ -1,4 +1,4 @@
-input {
+input, select {
     @include setInput(258px, 50px, $white, none, 12px, 0 10px);
         &::placeholder { 
             color: $light;
