@@ -18,18 +18,16 @@ const generateAddDropCourseHTML = (data) => {
             let courseSubContainer = document.createElement('div');
 
             let courseLI = document.createElement('button');
-            let deleteCourse = document.createElement('button');
-            let deleteIcon = document.createElement('i');
+            const IdToDelete = val.doc.id;
+
+            let deleteButton = `<button class="accent-btn delete-btn" onclick="deleteCourseFromUser(${IdToDelete})"><i class="fas fa-trash"></i></button>`;
 
             courseLI.textContent = courseVal.name;
-            deleteIcon.classList.add("fas", "fa-trash");
             courseSubContainer.classList.add("add-course-sub-container");
             courseLI.classList.add("accent-btn", "course-btn");
-            deleteCourse.classList.add("accent-btn", "delete-btn");
             
             courseSubContainer.appendChild(courseLI);
-            deleteCourse.appendChild(deleteIcon);
-            courseSubContainer.appendChild(deleteCourse);
+            courseSubContainer.innerHTML += deleteButton;
             addCourseContainer.appendChild(courseSubContainer);
 
         })
@@ -38,6 +36,15 @@ const generateAddDropCourseHTML = (data) => {
     });
 }
 
+const deleteCourseFromUser = (id) => {
+    console.log(id);
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            db.collection(user.uid).doc(id).delete();
+            alert('successfullt deleted');
+        }
+    })
+}
 
 
 getCurrentCourseList();
