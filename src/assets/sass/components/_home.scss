@@ -1,0 +1,80 @@
+img{
+    width: 147px;
+    height: 47px;
+    left: 119px;
+    top: 41px;
+
+}
+.home-logo-image{
+    width: 147px;
+    height: 47px;
+    left: 119px;
+    top: 41px;
+
+}
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+   padding:20px;
+
+}
+
+.home-main-heading{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width:100%;
+    img{
+        width:60px;
+    }
+}
+
+h4{
+    color:#F15523;
+}
+.home-courses-container{
+    display: flex;
+    justify-content:space-evenly;
+
+}
+
+.home-course-list{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.home-courses-list1{
+    border: 1px solid #0E23AD;
+}
+.home-courses-list2{
+    border: 1px solid #0E23AD;
+}
+.home-courses-list3{
+    border: 1px solid #0E23AD;
+}
+.home-courses-list4{
+    border: 1px solid #0E23AD;
+}
+.home-course-name{
+    text-align: center;
+    color: #E85E2C;
+    ;
+}
+.home-courses-button{
+    background-color: #0E23AD;
+    border: 1px solid #0E23AD;
+    border-radius: 10px;
+    color: white;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    height: 22px;
+    width: 126px;
+
+}
+
