@@ -1,6 +1,7 @@
 let courseList = [];
 let tempCourseList = [];
 let selectedCourses = [];
+let currentUser;
 
 const addCourseToCollege = (e) => {
     e.preventDefault();
@@ -44,8 +45,7 @@ const generateSearchCourseHTML = (data) => {
         // checkBox.type = "checkbox";
         plusIcon.classList.add('fas', 'fa-plus');
 
-        // checkBox.setAttribute('id', val.crn);
-        let checkBox = `<input type='checkbox' onclick='selectCourse(${JSON.stringify(val).split('"').join("&quot;")})'/>`;
+        let checkBox = `<input type='checkbox' onclick='selectCourse(${JSON.stringify(val).split('"').join("&quot;")}})'/>`;
 
 
         courseSubContainer.classList.add('search-course-sub-container');
@@ -119,6 +119,10 @@ const selectCourse = (courseItem) => {
 
 const submitCourseList = () => {
     addCourseToUser(selectedCourses);
+}
+
+const homeCourseList = () => {
+
 }
 
 // Fetch all the course list that exists
