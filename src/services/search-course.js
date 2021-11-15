@@ -26,29 +26,6 @@ const getCourseList = (e) => {
 }
 
 
-// Move to its suitable file (TODO)
-const generateAddDropCourseHTML = (data) => {
-    let courseSubContainer = document.createElement('div');
-   
-    data.forEach((val) => {
-        let courseLI = document.createElement('button');
-        let deleteCourse = document.createElement('button');
-        let deleteIcon = document.createElement('i');
-        
-        courseLI.textContent = val.data().name;
-        deleteIcon.classList.add("fas", "fa-trash");
-        courseSubContainer.classList.add("add-course-sub-container");
-        courseLI.classList.add("accent-btn", "course-btn");
-        deleteCourse.classList.add("accent-btn", "delete-btn");
-        
-        courseSubContainer.appendChild(courseLI);
-        deleteCourse.appendChild(deleteIcon);
-        courseSubContainer.appendChild(deleteCourse);
-        addCourseContainer.appendChild(courseSubContainer);
-    });
-}
-
-
 const generateSearchCourseHTML = (data) => {
     searchCourseContainer.innerHTML = "";
     data.forEach((val) => {
@@ -68,7 +45,7 @@ const generateSearchCourseHTML = (data) => {
         plusIcon.classList.add('fas', 'fa-plus');
 
         // checkBox.setAttribute('id', val.crn);
-        let checkBox = `<input type='checkbox' onclick='selectCourse(${val.crn})'/>`;
+        let checkBox = `<input type='checkbox' onclick='selectCourse(${JSON.stringify(val).split('"').join("&quot;")})'/>`;
 
 
         courseSubContainer.classList.add('search-course-sub-container');
@@ -124,15 +101,15 @@ const addCourseToUser = (courses) => {
             })
         }
         else {
-            // console.log('user is not signed in to add todos');
+            alert("Something went wrong!")
         }
     })
 }
 
-const selectCourse = (courseCrn) => {
-  const index = selectedCourses.findIndex((crn) => crn == courseCrn);
+const selectCourse = (courseItem) => {
+  const index = selectedCourses.findIndex((crn) => crn == courseItem.crn);
   if (index === -1) {
-      selectedCourses.push(courseCrn);
+      selectedCourses.push(courseItem);
   } else {
       selectedCourses.splice(index, 1);
   }
