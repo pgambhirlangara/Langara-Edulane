@@ -5,9 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../services/firstTimeLogin.js" defer></script>
     <title>Sign up</title>
 </head>
 <body>
+    <div class="first-login-profile-container" id="picUploadOverlay"> <!-- overlay container starts here-->
+        <div class="first-login-profile-title">
+            <h2>Welcome!</h2>
+            <span>Set your profile picture</span>
+        </div>
+        <div class="first-login-profile-img">
+            <img src="../../assets/images/profile-placeholder.svg" alt="">
+        </div>
+        <div class="first-login-profile-btn">
+            <button class="accent-btn">Take a picture</button>
+            <button class="accent-btn">Camera roll</button>
+            <button class="tertiary-btn set-profile-btn">Set profile picture</button>
+        </div>
+        <p id="overlayCloseTxt">close</p>
+    </div><!-- overlay container ends here-->
+
     <div class="first-login-info-container">
         <div class="first-login-info-header">
             <img src="../../images/edulane_horizontal_color_trimmed.svg">
@@ -19,7 +36,7 @@
         <div class="profile-header-image-container">
         </div>
         <div class="first-login-img-container">
-            <a href="#"><img src="../../images/firstTimeLoginImage-placeholder.svg" alt="Change Picture"></a>
+            <a href="#"><img src="../../images/firstTimeLoginImage-placeholder.svg" alt="Change Picture" id="profImgChangeBtn"></a>
         <!--     <p>Hi James!</p> -->
         </div>
         <div class="first-login-info-title">
