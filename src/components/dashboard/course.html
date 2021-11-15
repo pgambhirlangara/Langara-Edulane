@@ -31,6 +31,11 @@
                 <div class="form-required-circle"></div>
             </div>
             <div class="first-login-form-row">
+                <label for="courseDescription">Description</label>
+                <input type="text" name="courseDescription" id="courseDescription" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
                 <label for="courseIntake">Course Intake</label>
                 <select name="courseIntake" id="courseIntake" required>
                     <option value="January">Spring</option>
@@ -63,7 +68,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="../../services/firebase.js"></script>
     <script src="../../services/auth.js"></script>
-    <script src="../../services/course.js"></script>
+    <script src="../../services/search-course.js"></script>
 </body>
 
 </html>
