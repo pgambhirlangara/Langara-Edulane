@@ -4,6 +4,7 @@
 const register = (e) => {
     e.preventDefault();
     // sign up the user & add firestore data
+
     auth.createUserWithEmailAndPassword(studentEmail.value, studentPassword.value).then(cred => {
       return db.collection("users").doc(cred.user.uid).set({
         name: studentName.value,
