@@ -27,8 +27,8 @@
             <div class="home-inside-container1" id="home-profile-container">
                 <div class="home-courses-profile-img"><img src="../assets/images/profile-placeholder.svg"></div>
                 <div class="home-profile-container">
-                    <h4> Hi, Jasleen</h4>
-                    <span> Sept 24,2021</span>
+                    <h4 id="userName"></h4>
+                    <span id="currentDate"></span>
                 </div>
             </div>
 
@@ -39,64 +39,7 @@
             <a class="home-courses-button" href="add-drop-course.html">Add/Drop Courses</a>
         </div>
 
-        <div class="home-courses-list" id="home-course-list">
-            <div class="home-courses-list-item">
-                <div class="home-courses-list-item-img">
-                    <img src="../assets/images/profile-placeholder.svg">
-                </div>
-                <div class="home-courses-content">
-                    <h4>4835 HTML/CSS</h4>
-                    <div class="home-courses-date">
-                        <span class="home-courses-intake">Fall 2021</span>
-                        <span>Ends on December 2021</span>
-                    </div>
-                    <div>20% Completed</div>
-                </div>
-            </div>
-
-            <div class="home-courses-list-item">
-                <div class="home-courses-list-item-img">
-                    <img src="../assets/images/profile-placeholder.svg">
-                </div>
-                <div class="home-courses-content">
-                    <h4>4835 HTML/CSS</h4>
-                    <div class="home-courses-date">
-                        <span class="home-courses-intake">Fall 2021</span>
-                        <span>Ends on December 2021</span>
-                    </div>
-                    <div>20% Completed</div>
-                </div>
-            </div>
-
-            <div class="home-courses-list-item">
-                <div class="home-courses-list-item-img">
-                    <img src="../assets/images/profile-placeholder.svg">
-                </div>
-                <div class="home-courses-content">
-                    <h4>4835 HTML/CSS</h4>
-                    <div class="home-courses-date">
-                        <span class="home-courses-intake">Fall 2021</span>
-                        <span>Ends on December 2021</span>
-                    </div>
-                    <div>20% Completed</div>
-                </div>
-            </div>
-
-
-            <div class="home-courses-list-item">
-                <div class="home-courses-list-item-img">
-                    <img src="../assets/images/profile-placeholder.svg">
-                </div>
-                <div class="home-courses-content">
-                    <h4>4835 HTML/CSS</h4>
-                    <div class="home-courses-date">
-                        <span class="home-courses-intake">Fall 2021</span>
-                        <span>Ends on December 2021</span>
-                    </div>
-                    <div>20% Completed</div>
-                </div>
-            </div>
-
+        <div class="home-courses-list" id="homeCourseList">
         </div>
 
     </div>
@@ -105,7 +48,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="../services/firebase.js"></script>
     <script src="../services/auth.js"></script>
-    <script src="../services/search-course.js"></script>
+    <script src="../services/home.js"></script>
 </body>
 
 </html>
