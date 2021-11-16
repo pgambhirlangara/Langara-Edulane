@@ -1,0 +1,133 @@
+.home-courses-profile-img img { 
+    height: 50px;
+    width: 50px;
+}
+
+.home-logo-image img {
+    width: 150px;
+    height: 50px;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+
+    h1 {
+
+    }
+}
+
+.home-main-heading {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.home-profile-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+h4 {
+    color:#F15523;
+}
+
+.home-courses-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+
+    h1 {
+        color: $primary-color;
+    }
+}
+
+.home-inside-container1 {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.home-icons {
+    display: flex;
+    gap: 15px;
+    i {
+        color: $primary-color;
+    }
+}
+
+.home-courses-list {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 100%;
+
+    
+    .home-courses-list-item {
+        border: 1px solid #0E23AD;
+        background-color: white;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        gap: 10px; 
+        
+
+    .home-courses-list-item-img {
+       img {
+            width: 60px;
+            height: 60px;
+       }
+    }
+
+
+    .home-courses-content {
+        width: 100%;
+
+        .home-courses-date {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .home-courses-intake {
+            font-weight: bold;
+        }
+    }
+
+    }
+}
+
+
+
+.home-course-name {
+    text-align: center;
+    color: $primary-color;
+}
+
+.home-courses-button {
+    background-color: #0E23AD;
+    border: 1px solid #0E23AD;
+    border-radius: 10px;
+    color: white;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    width: 126px;
+}
+
+.home-icons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
