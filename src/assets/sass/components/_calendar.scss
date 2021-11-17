@@ -77,7 +77,6 @@
         align-items: center;
         text-align: center;
         margin-top: 50px;
-
     }
 
     // .calendar-container__button
@@ -172,5 +171,76 @@
             font-size: 20px;
             background: white;
         }
+    }
+}
+
+
+.calendar-add-container {
+    margin: 20px auto;
+    padding: 0;
+    width: 300px;
+    height: 550px;
+    text-align: center;
+    border: 1px solid $secondary-color;
+    border-radius: 20px;
+    padding: 25px 20px;
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #calendar {
+        margin: 0 auto;
+
+        h2 {
+            line-height: 170px;
+            margin: 0;
+            font-weight: 300;
+            background: $secondary-color;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            // margin-top: -42px;
+            border-collapse: collapse;
+        }
+
+        .week-days {
+            height: 70px;
+            width: 20px;
+            .day {
+                color: $light;
+            }
+        }
+
+        .day {
+            height: 20px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .week {
+            .day {
+
+                &:not(.other-month):hover {
+                    color: #fff;
+                    background: $secondary-color;
+                    border: 1px solid $secondary-color;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .other-month {
+            opacity: 0.5;
+        }
+    }
+
+    p {
+        text-align: center;
     }
 }
