@@ -1,8 +1,17 @@
 /* Proxima Nova Adobe Font */
 /* ADOBE LINK - PROXIMA NOVA */
 @import url("https://use.typekit.net/zil0rks.css");
+.edulane-logo {
+  width: 40%;
+  margin: auto;
+  padding: 35px 0;
+}
+
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #EFEFEF;
 }
 
 * {
@@ -26,6 +35,11 @@ a {
 
 .reset-pass-info {
   font-size: 12px;
+}
+
+h3 {
+  color: #F15523;
+  margin-top: 15px;
 }
 
 .text-ellipses-2 {
@@ -589,6 +603,234 @@ html {
   text-decoration: underline;
   cursor: pointer;
   margin: 10px;
+}
+
+h3 span#username {
+  background: none;
+  display: inline;
+  color: #F15523;
+}
+
+#menu li:hover {
+  color: #F15523;
+}
+
+#menu li {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 15px 0;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 32px;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #F15523;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #F15523;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 0;
+  padding: 50px;
+  padding-top: 125px;
+  right: -100px;
+  background: white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transform: none;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+  opacity: 1;
+}
+
+.home-courses-profile-img img {
+  height: 50px;
+  width: 50px;
+}
+
+.home-logo-image img {
+  width: 150px;
+  height: 50px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-main-heading {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home-profile-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+h4 {
+  color: #F15523;
+}
+
+.home-courses-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+}
+
+.home-courses-container h1 {
+  color: #F15523;
+}
+
+.home-inside-container1 {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+}
+
+.home-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.home-icons i {
+  color: #F15523;
+}
+
+.home-courses-list {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home-courses-list .home-courses-list-item {
+  border: 1px solid #0E23AD;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.home-courses-list .home-courses-list-item .home-courses-list-item-img img {
+  width: 60px;
+  height: 60px;
+}
+
+.home-courses-list .home-courses-list-item .home-courses-content {
+  width: 100%;
+}
+
+.home-courses-list .home-courses-list-item .home-courses-content .home-courses-date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-courses-list .home-courses-list-item .home-courses-content .home-courses-intake {
+  font-weight: bold;
+}
+
+.home-course-name {
+  text-align: center;
+  color: #F15523;
+}
+
+.home-courses-button {
+  background-color: #0E23AD;
+  border: 1px solid #0E23AD;
+  border-radius: 10px;
+  color: white;
+  line-height: 22px;
+  text-align: center;
+  font-size: 12px;
+  width: 126px;
+}
+
+.home-icons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .search-course-title {

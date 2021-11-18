@@ -1,5 +1,16 @@
+
+.edulane-logo {
+    width: 40%;
+    margin: auto;
+    padding: 35px 0;
+ }
+
 html,body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $background;
+    // overflow-x: hidden // from burger menu
 }
 
 * {
@@ -22,6 +33,12 @@ a {
 
 .reset-pass-info {
     font-size: 12px;
+}
+
+
+h3 {
+    color: #F15523;
+    margin-top: 15px;
 }
 
 .text-ellipses-2 {
