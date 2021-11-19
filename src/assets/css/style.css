@@ -452,6 +452,13 @@ html {
   gap: 20px;
 }
 
+.first-login-profile-container .first-login-profile-btn #snap,
+.first-login-profile-container .first-login-profile-btn #takePicAgain {
+  background-color: #0E23AD;
+  color: white;
+  display: none;
+}
+
 .first-login-profile-container .set-profile-btn {
   width: 255px;
 }
@@ -459,6 +466,14 @@ html {
 .first-login-profile-container .first-login-profile-img img {
   width: 250px;
   height: 250px;
+}
+
+.first-login-profile-container .first-login-profile-img video {
+  display: none;
+}
+
+.first-login-profile-container .first-login-profile-img canvas {
+  display: none;
 }
 
 /* Styling to show overlay  */

@@ -66,6 +66,12 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    #snap,
+    #takePicAgain {
+      background-color: $secondary-color;
+      color: white;
+      display: none;
+    }
   }
 
   .set-profile-btn {
@@ -76,6 +82,12 @@
     img {
       width: 250px;
       height: 250px;
+    }
+    video {
+      display: none;
+    }
+    canvas {
+      display: none;
     }
   }
 }
