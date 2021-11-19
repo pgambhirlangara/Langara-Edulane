@@ -95,4 +95,21 @@ snapBtn.addEventListener('click', ()=> {
     snapBtn.style.display = "none";
     profilePicCanvas.style.display = "block";
     snapAgainBtn.style.display = "block";
+    // Turn the captured image into blob
+    const imageBlob = profilePicCanvas.toBlob(handleBlob, 'image/jpeg')
 })
+
+function handleBlob(blob) {
+  // we can turn the blob into DOMString
+  const copyImg = document.createElement('img');
+  copyImg.style.height = "250px";
+  copyImg.style.borderRadius = "50%";
+
+  // we can turn the blob into base64 using FileReader
+  const reader = new FileReader();
+  reader.readAsDataURL(blob);
+  reader.addEventListener('load', () => {
+    console.log(reader.result);
+  });
+
+}
