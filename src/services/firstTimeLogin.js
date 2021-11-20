@@ -1,9 +1,10 @@
 /* ==========================================
     Elements to toggle pic upload overlay
 ============================================*/
-const ImgChangeBtn = document.getElementById('profImgChangeBtn')
-const picUploadOverlay = document.getElementById('picUploadOverlay')
-const overlayCloseTxt = document.getElementById('overlayCloseTxt')
+const ImgChangeBtn = document.getElementById('profImgChangeBtn');
+const picUploadOverlay = document.getElementById('picUploadOverlay');
+const overlayCloseTxt = document.getElementById('overlayCloseTxt');
+const setProfilePic = document.getElementById('setProfilePic');
 
 /* ==========================================
     Elements to access the device camera
@@ -86,30 +87,69 @@ snapAgainBtn.addEventListener('click', ()=> {
     bootDeviceCamera();
 })
 
+// Show a preview when profile pic is selected from storage
+let files;
+let reader1 = new FileReader();
+function imagePreview(event) {
+    let file = event.target.files[0];
+    files = event.target.files[0];
+    let reader = new FileReader();
+    reader.onload = (event)=> {
+        profilePicPlaceholder.setAttribute('src', reader.result);
+        ImgChangeBtn.setAttribute('src', reader.result);
+        ImgChangeBtn.style.borderRadius = '50%';
+    }
+    reader.readAsDataURL(file);
+    console.log(files);
+}
+
 // Click "Snap!" to take a snapshot
 snapBtn.addEventListener('click', ()=> {
     context.drawImage(finder, 0, 0)
     stopDeviceCamera();
-    // show only thr canvas and "Once again" button
+    // show only the canvas and "Once again" button
     finder.style.display = "none";
     snapBtn.style.display = "none";
     profilePicCanvas.style.display = "block";
     snapAgainBtn.style.display = "block";
     // Turn the captured image into blob
     const imageBlob = profilePicCanvas.toBlob(handleBlob, 'image/jpeg')
+    console.log(imageBlob);
 })
 
+// Function to pass in "toBlob" in the event listener for snapBtn
+let objectURL = ""
+let base64info = ""
 function handleBlob(blob) {
   // we can turn the blob into DOMString
+  objectURL = window.URL.createObjectURL(blob);
   const copyImg = document.createElement('img');
   copyImg.style.height = "250px";
-  copyImg.style.borderRadius = "50%";
+  /* console.log(objectURL); */
 
   // we can turn the blob into base64 using FileReader
-  const reader = new FileReader();
+  /* const reader = new FileReader();
   reader.readAsDataURL(blob);
   reader.addEventListener('load', () => {
     console.log(reader.result);
-  });
-
+  }); */
 }
+
+// Click "Set profile picture"
+setProfilePic.addEventListener('click', ()=> {
+    if(objectURL !== "") {
+        ImgChangeBtn.setAttribute('src', objectURL);
+    }
+    ImgChangeBtn.style.borderRadius = '50%';
+})
+
+const firstLoginSubmitBtn = document.getElementById('firstLoginSubmitBtn');
+const ProfilePicForm = document.getElementById('ProfilePicForm');
+
+firstLoginSubmitBtn.addEventListener('click', ()=> {
+    if(ProfilePicForm.value) {
+        /* storage.ref('ProfilePics/').child(files.name).put(files); */
+    } else {
+        console.log('empty');
+    }
+})

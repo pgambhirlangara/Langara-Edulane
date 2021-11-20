@@ -86,6 +86,9 @@ html {
         transform: translate(-50%, -50%);
       }
     }
+    #ProfilePicForm {
+      display: none;
+    }
     .submitButton {
       text-align: center;
       button {

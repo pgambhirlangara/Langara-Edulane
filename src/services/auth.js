@@ -13,6 +13,8 @@ const register = (e) => {
         nickName: studentNickName.value,
         department: studentDepartment.value,
       });
+    }).then(()=> {
+        storage.ref('ProfilePics/').child(files.name).put(files); // Added bt Hiroshi, to upload profile pic
     }).then(() => {
         alert("Account succesfully Created");
         window.location = "login.html";

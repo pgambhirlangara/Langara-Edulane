@@ -312,6 +312,10 @@ html {
   transform: translate(-50%, -50%);
 }
 
+.first-login-info-container .first-login-form #ProfilePicForm {
+  display: none;
+}
+
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
 }
@@ -457,6 +461,11 @@ html {
   background-color: #0E23AD;
   color: white;
   display: none;
+}
+
+.first-login-profile-container .first-login-profile-btn #cameraRoll {
+  text-align: center;
+  line-height: 60px;
 }
 
 .first-login-profile-container .set-profile-btn {
