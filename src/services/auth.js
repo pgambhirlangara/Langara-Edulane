@@ -13,8 +13,10 @@ const register = (e) => {
         nickName: studentNickName.value,
         department: studentDepartment.value,
       });
-    }).then(()=> {
-        storage.ref('ProfilePics/').child(files.name).put(files); // Added bt Hiroshi, to upload profile pic
+    }).then(() => {
+        /* Added by Hiroshi on Nov 21, to upload profile pic (Variables refer to "firstTimeLogin.js") */
+        let newUid = auth.currentUser.uid;
+        return storage.ref(`profilePics/${newUid}.jpg`).put(files);
     }).then(() => {
         alert("Account succesfully Created");
         window.location = "login.html";

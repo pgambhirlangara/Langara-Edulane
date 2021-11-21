@@ -9,17 +9,11 @@ const setProfilePic = document.getElementById('setProfilePic');
 /* ==========================================
     Elements to access the device camera
 ============================================*/
-// Get video element(reflection of the camera) in the UI
 const finder = document.getElementById('profilePicFinder');
-// "Take a picture button"
 const takePicBtn = document.getElementById('takePic');
-// "Snap!" button
 const snapBtn = document.getElementById('snap');
-// "Once again button"
 const snapAgainBtn = document.getElementById('takePicAgain');
-// Profile pic placeholder
 const profilePicPlaceholder = document.getElementById('profilePicPlaceholder');
-// Get canvas element in the UI
 const profilePicCanvas = document.getElementById('profilePicCanvas');
 const context = profilePicCanvas.getContext('2d');
 context.scale(0.5, 0.5);
@@ -55,7 +49,7 @@ overlayCloseTxt.addEventListener('click', () => {
     Functions related to the device camera
 ============================================*/
 
-// Boot the device camera
+// Boot the device camera and show finder
 const bootDeviceCamera = ()=> {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({ video: true }).then( (stream) => {
@@ -78,18 +72,8 @@ const stopDeviceCamera = ()=> {
     tracks.forEach(track => track.stop());
 }
 
-// Click "take a picture" button and show the finder
-takePicBtn.addEventListener('click', bootDeviceCamera)
-snapAgainBtn.addEventListener('click', ()=> {
-    // hide the canvas and "Once again button"
-    profilePicCanvas.style.display = "none";
-    snapAgainBtn.style.display = "none";
-    bootDeviceCamera();
-})
-
 // Show a preview when profile pic is selected from storage
 let files;
-let reader1 = new FileReader();
 function imagePreview(event) {
     let file = event.target.files[0];
     files = event.target.files[0];
@@ -100,8 +84,27 @@ function imagePreview(event) {
         ImgChangeBtn.style.borderRadius = '50%';
     }
     reader.readAsDataURL(file);
-    console.log(files);
 }
+
+// Function to pass in "toBlob" in the event listener for snapBtn
+let objectURL;
+function handleBlob(blob) {
+  files = blob
+  objectURL = window.URL.createObjectURL(blob);
+}
+
+/* ==========================================
+    Event Listeners
+============================================*/
+
+// Click "take a picture" button and show the finder
+takePicBtn.addEventListener('click', bootDeviceCamera)
+snapAgainBtn.addEventListener('click', ()=> {
+    // hide the canvas and "Once again button"
+    profilePicCanvas.style.display = "none";
+    snapAgainBtn.style.display = "none";
+    bootDeviceCamera();
+})
 
 // Click "Snap!" to take a snapshot
 snapBtn.addEventListener('click', ()=> {
@@ -113,43 +116,14 @@ snapBtn.addEventListener('click', ()=> {
     profilePicCanvas.style.display = "block";
     snapAgainBtn.style.display = "block";
     // Turn the captured image into blob
-    const imageBlob = profilePicCanvas.toBlob(handleBlob, 'image/jpeg')
-    console.log(imageBlob);
+    profilePicCanvas.toBlob(handleBlob, 'image/jpeg')
 })
-
-// Function to pass in "toBlob" in the event listener for snapBtn
-let objectURL = ""
-let base64info = ""
-function handleBlob(blob) {
-  // we can turn the blob into DOMString
-  objectURL = window.URL.createObjectURL(blob);
-  const copyImg = document.createElement('img');
-  copyImg.style.height = "250px";
-  /* console.log(objectURL); */
-
-  // we can turn the blob into base64 using FileReader
-  /* const reader = new FileReader();
-  reader.readAsDataURL(blob);
-  reader.addEventListener('load', () => {
-    console.log(reader.result);
-  }); */
-}
 
 // Click "Set profile picture"
 setProfilePic.addEventListener('click', ()=> {
-    if(objectURL !== "") {
+    if(objectURL !== undefined) {
         ImgChangeBtn.setAttribute('src', objectURL);
     }
     ImgChangeBtn.style.borderRadius = '50%';
-})
-
-const firstLoginSubmitBtn = document.getElementById('firstLoginSubmitBtn');
-const ProfilePicForm = document.getElementById('ProfilePicForm');
-
-firstLoginSubmitBtn.addEventListener('click', ()=> {
-    if(ProfilePicForm.value) {
-        /* storage.ref('ProfilePics/').child(files.name).put(files); */
-    } else {
-        console.log('empty');
-    }
+    overlayToggle();
 })
