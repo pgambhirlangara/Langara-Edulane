@@ -7,24 +7,9 @@ let mapArea = document.getElementById('map-area');
 let currentLatLang;
 const getCurrentPositionBtn = document.getElementById('getCurrentPosition')
 
-getCurrentPositionBtn.addEventListener('click', ()=> {
-  if ( navigator.geolocation ) {
-      	navigator.geolocation.getCurrentPosition( 
-         ( position ) => {  
-            currentLatitude = position.coords.latitude;
-            currentLongitude = position.coords.longitude;
-            initMap();
-            showCurrentPositionMarker();
-      	}, 
-		( error ) => {
-			if (	error.code == error.PERMISSION_DENIED ) {
-				window.alert("Geolocation Permission Denied");
-			}
-		 });
-    } else {
-      console.log("Geolocation is not supported by this browser.");
-    }
-})
+/* ==============================
+    Functions
+============================== */
 
 function initMap() {
   map = new google.maps.Map(mapArea, {
@@ -44,3 +29,28 @@ const showCurrentPositionMarker = ()=> {
    infoWindow.open(map);
    map.setCenter(position);
 }
+
+/* ==============================
+    Event Listeners
+============================== */
+
+
+getCurrentPositionBtn.addEventListener('click', ()=> {
+  if ( navigator.geolocation ) {
+      	navigator.geolocation.getCurrentPosition( 
+         ( position ) => {  
+            currentLatitude = position.coords.latitude;
+            currentLongitude = position.coords.longitude;
+            
+            initMap();
+            showCurrentPositionMarker();
+      	}, 
+		( error ) => {
+			if (	error.code == error.PERMISSION_DENIED ) {
+				window.alert("Geolocation Permission Denied");
+			}
+		 });
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+})
