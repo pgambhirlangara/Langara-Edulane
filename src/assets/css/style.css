@@ -312,6 +312,10 @@ html {
   transform: translate(-50%, -50%);
 }
 
+.first-login-info-container .first-login-form #ProfilePicForm {
+  display: none;
+}
+
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
 }
@@ -381,11 +385,33 @@ html {
 .first-login-profile-container {
   display: flex;
   flex-direction: column;
-  background-color: rgba(218, 218, 218, 0.37);
+  background-color: #dadada;
   height: 100%;
   align-items: center;
   justify-content: center;
   gap: 15px;
+  /* Overlay configuration */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 60%;
+  max-width: 500px;
+  visibility: hidden;
+  border-radius: 20px;
+  border: #0E23AD 1px solid;
+}
+
+.first-login-profile-container p {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.first-login-profile-container p:hover {
+  cursor: pointer;
 }
 
 .first-login-profile-container .first-login-profile-title {
@@ -430,6 +456,18 @@ html {
   gap: 20px;
 }
 
+.first-login-profile-container .first-login-profile-btn #snap,
+.first-login-profile-container .first-login-profile-btn #takePicAgain {
+  background-color: #0E23AD;
+  color: white;
+  display: none;
+}
+
+.first-login-profile-container .first-login-profile-btn #cameraRoll {
+  text-align: center;
+  line-height: 60px;
+}
+
 .first-login-profile-container .set-profile-btn {
   width: 255px;
 }
@@ -437,6 +475,19 @@ html {
 .first-login-profile-container .first-login-profile-img img {
   width: 250px;
   height: 250px;
+}
+
+.first-login-profile-container .first-login-profile-img video {
+  display: none;
+}
+
+.first-login-profile-container .first-login-profile-img canvas {
+  display: none;
+}
+
+/* Styling to show overlay  */
+.overlay-on {
+  visibility: visible;
 }
 
 .add-drop-title {
@@ -958,7 +1009,7 @@ h4 {
 /* Desktop */
 @media (min-width: 1280px) {
   .container-welcome {
-    background-image: linear-gradient(33.58deg, #F1552399, #2B3C9899), url(../../assets/images/welcome.jpeg);
+    background-image: linear-gradient(33.58deg, #f1552399, #2b3c9899), url(../../assets/images/welcome.jpeg);
   }
   .reset-pass-container .reset-pass-info {
     max-width: 400px;
@@ -973,6 +1024,13 @@ h4 {
   .container-login .sub-container-login #click-areas .primary-btn.login-area {
     width: 30%;
     margin-right: 20px;
+  }
+  /* Styling for overlay in signup section */
+  .first-login-profile-container {
+    max-width: 100%;
+    width: 708px;
+    height: 806px;
+    top: 40%;
   }
   .first-login-info-container {
     position: relative;
