@@ -8,19 +8,28 @@
 @import "components/input";
 @import "components/reset-pass";
 @import "components/welcome";
+@import "components/sign-mobile";
+@import "components/incorrect-pass";
 @import "components/incorrect-pass";
 @import "components/first-login";
+@import "components/add-drop-course";
+@import "components/login";
+@import "components/menu-box";
+@import "components/home";
+@import "components/search-course";
+@import "components/faq.scss";
 
 /* Mobile */
 @import "modules/mobile";
+@import "components/home";
 
 /* Tablet */
-@media (min-width:600px) {
-    @import "modules/tablet";
+@media (min-width: 600px) {
+  @import "modules/tablet";
 }
 
 /* Desktop */
-@media (min-width:1280px) {
-    @import "modules/desktop";
+@media (min-width: 1280px) {
+  @import "modules/desktop";
+  @import "components/signup-desktop";
 }
-
