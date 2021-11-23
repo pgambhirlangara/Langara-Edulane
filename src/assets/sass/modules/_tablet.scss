@@ -17,3 +17,23 @@
 .primary-btn {
     margin-left: 10px;
 }
+
+// Incorrect pass tablet view
+.window {
+    width: 25rem;
+    height: 20rem;
+
+    &__inner {
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.container-password {
+    width: 20rem;
+}

@@ -26,6 +26,29 @@
     }
   }
 }
+// Incorrect pass desktop view
+.window {
+  width: 35rem;
+  height: 20rem;
+
+  &__inner {
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.container-password {
+  width: 30rem;
+  .primary-btn.login-area {
+    width: 30%;
+    margin-right: 20px;
+  }
+}
 
 /* Styling for overlay in signup section */
 .first-login-profile-container {
