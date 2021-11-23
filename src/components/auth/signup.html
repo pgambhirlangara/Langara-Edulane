@@ -8,6 +8,26 @@
     <title>Sign up</title>
 </head>
 <body>
+    <div class="first-login-profile-container" id="picUploadOverlay"> <!-- overlay container starts here-->
+        <div class="first-login-profile-title">
+            <h2>Welcome!</h2>
+            <span>Set your profile picture</span>
+        </div>
+        <div class="first-login-profile-img">
+            <img src="../../assets/images/profile-placeholder.svg" id="profilePicPlaceholder" alt="placeholder">
+            <video id="profilePicFinder" width="250" height="250" autoplay></video>
+            <canvas id="profilePicCanvas" width="250" height="250"></canvas>
+        </div>
+        <div class="first-login-profile-btn">
+            <button class="accent-btn" id="takePic">Take a picture</button>
+            <button class="accent-btn" id="snap">Snap!</button>
+            <button class="accent-btn" id="takePicAgain">Once Again</button>
+            <label for="ProfilePicForm" class="accent-btn" id="cameraRoll">Camera Roll</label>
+            <button class="tertiary-btn set-profile-btn" id="setProfilePic">Set profile picture</button>
+        </div>
+        <p id="overlayCloseTxt">close</p>
+    </div><!-- overlay container ends here-->
+
     <div class="first-login-info-container">
         <div class="first-login-info-header">
             <img src="../../images/edulane_horizontal_color_trimmed.svg">
@@ -18,10 +38,10 @@
         </div>
         <div class="profile-header-image-container">
         </div>
-        <!-- <div class="first-login-img-container">
-            <a href="#"><img src="../../images/firstTimeLoginImage-placeholder.svg" alt="Change Picture"></a>
-            <p>Hi James!</p>
-        </div> -->
+        <div class="first-login-img-container">
+            <a href="#"><img src="../../images/firstTimeLoginImage-placeholder.svg" alt="Change Picture" id="profImgChangeBtn"></a>
+        <!--     <p>Hi James!</p> -->
+        </div>
         <div class="first-login-info-title">
             <h2>Personal Information</h2>
         </div>
@@ -57,18 +77,18 @@
                 <input type="text" name="studentDepartment" id="studentDepartment" placeholder="Required" required>
                 <div class="form-required-circle"></div>
             </div>
-            <div class="submitButton">
+            <input type="file" name="ProfilePicForm" id="ProfilePicForm" onchange="imagePreview(event);"> <!-- Hidden input -->
+            <div class="submitButton" id="firstLoginSubmitBtn">
                 <button class="primary-btn" type="submit">Sign up</button>
             </div>
         </form>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
     <script src="../../services/firebase.js"></script>
     <script src="../../services/auth.js"></script>
+    <script src="../../services/firstTimeLogin.js"></script>
 </body>
 </html>
