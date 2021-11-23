@@ -1,20 +1,11 @@
 <html lang="en">
-<<<<<<< HEAD
-=======
 
->>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home - Langara EduLane</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-<<<<<<< HEAD
-</head>
-<body>
-    HOME PAGE!
-</body>
-=======
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 
@@ -50,6 +41,27 @@
 
         <div class="home-courses-list" id="homeCourseList">
         </div>
+        <!-- Find My Friends section from here -->
+        <div class="find-my-friends">
+            <div class="find-my-friends-header">
+                <h2>Find My Friends</h2>
+                <img src="../images/plus_button.svg" alt="plus button">
+            </div>
+            <button id="getCurrentPosition">Get Current Position</button>
+            <div class="map-section">
+                <div class="map-header">
+                    <p class="map-header-title">Nearby Friends</p>
+                    <img src="../images/map-pin.svg" alt="">
+                    <p class="friend-name">Poala Rubio</p>
+                </div>
+                <div id="map-area">
+                    <!-- Todo: It would be better to hide the API key! -->
+                    <script async
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt3pYgKXe6eKRw7gIC04VL4VVvPdTnnS8&callback=initMap">
+                    </script>
+                </div>
+            </div>
+        </div>
 
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
@@ -58,7 +70,7 @@
     <script src="../services/firebase.js"></script>
     <script src="../services/auth.js"></script>
     <script src="../services/home.js"></script>
+    <script src="../services/map.js"></script>
 </body>
 
->>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
 </html>

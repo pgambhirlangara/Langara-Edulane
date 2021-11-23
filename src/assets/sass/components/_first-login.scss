@@ -1,62 +1,102 @@
 .first-login-profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(218, 218, 218);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  /* Overlay configuration */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 60%;
+  max-width: 500px;
+  visibility: hidden;
+  border-radius: 20px;
+  border: $secondary-color 1px solid;
+  p {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .first-login-profile-title {
     display: flex;
     flex-direction: column;
-    background-color: rgba(218, 218, 218, 0.37);
-    height: 100%;
+    gap: 10px;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
 
-    .first-login-profile-title {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-
-        h2 {
-            color: $primary-color;
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        span {
-            font-weight: bold;
-            font-size: 24px;
-        }
+    h2 {
+      color: $primary-color;
+      font-size: 32px;
+      font-weight: bold;
     }
 
-    .first-login-profile-logo-container {
-        display: flex;
-        align-items: center;
-        width: 100%;
+    span {
+      font-weight: bold;
+      font-size: 24px;
+    }
+  }
 
-        a {
-            width: 30px;
-            text-align: center;
-        }
+  .first-login-profile-logo-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
 
-        img {
-            width: 150px;
-            height: 50px;
-            margin: auto;
-        }
+    a {
+      width: 30px;
+      text-align: center;
     }
 
-    .first-login-profile-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+    img {
+      width: 150px;
+      height: 50px;
+      margin: auto;
     }
+  }
 
-    .set-profile-btn {
-        width: 255px;
+  .first-login-profile-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    #snap,
+    #takePicAgain {
+      background-color: $secondary-color;
+      color: white;
+      display: none;
     }
+    #cameraRoll {
+      text-align: center;
+      line-height: 60px;
+    }
+  }
 
-    .first-login-profile-img {
-       img {
-        width: 250px;
-        height: 250px;
-       }
+  .set-profile-btn {
+    width: 255px;
+  }
+
+  .first-login-profile-img {
+    img {
+      width: 250px;
+      height: 250px;
     }
+    video {
+      display: none;
+    }
+    canvas {
+      display: none;
+    }
+  }
+}
+
+/* Styling to show overlay  */
+.overlay-on {
+  visibility: visible;
 }
