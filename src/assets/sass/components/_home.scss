@@ -9,15 +9,23 @@
 }
 
 .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+
+    h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-items: center;
   padding: 20px;
+    }
+}
 
-  h1 {
-  }
   /* Styling for Find My Friends section */
   .find-my-friends {
     width: 99%;
@@ -78,7 +86,6 @@
       }
     }
   }
-}
 
 .home-main-heading {
   display: flex;
