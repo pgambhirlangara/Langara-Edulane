@@ -15,7 +15,24 @@
         <div class="calendar-add-container__inner">
             <div class="calendar-add-container__board" id="calendar">
             </div>
-            
+
+            <form class="calendar-add-container__form" action="">
+                <label for="title">Title</label><br>
+                <input type="text" id="title" name="title"><br>
+                <label for="location">Location</label><br>
+                <input type="text" id="location" name="location"><br><br>
+                <div class="time">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+
+                <input type="submit" value="Add">
+            </form>
         </div>
     </div>
 
@@ -26,6 +43,7 @@
     
     <script src="../../services/firebase.js"></script>
     <script src="../../services/auth.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
     <script src="../../services/calendar.js"></script>
 </body>
 
