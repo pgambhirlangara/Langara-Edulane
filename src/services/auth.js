@@ -35,7 +35,7 @@ const login = (event) => {
 const logout = () => {
     auth.signOut();
     alert("User Logged Out!");
-    window.location = "login.html";
+    window.location = "../auth/login.html";
 }
 
 

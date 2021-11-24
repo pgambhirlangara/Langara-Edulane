@@ -8,6 +8,8 @@ const getCurrentCourseList = () => {
                 addCourseContainer.innerHTML = "";
                 generateAddDropCourseHTML(val)
             })
+        } else {
+            window.location = '../components/auth/login.html';
         }
     })
 }

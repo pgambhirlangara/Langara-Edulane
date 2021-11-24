@@ -118,7 +118,7 @@ const addCourseToUser = (courses) => {
           console.log(err.message);
         });
     } else {
-      alert("Something went wrong!");
+      window.location = '../components/auth/login.html';
     }
   });
 };
@@ -150,6 +150,8 @@ const getCurrentCourseList = () => {
         });
         getCourseList();
       });
+    } else {
+      window.location = '../components/auth/login.html';
     }
   });
 };

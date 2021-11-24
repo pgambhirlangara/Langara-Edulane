@@ -11,6 +11,8 @@ const getCurrentCourseList = () => {
         generateHomeHTML(val);
         console.log(val);
       });
+    } else {
+      window.location = '../components/auth/login.html';
     }
   });
 };
