@@ -1,6 +1,3 @@
-
-
-
 const getCurrentCourseList = () => {
     auth.onAuthStateChanged(user => {
         if (user) {
