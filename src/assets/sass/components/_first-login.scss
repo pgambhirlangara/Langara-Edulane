@@ -19,8 +19,8 @@
   border-radius: 20px;
   border: $secondary-color 1px solid;
   p {
-    margin-top: 10px;
-    font-size: 1.5rem;
+    margin-top: 0;
+    font-size: 1.2rem;
     text-decoration: underline;
     &:hover {
       cursor: pointer;
@@ -66,26 +66,32 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    #takePic {
+      height: 30px;
+    }
     #snap,
     #takePicAgain {
       background-color: $secondary-color;
       color: white;
       display: none;
+      height: 30px;
     }
     #cameraRoll {
       text-align: center;
-      line-height: 60px;
+      line-height: 30px;
+      height: 30px;
     }
   }
 
   .set-profile-btn {
-    width: 255px;
+    width: 240px;
+    height: 35px;
   }
 
   .first-login-profile-img {
     img {
-      width: 250px;
-      height: 250px;
+      width: 150px;
+      height: 150px;
     }
     video {
       display: none;
