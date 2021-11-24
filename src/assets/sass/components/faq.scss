@@ -1,71 +1,71 @@
 body {
-    background-color: $extreme-light;    
+  background-color: $background;
 }
 
 .faq-main-heading {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;    
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .faq-logo-image img {
-    width: 150px;
-    height: 50px;
-  }
+  width: 150px;
+  height: 50px;
+}
 
 .faq-logo-image img {
-    width: 150px;
-    height: 50px;
+  width: 150px;
+  height: 50px;
 }
 
 .faq-icons {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    gap: 20px;
-    margin-right: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  margin-right: 16px;
 }
 
 .faq-container {
-    h1 {
-        color: $primary-color;
-        width: 100%;
-        margin-left: 16px;
-        margin-bottom: 20px;
-    }
+  h1 {
+    color: $primary-color;
+    width: 100%;
+    margin-left: 16px;
+    margin-bottom: 20px;
+  }
 
+  i {
+    color: $primary-color;
+  }
+
+  .accordian-question {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .accordion {
+    padding: 8px 0px;
     i {
-        color: $primary-color;
+      border: 1px solid $primary-color;
+      border-radius: 5px;
+      padding: 5px;
+      color: $primary-color;
+      margin-right: 4px;
     }
 
-    .accordian-question {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-    }
+    border: none !important;
+    background-color: transparent;
+    color: $primary-color;
+  }
 
-    .accordion {
-        padding: 8px 0px;
-        i {
-            border: 1px solid $primary-color;
-            border-radius: 5px;
-            padding: 5px;
-            color: $primary-color;
-            margin-right: 4px;
-        }
-
-        border: none !important;
-        background-color: transparent;
-        color: $primary-color;
+  .panel {
+    p {
+      padding: 8px 30px;
+      border-bottom: 1px solid black;
+      margin-bottom: 16px;
     }
-
-    .panel {
-        p {
-            padding: 8px 30px;
-            border-bottom: 1px solid black;
-            margin-bottom: 16px;
-        }
-    }
+  }
 }
