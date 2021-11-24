@@ -476,8 +476,8 @@ html {
 }
 
 .first-login-profile-container p {
-  margin-top: 10px;
-  font-size: 1.5rem;
+  margin-top: 0;
+  font-size: 1.2rem;
   text-decoration: underline;
 }
 
@@ -527,25 +527,32 @@ html {
   gap: 20px;
 }
 
+.first-login-profile-container .first-login-profile-btn #takePic {
+  height: 30px;
+}
+
 .first-login-profile-container .first-login-profile-btn #snap,
 .first-login-profile-container .first-login-profile-btn #takePicAgain {
   background-color: #0E23AD;
   color: white;
   display: none;
+  height: 30px;
 }
 
 .first-login-profile-container .first-login-profile-btn #cameraRoll {
   text-align: center;
-  line-height: 60px;
+  line-height: 30px;
+  height: 30px;
 }
 
 .first-login-profile-container .set-profile-btn {
-  width: 255px;
+  width: 240px;
+  height: 35px;
 }
 
 .first-login-profile-container .first-login-profile-img img {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
 }
 
 .first-login-profile-container .first-login-profile-img video {
