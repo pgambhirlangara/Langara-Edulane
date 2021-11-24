@@ -3,3 +3,9 @@ node_modules
 
 #package-lock
 package-lock.json
+
+
+src/assets/css/style.css
+
+#Auto generated DS STORE files
+.DS_Store

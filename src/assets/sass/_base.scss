@@ -1,0 +1,50 @@
+
+.edulane-logo {
+    width: 40%;
+    margin: auto;
+    padding: 35px 0;
+ }
+
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $background;
+    // overflow-x: hidden // from burger menu
+}
+
+* {
+    font-family: proxima-nova, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.back {
+    color: $secondary-color;
+}
+.main-bg {
+    @include setBackground(linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%));
+    height: 100%;
+}
+
+.reset-pass-info {
+    font-size: 12px;
+}
+
+
+h3 {
+    color: #F15523;
+    margin-top: 15px;
+}
+
+.text-ellipses-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
