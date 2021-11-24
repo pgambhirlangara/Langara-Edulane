@@ -19,6 +19,7 @@ const addCourseToCollege = (e) => {
 }
 
 const getCourseList = (e) => {
+    searchCourseContainer.innerHTML = '<div class="loader"></div>';
     db.collection('courses').get().then(snapshot => {
         courseList = snapshot.docs.map((item) => item.data());
         tempCourseList = courseList;
