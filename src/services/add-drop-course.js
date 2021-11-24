@@ -1,9 +1,11 @@
 
 const getCurrentCourseList = () => {
+    addCourseContainer.innerHTML = '<div class="loader"></div>';
     auth.onAuthStateChanged(user => {
         if (user) {
             db.collection(user.uid).onSnapshot((snapshot) => {
                 let val = snapshot.docChanges();
+                addCourseContainer.innerHTML = "";
                 generateAddDropCourseHTML(val)
             })
         }

@@ -2,6 +2,7 @@
 
 
 const getCurrentCourseList = () => {
+    homeCourseList.innerHTML = '<div class="loader"></div>';
     auth.onAuthStateChanged(user => {
         if (user) {
             console.log(user, "user");
@@ -9,6 +10,7 @@ const getCurrentCourseList = () => {
             currentDate.innerHTML = `${new Date().toLocaleDateString()}`;
             db.collection(user.uid).onSnapshot((snapshot) => {
                 let val = snapshot.docChanges();
+                homeCourseList.innerHTML = "";
                 generateHomeHTML(val);
                 console.log(val);
             })
