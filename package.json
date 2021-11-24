@@ -23,5 +23,8 @@
     "gulp-sass": "^5.0.0",
     "node-sass": "^6.0.1",
     "sass": "^1.43.2"
+  },
+  "dependencies": {
+    "momentjs": "^2.0.0"
   }
 }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Calendar</title>
+</head>
+
+<body>
+
+    <div class="calendar-container">
+        <div class="calendar-container__inner">
+            <div class="calendar-container__top">
+                <div class="calendar-container__title">
+                    <h2>Calendar</h2>
+                </div>
+                <div class="calendar-container__menu">
+                    <select name="month" id="month">
+                        <option value="january">January</option>
+                        <option value="february">February</option>
+                        <option value="march">March</option>
+                        <option value="april">April</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="calendar-container__wrapper">
+                <ul class="calendar">
+                    <li></li>
+                    <li class="weekday">Sun</li>
+                    <li class="weekday">Mon</li>
+                    <li class="weekday">Tue</li>
+                    <li class="weekday">Wed</li>
+                    <li class="weekday">Thu</li>
+                    <li class="weekday">Fri</li>
+                    <li></li>
+
+                    <li class="arrow-left"><i class="fas fa-chevron-left"></i></li>
+                    <li class="first-day">1</li>
+                    <li class='day'>2</li>
+                    <li class='day'>3</li>
+                    <li class='day'>29</li>
+                    <li class='day'>30</li>
+                    <li class='day'>31</li>
+                    <li class="arrow-right"><i class="fas fa-chevron-right"></i></li>
+                </ul>
+            </div>
+
+            <div class="calendar-container__schedule">
+                <div class="calendar-container__title">
+                    <h2>Schedule</h2>
+                </div>
+                <div class="calendar-container__button">
+                    <button class="btn">+</button>
+                </div>
+            </div>
+
+            <div class="calendar-container__event-area">
+                <div class="calendar-container__item">
+                    <div class="calendar-container__time">
+                        9:30
+                    </div>
+                    <div class="calendar-container__event">
+                        <div class="text">
+                            test
+                        </div>
+                        <div class="calendar-container__event-type">
+                            event
+                        </div>
+                        <div class="calendar-container__event-delete">
+                            <button class="btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-container__item">
+                    <div class="calendar-container__time">
+                        9:30
+                    </div>
+                    <div class="calendar-container__event">
+                        <div class="text">
+                            test
+                        </div>
+                        <div class="calendar-container__event-type">
+                            event
+                        </div>
+                        <div class="calendar-container__event-delete">
+                            <button class="btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="../../services/firebase.js"></script>
+    <script src="../../services/auth.js"></script>
+</body>
+
+</html>

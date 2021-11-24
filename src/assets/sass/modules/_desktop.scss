@@ -46,16 +46,33 @@
 .container-password {
   width: 30rem;
 
-  .primary-btn.login-area {
-    width: 30%;
-    margin-right: 20px;
-  }
-}
 
-/* Styling for overlay in signup section */
-.first-login-profile-container {
-  max-width: 100%;
-  width: 708px;
-  height: 806px;
-  top: 40%;
+  .container-login {
+    .sub-container-login {
+      #click-areas {
+        flex-direction: row;
+        justify-content: center;
+
+        .primary-btn.login-area {
+          width: 30%;
+          margin-right: 20px;
+        }
+
+
+        .container-login {
+          .sub-container-login {
+            #click-areas {
+              flex-direction: row;
+              justify-content: center;
+
+              .primary-btn.login-area {
+                width: 30%;
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

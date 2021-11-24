@@ -1,7 +1,10 @@
 let courseList = [];
 let tempCourseList = [];
 let selectedCourses = [];
+<<<<<<< HEAD
+=======
 let currentUser;
+>>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
 
 const addCourseToCollege = (e) => {
     e.preventDefault();
@@ -27,6 +30,32 @@ const getCourseList = (e) => {
 }
 
 
+<<<<<<< HEAD
+// Move to its suitable file (TODO)
+const generateAddDropCourseHTML = (data) => {
+    let courseSubContainer = document.createElement('div');
+   
+    data.forEach((val) => {
+        let courseLI = document.createElement('button');
+        let deleteCourse = document.createElement('button');
+        let deleteIcon = document.createElement('i');
+        
+        courseLI.textContent = val.data().name;
+        deleteIcon.classList.add("fas", "fa-trash");
+        courseSubContainer.classList.add("add-course-sub-container");
+        courseLI.classList.add("accent-btn", "course-btn");
+        deleteCourse.classList.add("accent-btn", "delete-btn");
+        
+        courseSubContainer.appendChild(courseLI);
+        deleteCourse.appendChild(deleteIcon);
+        courseSubContainer.appendChild(deleteCourse);
+        addCourseContainer.appendChild(courseSubContainer);
+    });
+}
+
+
+=======
+>>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
 const generateSearchCourseHTML = (data) => {
     searchCourseContainer.innerHTML = "";
     data.forEach((val) => {
@@ -45,7 +74,12 @@ const generateSearchCourseHTML = (data) => {
         // checkBox.type = "checkbox";
         plusIcon.classList.add('fas', 'fa-plus');
 
+<<<<<<< HEAD
+        // checkBox.setAttribute('id', val.crn);
+        let checkBox = `<input type='checkbox' onclick='selectCourse(${val.crn})'/>`;
+=======
         let checkBox = `<input type='checkbox' onclick='selectCourse(${JSON.stringify(val).split('"').join("&quot;")}})'/>`;
+>>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
 
 
         courseSubContainer.classList.add('search-course-sub-container');
@@ -101,15 +135,26 @@ const addCourseToUser = (courses) => {
             })
         }
         else {
+<<<<<<< HEAD
+            // console.log('user is not signed in to add todos');
+=======
             alert("Something went wrong!")
+>>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
         }
     })
 }
 
+<<<<<<< HEAD
+const selectCourse = (courseCrn) => {
+  const index = selectedCourses.findIndex((crn) => crn == courseCrn);
+  if (index === -1) {
+      selectedCourses.push(courseCrn);
+=======
 const selectCourse = (courseItem) => {
   const index = selectedCourses.findIndex((crn) => crn == courseItem.crn);
   if (index === -1) {
       selectedCourses.push(courseItem);
+>>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
   } else {
       selectedCourses.splice(index, 1);
   }
@@ -121,9 +166,12 @@ const submitCourseList = () => {
     addCourseToUser(selectedCourses);
 }
 
+<<<<<<< HEAD
+=======
 const homeCourseList = () => {
 
 }
 
+>>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
 // Fetch all the course list that exists
 getCourseList();

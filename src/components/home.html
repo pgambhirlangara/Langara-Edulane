@@ -76,6 +76,83 @@
 
         <div class="home-courses-list" id="homeCourseList">
         </div>
+        <!-- Calendar section from here -->
+
+        <div class="calendar-container">
+            <div class="calendar-container__inner">
+                <div class="calendar-container__top">
+                    <div class="calendar-container__title">
+                        <h2>Calendar</h2>
+                    </div>
+                    <div class="calendar-container__menu">
+                        <select name="month" id="month">
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calendar-container__wrapper">
+                    <ul class="calendar">
+                        <li></li>
+                        <li class="weekday">Sun</li>
+                        <li class="weekday">Mon</li>
+                        <li class="weekday">Tue</li>
+                        <li class="weekday">Wed</li>
+                        <li class="weekday">Thu</li>
+                        <li class="weekday">Fri</li>
+                        <li></li>
+
+                        <li class="arrow-left"><i class="fas fa-chevron-left"></i></li>
+                        <li class="first-day">1</li>
+                        <li class='day'>2</li>
+                        <li class='day'>3</li>
+                        <li class='day'>29</li>
+                        <li class='day'>30</li>
+                        <li class='day'>31</li>
+                        <li class="arrow-right"><i class="fas fa-chevron-right"></i></li>
+                    </ul>
+                </div>
+
+                <div class="calendar-container__schedule">
+                    <div class="calendar-container__title">
+                        <h2>Schedule</h2>
+                    </div>
+                    <div class="calendar-container__button">
+                        <button class="btn" id="calendar-add-btn">+</button>
+                    </div>
+                </div>
+
+                <div class="calendar-container__event-area">
+                    <!-- <div class="calendar-container__item">
+                        <div class="calendar-container__time">
+                            9:30
+                        </div>
+                        <div class="calendar-container__event">
+                            <div class="text">
+                                test
+                            </div>
+                            <div class="calendar-container__event-type">
+                                event
+                            </div>
+                        </div>
+                        <div class="calendar-container__event-delete">
+                            <button class="btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="calendar-container__space">
+
+            </div>
+        </div>
+
+
+
+
+
         <!-- Find My Friends section from here -->
         <div class="find-my-friends">
             <div class="find-my-friends-header">
@@ -91,7 +168,9 @@
                 </div>
                 <div id="map-area">
                     <!-- Todo: It would be better to hide the API key! -->
-                    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt3pYgKXe6eKRw7gIC04VL4VVvPdTnnS8&callback=initMap"></script>
+                    <script async
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt3pYgKXe6eKRw7gIC04VL4VVvPdTnnS8&callback=initMap">
+                    </script>
                 </div>
             </div>
         </div>
@@ -100,10 +179,11 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
-    <script src="../services/firebase.js"></script>
-    <script src="../services/auth.js"></script>
-    <script src="../services/home.js"></script>
+    <!-- <script src="../services/firebase.js"></script>
+    <script src="../services/auth.js"></script> -->
+    <!-- <script src="../services/home.js"></script> -->
     <script src="../services/map.js"></script>
+    <script src="../services/calendar.js"></script>
 </body>
 
 </html>
