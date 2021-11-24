@@ -1,13 +1,15 @@
 .calendar-container {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-    width: 400px;
+    min-width: 20rem;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
 
     // .calendar-container__inner
 
     &__inner {
-        padding: 25px;
+        padding: 10px;
     }
 
     // .calendar-container__top
@@ -86,7 +88,7 @@
         button {
             height: 32px;
             width: 32px;
-            border: 2px solid $secondary-color;
+            border: 1px solid $secondary-color;
             border-radius: 10px;
             color: $secondary-color;
             font-size: 20px;
@@ -109,6 +111,7 @@
         text-align: center;
         align-items: center;
         margin-bottom: 40px;
+        justify-content: space-between;
     }
 
     // .calendar-container__time
@@ -123,8 +126,8 @@
     &__event {
         position: relative;
         height: 50px;
-        width: 230px;
-        border: 2px solid $secondary-color;
+        width: 200px;
+        border: 1px solid $secondary-color;
         border-radius: 10px;
         text-align: center;
         background: white;
@@ -157,20 +160,20 @@
     // .calendar-container__event-delete
 
     &__event-delete {
-        position: absolute;
-        top: -2px;
-        left: 250px;
-        ;
-
         button {
             height: 54px;
             width: 54px;
-            border: 2px solid $secondary-color;
+            border: 1px solid $secondary-color;
             border-radius: 10px;
             color: $secondary-color;
             font-size: 20px;
             background: white;
         }
+    }
+
+    &__space {
+        width: 50%;
+        height: 100%;
     }
 }
 
