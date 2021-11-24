@@ -16,7 +16,7 @@ const snapAgainBtn = document.getElementById('takePicAgain');
 const profilePicPlaceholder = document.getElementById('profilePicPlaceholder');
 const profilePicCanvas = document.getElementById('profilePicCanvas');
 const context = profilePicCanvas.getContext('2d');
-context.scale(0.5, 0.5);
+context.scale(0.3, 0.3);
 
 /* ==========================================
     Functions related to the overlay
