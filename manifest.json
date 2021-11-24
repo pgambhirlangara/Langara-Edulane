@@ -12,5 +12,5 @@
                 "type" : "image/png"
             } ] ,
     "start_url" :  "src/components/auth/welcome.html" , 
-    "display" :  "standalone"
+    "display" :  "fullscreen"
   }
