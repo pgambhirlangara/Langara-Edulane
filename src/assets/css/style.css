@@ -330,7 +330,7 @@ html {
   border-radius: 15px;
 }
 
-.window {
+.window-password {
   margin: 0.5rem auto;
   min-width: 18rem;
   padding: 0;
@@ -349,13 +349,13 @@ html {
   transform: translate(-50%, -50%);
 }
 
-.window__inner {
+.window-password__inner {
   margin: 0 auto;
   text-align: center;
   color: #717171;
 }
 
-.window__inner h3 {
+.window-password__inner h3 {
   color: #717171;
   display: block;
   margin-bottom: 1rem;
@@ -363,14 +363,14 @@ html {
   font-weight: 700;
 }
 
-.window__inner p {
+.window-password__inner p {
   color: #717171;
   display: block;
   font-size: 1rem;
   margin-bottom: 2.3rem;
 }
 
-.window__inner hr {
+.window-password__inner hr {
   display: block;
   height: 2px;
   border: 0;
@@ -378,7 +378,7 @@ html {
   padding: 0;
 }
 
-.window__inner input {
+.window-password__inner input {
   margin: 0;
   color: #717171;
   font-size: 24px;
@@ -392,7 +392,7 @@ html {
   align-items: center;
 }
 
-.window {
+.window-password {
   margin: 0.5rem auto;
   min-width: 18rem;
   padding: 0;
@@ -411,13 +411,13 @@ html {
   transform: translate(-50%, -50%);
 }
 
-.window__inner {
+.window-password__inner {
   margin: 0 auto;
   text-align: center;
   color: #717171;
 }
 
-.window__inner h3 {
+.window-password__inner h3 {
   color: #717171;
   display: block;
   margin-bottom: 1rem;
@@ -425,14 +425,14 @@ html {
   font-weight: 700;
 }
 
-.window__inner p {
+.window-password__inner p {
   color: #717171;
   display: block;
   font-size: 1rem;
   margin-bottom: 2.3rem;
 }
 
-.window__inner hr {
+.window-password__inner hr {
   display: block;
   height: 2px;
   border: 0;
@@ -440,7 +440,7 @@ html {
   padding: 0;
 }
 
-.window__inner input {
+.window-password__inner input {
   margin: 0;
   color: #717171;
   font-size: 24px;
@@ -1430,14 +1430,14 @@ h4 {
   .primary-btn {
     margin-left: 10px;
   }
-  .window {
+  .window-password {
     width: 25rem;
     height: 20rem;
   }
-  .window__inner h3 {
+  .window-password__inner h3 {
     font-size: 1.5rem;
   }
-  .window__inner p {
+  .window-password__inner p {
     font-size: 1.2rem;
   }
   .container-password {
@@ -1464,14 +1464,14 @@ h4 {
     width: 30%;
     margin-right: 20px;
   }
-  .window {
+  .window-password {
     width: 35rem;
     height: 20rem;
   }
-  .window__inner h3 {
+  .window-password__inner h3 {
     font-size: 1.6rem;
   }
-  .window__inner p {
+  .window-password__inner p {
     font-size: 1.3rem;
   }
   .container-password {
