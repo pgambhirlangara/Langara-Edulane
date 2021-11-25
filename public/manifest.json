@@ -11,6 +11,6 @@
                 "sizes" : "512x512" ,
                 "type" : "image/png"
             } ] ,
-    "start_url" :  "src/components/auth/welcome.html" , 
+    "start_url" :  "index.html" , 
     "display" :  "fullscreen"
   }
