@@ -330,45 +330,117 @@ html {
   border-radius: 15px;
 }
 
-.window {
+.window-password {
   margin: 0.5rem auto;
   min-width: 18rem;
   padding: 0;
   width: 17rem;
   height: 17rem;
-  border: 2px solid #2B3C98;
+  border: 2px solid #2b3c98;
   border-radius: 20px;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.window__inner {
+.window-password__inner {
   margin: 0 auto;
   text-align: center;
   color: #717171;
 }
 
-.window__inner h3 {
+.window-password__inner h3 {
+  color: #717171;
   display: block;
   margin-bottom: 1rem;
-  font-size: 24px;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
-.window__inner p {
+.window-password__inner p {
+  color: #717171;
   display: block;
+  font-size: 1rem;
   margin-bottom: 2.3rem;
 }
 
-.window__inner hr {
+.window-password__inner hr {
   display: block;
   height: 2px;
   border: 0;
-  border-top: 1px solid #0E23AD;
+  border-top: 1px solid #0e23ad;
   padding: 0;
 }
 
-.window__inner input {
+.window-password__inner input {
+  margin: 0;
+  color: #717171;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.container-password {
+  width: 14rem;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+}
+
+.window-password {
+  margin: 0.5rem auto;
+  min-width: 18rem;
+  padding: 0;
+  width: 17rem;
+  height: 17rem;
+  border: 2px solid #2b3c98;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.window-password__inner {
+  margin: 0 auto;
+  text-align: center;
+  color: #717171;
+}
+
+.window-password__inner h3 {
+  color: #717171;
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.window-password__inner p {
+  color: #717171;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 2.3rem;
+}
+
+.window-password__inner hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #0e23ad;
+  padding: 0;
+}
+
+.window-password__inner input {
   margin: 0;
   color: #717171;
   font-size: 24px;
@@ -752,32 +824,41 @@ hr {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  /* Styling for Find My Friends section */
 }
 
-.home-container .find-my-friends {
+.home-container h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Styling for Find My Friends section */
+.find-my-friends {
   width: 99%;
 }
 
-.home-container .find-my-friends .find-my-friends-header {
+.find-my-friends .find-my-friends-header {
   margin: 44px 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.home-container .find-my-friends .find-my-friends-header h2 {
+.find-my-friends .find-my-friends-header h2 {
   font-size: 32px;
   color: #F15523;
 }
 
-.home-container .find-my-friends .find-my-friends-header img {
+.find-my-friends .find-my-friends-header img {
   height: 32px;
   width: 32px;
   margin: 0 32px 0 0;
 }
 
-.home-container .find-my-friends #getCurrentPosition {
+.find-my-friends #getCurrentPosition {
   width: 170px;
   height: 40px;
   color: white;
@@ -787,41 +868,41 @@ hr {
   margin-bottom: 20px;
 }
 
-.home-container .find-my-friends #getCurrentPosition:hover {
+.find-my-friends #getCurrentPosition:hover {
   cursor: pointer;
 }
 
-.home-container .find-my-friends .map-section .map-header {
+.find-my-friends .map-section .map-header {
   border-radius: 24px 24px 0;
   background-color: #fff;
   height: 120px;
   padding-top: 20px;
 }
 
-.home-container .find-my-friends .map-section .map-header p.map-header-title {
+.find-my-friends .map-section .map-header p.map-header-title {
   font-size: 16px;
   font-weight: bold;
   margin-left: 33px;
 }
 
-.home-container .find-my-friends .map-section .map-header img {
+.find-my-friends .map-section .map-header img {
   width: 12px;
   height: auto;
   margin: 4px 4px 0 36px;
 }
 
-.home-container .find-my-friends .map-section .map-header p.friend-name {
+.find-my-friends .map-section .map-header p.friend-name {
   display: inline-block;
 }
 
-.home-container .find-my-friends #map-area {
+.find-my-friends #map-area {
   border-radius: 24px 24px 0;
   width: 100%;
   height: 600px;
   transform: translateY(-46px);
 }
 
-.home-container .find-my-friends #map-area .gm-style .gm-style-iw-c {
+.find-my-friends #map-area .gm-style .gm-style-iw-c {
   color: #F15523;
   font-weight: bold;
   font-size: 1rem;
@@ -1055,6 +1136,74 @@ h4 {
   gap: 10px;
 }
 
+body {
+  background-color: #DADADA;
+}
+
+.faq-main-heading {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.faq-logo-image img {
+  width: 150px;
+  height: 50px;
+}
+
+.faq-logo-image img {
+  width: 150px;
+  height: 50px;
+}
+
+.faq-icons {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  margin-right: 16px;
+}
+
+.faq-container h1 {
+  color: #F15523;
+  width: 100%;
+  margin-left: 16px;
+  margin-bottom: 20px;
+}
+
+.faq-container i {
+  color: #F15523;
+}
+
+.faq-container .accordian-question {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.faq-container .accordion {
+  padding: 8px 0px;
+  border: none !important;
+  background-color: transparent;
+  color: #F15523;
+}
+
+.faq-container .accordion i {
+  border: 1px solid #F15523;
+  border-radius: 5px;
+  padding: 5px;
+  color: #F15523;
+  margin-right: 4px;
+}
+
+.faq-container .panel p {
+  padding: 8px 30px;
+  border-bottom: 1px solid black;
+  margin-bottom: 16px;
+}
+
 /* Mobile */
 .reset-bg, .login-bg {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
@@ -1077,32 +1226,41 @@ h4 {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  /* Styling for Find My Friends section */
 }
 
-.home-container .find-my-friends {
+.home-container h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Styling for Find My Friends section */
+.find-my-friends {
   width: 99%;
 }
 
-.home-container .find-my-friends .find-my-friends-header {
+.find-my-friends .find-my-friends-header {
   margin: 44px 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.home-container .find-my-friends .find-my-friends-header h2 {
+.find-my-friends .find-my-friends-header h2 {
   font-size: 32px;
   color: #F15523;
 }
 
-.home-container .find-my-friends .find-my-friends-header img {
+.find-my-friends .find-my-friends-header img {
   height: 32px;
   width: 32px;
   margin: 0 32px 0 0;
 }
 
-.home-container .find-my-friends #getCurrentPosition {
+.find-my-friends #getCurrentPosition {
   width: 170px;
   height: 40px;
   color: white;
@@ -1112,41 +1270,41 @@ h4 {
   margin-bottom: 20px;
 }
 
-.home-container .find-my-friends #getCurrentPosition:hover {
+.find-my-friends #getCurrentPosition:hover {
   cursor: pointer;
 }
 
-.home-container .find-my-friends .map-section .map-header {
+.find-my-friends .map-section .map-header {
   border-radius: 24px 24px 0;
   background-color: #fff;
   height: 120px;
   padding-top: 20px;
 }
 
-.home-container .find-my-friends .map-section .map-header p.map-header-title {
+.find-my-friends .map-section .map-header p.map-header-title {
   font-size: 16px;
   font-weight: bold;
   margin-left: 33px;
 }
 
-.home-container .find-my-friends .map-section .map-header img {
+.find-my-friends .map-section .map-header img {
   width: 12px;
   height: auto;
   margin: 4px 4px 0 36px;
 }
 
-.home-container .find-my-friends .map-section .map-header p.friend-name {
+.find-my-friends .map-section .map-header p.friend-name {
   display: inline-block;
 }
 
-.home-container .find-my-friends #map-area {
+.find-my-friends #map-area {
   border-radius: 24px 24px 0;
   width: 100%;
   height: 600px;
   transform: translateY(-46px);
 }
 
-.home-container .find-my-friends #map-area .gm-style .gm-style-iw-c {
+.find-my-friends #map-area .gm-style .gm-style-iw-c {
   color: #F15523;
   font-weight: bold;
   font-size: 1rem;
@@ -1272,6 +1430,19 @@ h4 {
   .primary-btn {
     margin-left: 10px;
   }
+  .window-password {
+    width: 25rem;
+    height: 20rem;
+  }
+  .window-password__inner h3 {
+    font-size: 1.5rem;
+  }
+  .window-password__inner p {
+    font-size: 1.2rem;
+  }
+  .container-password {
+    width: 20rem;
+  }
 }
 
 /* Desktop */
@@ -1290,6 +1461,23 @@ h4 {
     justify-content: center;
   }
   .container-login .sub-container-login #click-areas .primary-btn.login-area {
+    width: 30%;
+    margin-right: 20px;
+  }
+  .window-password {
+    width: 35rem;
+    height: 20rem;
+  }
+  .window-password__inner h3 {
+    font-size: 1.6rem;
+  }
+  .window-password__inner p {
+    font-size: 1.3rem;
+  }
+  .container-password {
+    width: 30rem;
+  }
+  .container-password .primary-btn.login-area {
     width: 30%;
     margin-right: 20px;
   }

@@ -4,126 +4,158 @@ let selectedCourses = [];
 let currentUser;
 
 const addCourseToCollege = (e) => {
-    e.preventDefault();
-      return db.collection("courses").doc().set({
-        name: courseName.value,
-        department: courseDepartment.value,
-        inTake: courseIntake.value,
-        startDate: courseStartDate.value,
-        crn: courseCRN.value,
-        endDate: courseEndDate.value,
-        description: courseDescription.value
-    }).then(() => {
-        alert("Course succesfully Created");
+  e.preventDefault();
+  return db
+    .collection("courses")
+    .doc()
+    .set({
+      name: courseName.value,
+      department: courseDepartment.value,
+      inTake: courseIntake.value,
+      startDate: courseStartDate.value,
+      crn: courseCRN.value,
+      endDate: courseEndDate.value,
+      description: courseDescription.value,
+    })
+    .then(() => {
+      alert("Course succesfully Created");
     });
-}
+};
 
 const getCourseList = (e) => {
-    db.collection('courses').get().then(snapshot => {
-        courseList = snapshot.docs.map((item) => item.data());
-        tempCourseList = courseList;
-        generateSearchCourseHTML(courseList);
+  searchCourseContainer.innerHTML = '<div class="loader"></div>';
+  db.collection("courses")
+    .get()
+    .then((snapshot) => {
+      courseList = snapshot.docs.map((item) => item.data());
+      tempCourseList = courseList;
+      generateSearchCourseHTML(courseList);
     });
-}
-
+};
 
 const generateSearchCourseHTML = (data) => {
-    searchCourseContainer.innerHTML = "";
-    data.forEach((val) => {
-        let courseSubContainer = document.createElement('div');
-        let searchCourseImageContainer = document.createElement('div');
-        let searchCourseImage = document.createElement('img');
-        let searchCourseContent = document.createElement('div');
-        let courseTitle = document.createElement('h4');
-        let searchCourseNameContainer = document.createElement('div');
-        // let checkBox = document.createElement('input');
-        let searchCourseDescriptionContainer = document.createElement('div');
-        let description = document.createElement('span');
-        let plusContainer = document.createElement('div');
-        let plusIcon = document.createElement('i');
+  searchCourseContainer.innerHTML = "";
+  data.forEach((val) => {
+    let courseSubContainer = document.createElement("div");
+    let searchCourseImageContainer = document.createElement("div");
+    let searchCourseImage = document.createElement("img");
+    let searchCourseContent = document.createElement("div");
+    let courseTitle = document.createElement("h4");
+    let searchCourseNameContainer = document.createElement("div");
+    // let checkBox = document.createElement('input');
+    let searchCourseDescriptionContainer = document.createElement("div");
+    let description = document.createElement("span");
+    let plusContainer = document.createElement("div");
+    let plusIcon = document.createElement("i");
 
-        // checkBox.type = "checkbox";
-        plusIcon.classList.add('fas', 'fa-plus');
+    // checkBox.type = "checkbox";
+    plusIcon.classList.add("fas", "fa-plus");
+    let isTaken = selectedCourses.find((item) => item.crn === val.crn);
+    let checkBox = `<input type='checkbox' ${isTaken ? 'checked' : null} onclick='selectCourse(${JSON.stringify(
+      val
+    )
+      .split('"')
+      .join("&quot;")})' />`;
+    // checkBox. = isTaken ? "true" : "";
+    courseSubContainer.classList.add("search-course-sub-container");
+    searchCourseImageContainer.classList.add("search-course-img");
+    searchCourseContent.classList.add("search-course-content");
+    searchCourseNameContainer.classList.add("search-course-name-container");
+    searchCourseDescriptionContainer.classList.add(
+      "search-course-description-container"
+    );
+    description.classList.add("text-ellipses-2");
+    plusContainer.classList.add("plus-course-container");
 
-        let checkBox = `<input type='checkbox' onclick='selectCourse(${JSON.stringify(val).split('"').join("&quot;")}})'/>`;
+    courseSubContainer.appendChild(searchCourseImageContainer);
+    courseSubContainer.appendChild(searchCourseContent);
 
+    courseTitle.textContent = `${val.crn} ${val.name}`;
+    searchCourseNameContainer.appendChild(courseTitle);
+    searchCourseNameContainer.innerHTML += checkBox;
+    // searchCourseNameContainer.appendChild(checkBox);
 
-        courseSubContainer.classList.add('search-course-sub-container');
-        searchCourseImageContainer.classList.add('search-course-img');
-        searchCourseContent.classList.add('search-course-content');
-        searchCourseNameContainer.classList.add('search-course-name-container');
-        searchCourseDescriptionContainer.classList.add('search-course-description-container');
-        description.classList.add('text-ellipses-2');
-        plusContainer.classList.add('plus-course-container');
+    searchCourseDescriptionContainer.appendChild(description);
+    plusContainer.appendChild(plusIcon);
+    searchCourseDescriptionContainer.appendChild(plusContainer);
+    searchCourseContent.appendChild(searchCourseNameContainer);
+    searchCourseContent.appendChild(searchCourseDescriptionContainer);
 
-        courseSubContainer.appendChild(searchCourseImageContainer);
-        courseSubContainer.appendChild(searchCourseContent);
+    searchCourseImage.setAttribute(
+      "src",
+      "../assets/images/profile-placeholder.svg"
+    );
+    searchCourseImageContainer.appendChild(searchCourseImage);
 
-        courseTitle.textContent = `${val.crn} ${val.name}`;
-        searchCourseNameContainer.appendChild(courseTitle);
-        searchCourseNameContainer.innerHTML += checkBox;
-        // searchCourseNameContainer.appendChild(checkBox);
+    description.textContent = val.description;
 
-        searchCourseDescriptionContainer.appendChild(description);
-        plusContainer.appendChild(plusIcon);
-        searchCourseDescriptionContainer.appendChild(plusContainer);
-        searchCourseContent.appendChild(searchCourseNameContainer);
-        searchCourseContent.appendChild(searchCourseDescriptionContainer);
-
-        searchCourseImage.setAttribute('src', "../assets/images/profile-placeholder.svg");
-        searchCourseImageContainer.appendChild(searchCourseImage);
-
-        description.textContent = val.description;
-
-        searchCourseContainer.appendChild(courseSubContainer);
-    });
-}
+    searchCourseContainer.appendChild(courseSubContainer);
+  });
+};
 
 const searchCourses = (event) => {
-    if (event.target.value.length === 0 ) {
-        courseList = tempCourseList;
-    } else {
-        courseList = courseList.filter((item) => item.crn === event.target.value);
-    }
-    generateSearchCourseHTML(courseList);
-}
-
+  if (event.target.value.length === 0) {
+    courseList = tempCourseList;
+  } else {
+    courseList = courseList.filter((item) => item.crn === event.target.value);
+  }
+  generateSearchCourseHTML(courseList);
+};
 
 const addCourseToUser = (courses) => {
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            db.collection(user.uid).doc().set({
-                courses
-            }).then(() => {
-                alert("Courses added to user succesfully");
-            }).catch(err => {
-                console.log(err.message);
-            })
-        }
-        else {
-            alert("Something went wrong!")
-        }
-    })
-}
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      db.collection(user.uid)
+        .doc()
+        .set({
+          courses,
+        })
+        .then(() => {
+          alert("Courses added to user succesfully");
+          window.location = "add-drop-course.html";
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    } else {
+      window.location = '../components/auth/login.html';
+    }
+  });
+};
 
 const selectCourse = (courseItem) => {
-  const index = selectedCourses.findIndex((crn) => crn == courseItem.crn);
+  const index = selectedCourses.findIndex(
+    (course) => course.crn === courseItem.crn
+  );
   if (index === -1) {
-      selectedCourses.push(courseItem);
+    selectedCourses.push(courseItem);
   } else {
-      selectedCourses.splice(index, 1);
+    selectedCourses.splice(index, 1);
   }
-
-  console.log(selectedCourses);
 };
 
 const submitCourseList = () => {
-    addCourseToUser(selectedCourses);
-}
+  addCourseToUser(selectedCourses);
+};
 
-const homeCourseList = () => {
+const getCurrentCourseList = () => {
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      db.collection(user.uid).onSnapshot((snapshot) => {
+        let val = snapshot.docChanges();
+        val.forEach((data) => {
+            if (data.doc) {
+                selectedCourses = [...selectedCourses, ...data.doc.data().courses]
+            }
+        });
+        getCourseList();
+      });
+    } else {
+      window.location = '../components/auth/login.html';
+    }
+  });
+};
 
-}
-
+const homeCourseList = () => {};
+getCurrentCourseList();
 // Fetch all the course list that exists
-getCourseList();
