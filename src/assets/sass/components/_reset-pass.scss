@@ -56,3 +56,13 @@ label {
 .reset-pass-login {
     margin-top: 35px;
 }
+
+.back-container {
+    top: 50px;
+    position: absolute;
+    left: 20px;
+
+    .back {
+        color: $white !important;
+    }
+}

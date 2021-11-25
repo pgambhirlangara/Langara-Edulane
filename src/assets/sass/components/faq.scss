@@ -18,6 +18,29 @@ body {
 .faq-logo-image img {
   width: 150px;
   height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 9px;
+    position: relative;  
+
+    a {
+    width: 30px;
+    text-align: center;
+    position: absolute;
+    top: 25px;
+    left: 37px;
+    font-size: 25px;
+    font-weight: bold;
+    }
+
+    .faq-logo-image  {
+        img {
+            width: 150px;
+            height: 50px;
+        }
+        margin: auto;
+    }
 }
 
 .faq-icons {
@@ -45,6 +68,16 @@ body {
     gap: 10px;
     align-items: flex-start;
   }
+    .accordion {
+        padding: 8px 0px;
+        width: 100%;
+        i {
+            border: 1px solid $primary-color;
+            border-radius: 5px;
+            padding: 5px;
+            color: $primary-color;
+            margin-right: 4px;
+        }
 
   .accordion {
     padding: 8px 0px;
