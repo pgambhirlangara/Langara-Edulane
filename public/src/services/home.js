@@ -46,3 +46,17 @@ const generateHomeHTML = (data) => {
 };
 
 getCurrentCourseList();
+
+
+/* Script to toggle the hamburger menu: configured by Tainara on Nov. 25 */
+function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+        document.getElementById("menuToggle").style.display = "none";
+        document.getElementById("closeBtn").style.display = "block";
+        }
+
+        function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+        document.getElementById("menuToggle").style.display = "block";
+        document.getElementById("closeBtn").style.display = "none";
+        }
