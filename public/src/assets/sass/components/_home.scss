@@ -24,7 +24,6 @@
     align-items: center;
     padding: 20px;
   }
-    }
 }
 
 /* Styling for Find My Friends section */
@@ -46,7 +45,7 @@
     }
   }
   #getCurrentPosition {
-    @include setButton(170px, 40px, $white, $secondary-color);
+    @include setButton(190px, 40px, $white, $secondary-color);
     font-size: 1rem;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -116,7 +115,7 @@ h4 {
   a {
     z-index: 999;
   }
-  
+
   h1 {
     color: $primary-color;
   }
