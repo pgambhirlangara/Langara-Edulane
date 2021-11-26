@@ -26,5 +26,6 @@
   },
   "dependencies": {
     "momentjs": "^2.0.0"
-  }
+  },
+  "keywords": []
 }
