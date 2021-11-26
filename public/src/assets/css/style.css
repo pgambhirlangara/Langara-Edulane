@@ -1086,10 +1086,6 @@ h4 {
   padding: 40px;
 }
 
-.home-courses-container a {
-  z-index: 999;
-}
-
 .home-courses-container h1 {
   color: #F15523;
 }
@@ -1840,10 +1836,6 @@ h4 {
   align-items: center;
   width: 100%;
   padding: 40px;
-}
-
-.home-courses-container a {
-  z-index: 999;
 }
 
 .home-courses-container h1 {

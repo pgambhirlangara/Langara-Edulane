@@ -44,7 +44,7 @@ getCurrentPositionBtn.addEventListener('click', ()=> {
             db.collection("users").doc(auth.currentUser.uid).set({
               latitude: position.coords.latitude,
               longitude: position.coords.longitude,
-            });
+            }, {merge: true});
             initMap();
             showCurrentPositionMarker();
       	}, 
