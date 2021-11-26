@@ -1011,7 +1011,7 @@ hr {
 }
 
 .find-my-friends #getCurrentPosition {
-  width: 190px;
+  width: 160px;
   height: 40px;
   color: white;
   background-color: #0E23AD;
@@ -1021,6 +1021,22 @@ hr {
 }
 
 .find-my-friends #getCurrentPosition:hover {
+  cursor: pointer;
+}
+
+.find-my-friends #stopSharingPosition {
+  width: 160px;
+  height: 40px;
+  color: #0E23AD;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.find-my-friends #stopSharingPosition:hover {
   cursor: pointer;
 }
 
@@ -1763,7 +1779,7 @@ body {
 }
 
 .find-my-friends #getCurrentPosition {
-  width: 190px;
+  width: 160px;
   height: 40px;
   color: white;
   background-color: #0E23AD;
@@ -1773,6 +1789,22 @@ body {
 }
 
 .find-my-friends #getCurrentPosition:hover {
+  cursor: pointer;
+}
+
+.find-my-friends #stopSharingPosition {
+  width: 160px;
+  height: 40px;
+  color: #0E23AD;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.find-my-friends #stopSharingPosition:hover {
   cursor: pointer;
 }
 

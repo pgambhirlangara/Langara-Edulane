@@ -45,10 +45,21 @@
     }
   }
   #getCurrentPosition {
-    @include setButton(190px, 40px, $white, $secondary-color);
+    @include setButton(160px, 40px, $white, $secondary-color);
     font-size: 1rem;
     border-radius: 10px;
     margin-bottom: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  #stopSharingPosition {
+    @include setButton(160px, 40px, $secondary-color, $white);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: none;
     &:hover {
       cursor: pointer;
     }
