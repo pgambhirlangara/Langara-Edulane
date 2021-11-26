@@ -10,36 +10,42 @@
 </head>
 
 <body>
-    <div></div>
     <!-- Hamburger Menu From Here -->
-    <nav role='navigation' id="hamburgerMenu">
-        <div id="menuToggle">
-            <input type="checkbox" />
+    <nav role="navigation" id="hamburgerMenu">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <ul>
+                    <a>
+                        <img class="profile-picture" src="../images/profile-placeholder.svg">
+                        <h3>Hi, <span id="username">Jasleen</span></h3>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <li>My Courses</li>
+                    </a>
+                    <a href="#">
+                        <li>Calendar</li>
+                    </a>
+                    <a href="#">
+                        <li>Find my friends</li>
+                    </a>
+                    <a href="#">
+                        <li>Fee Information</li>
+                    </a>
+                    <a href="faq.html">
+                        <li>FAQ's</li>
+                    </a>
+                    <a href="#">
+                        <li>Logout</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div id="menuToggle" onclick="openNav()">
             <span></span>
             <span></span>
             <span></span>
-            <ul id="menu">
-                <a>
-                    <img src="../images/profile-placeholder.svg">
-                    <h3>Hi, <span id="username">Jasleen</span></h3>
-                </a>
-                <hr>
-                <a href="home.html">
-                    <li>My Courses</li>
-                </a>
-                <a href="#">
-                    <li>Calendar</li>
-                </a>
-                <a href="#">
-                    <li>Find my friends</li>
-                </a>
-                <a href="faq.html">
-                    <li>FAQ's</li>
-                </a>
-                <a onclick="logout()">
-                    <li>Logout</li>
-                </a>
-            </ul>
         </div>
     </nav>
     <!-- Hamburger Menu Ends Here -->
