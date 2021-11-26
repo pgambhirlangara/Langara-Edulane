@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "node-sass src/assets/sass/_main.scss src/assets/css/style.css --output-style expanded"
+    "compile:sass": "node-sass public/src/assets/sass/_main.scss public/src/assets/css/style.css --output-style expanded"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,6 @@
   },
   "dependencies": {
     "momentjs": "^2.0.0"
-  }
+  },
+  "keywords": []
 }
