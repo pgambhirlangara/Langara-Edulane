@@ -19,7 +19,6 @@ const getCurrentUserPic = async (userId)=> {
   const userPic = storage.ref(`profilePics/${userId}.jpg`).name; */
   const userPic = storage.ref().child(`profilePics/${userId}.jpg`)
   userPic.getDownloadURL().then((url)=> {
-    console.log(url);
     imgInHeading.src = url;
     imgInHeading.style.borderRadius = "50%"
     imgInHamburgerMenu.src = url;
