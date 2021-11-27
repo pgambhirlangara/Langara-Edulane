@@ -6,10 +6,25 @@ const getCurrentUserDoc = async (userId)=> {
       const currentUserName = userDoc.data().nickName
       userName.innerHTML = `Hi, ${currentUserName} !`;
       username.innerHTML = `${currentUserName} !`;
-      console.log(currentUserName);
     } else {
       console.log('user not find')
     }
+}
+
+/* Get the current user photo and show on the top bar */
+const getCurrentUserPic = async (userId)=> {
+  const imgInHeading = document.getElementById('home-inside-container-img')
+  const imgInHamburgerMenu = document.getElementById('imgInHamburgerMenu')
+  /* const bucketName = "langara-edu.appspot.com";
+  const userPic = storage.ref(`profilePics/${userId}.jpg`).name; */
+  const userPic = storage.ref().child(`profilePics/${userId}.jpg`)
+  userPic.getDownloadURL().then((url)=> {
+    console.log(url);
+    imgInHeading.src = url;
+    imgInHeading.style.borderRadius = "50%"
+    imgInHamburgerMenu.src = url;
+    imgInHamburgerMenu.style.borderRadius = "50%"
+  })
 }
 
 const getCurrentCourseList = () => {
@@ -19,6 +34,7 @@ const getCurrentCourseList = () => {
       console.log(user, "user");
       const currentUserId = user.uid
       getCurrentUserDoc(currentUserId);
+      getCurrentUserPic(currentUserId);
       currentDate.innerHTML = `${new Date().toLocaleDateString()}`;
       db.collection(user.uid).onSnapshot((snapshot) => {
         let val = snapshot.docChanges();

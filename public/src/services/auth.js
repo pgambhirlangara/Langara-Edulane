@@ -17,7 +17,7 @@ const register = (e) => {
         let newUid = auth.currentUser.uid;
         return storage.ref(`profilePics/${newUid}.jpg`).put(files);
     }).then(() => {
-        alert("Account succesfully Created");
+        alert("Account successfully Created");
         window.location = "login.html";
     });
 

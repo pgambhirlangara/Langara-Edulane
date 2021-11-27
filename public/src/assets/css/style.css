@@ -827,7 +827,7 @@ hr {
   display: block;
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: 20px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -1117,8 +1117,8 @@ h4 {
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid black;
+  margin-top: 30px;
   padding-bottom: 20px;
-  transform: translateY(-50px);
 }
 
 .home-icons {
@@ -1892,8 +1892,8 @@ h4 {
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid black;
+  margin-top: 30px;
   padding-bottom: 20px;
-  transform: translateY(-50px);
 }
 
 .home-icons {
