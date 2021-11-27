@@ -838,7 +838,7 @@ hr {
 #menuToggle {
   display: block;
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 20px;
   z-index: 1;
   -webkit-user-select: none;
@@ -987,16 +987,17 @@ hr {
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px 20px 20px;
 }
 
 .home-container h1 {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0 20px;
 }
 
 /* Styling for Find My Friends section */
@@ -1012,7 +1013,7 @@ hr {
 }
 
 .find-my-friends .find-my-friends-header h2 {
-  font-size: 32px;
+  font-size: 1.5rem;
   color: #F15523;
 }
 
@@ -1096,7 +1097,7 @@ hr {
   width: 100%;
   position: sticky;
   top: 0;
-  padding-top: 10px;
+  padding-top: 20px;
   background-color: #EFEFEF;
   z-index: 100;
 }
@@ -1116,7 +1117,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 40px 40px;
+  margin: 0 20px;
 }
 
 .home-courses-container h1 {
@@ -1324,14 +1325,13 @@ h4 {
 }
 
 .calendar-container {
-  margin: 0;
+  margin: 30px 0 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
 
 .calendar-container__inner {
-  padding: 10px;
   min-width: 20rem;
   height: 100%;
 }
@@ -1344,7 +1344,7 @@ h4 {
 
 .calendar-container__title h2 {
   color: #F15523;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -1751,7 +1751,13 @@ body {
 }
 
 /* Mobile */
-.reset-bg, .login-bg {
+body,
+html {
+  margin: 0;
+}
+
+.reset-bg,
+.login-bg {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
 }
 
@@ -1771,16 +1777,17 @@ body {
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px 20px 20px;
 }
 
 .home-container h1 {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0 20px;
 }
 
 /* Styling for Find My Friends section */
@@ -1796,7 +1803,7 @@ body {
 }
 
 .find-my-friends .find-my-friends-header h2 {
-  font-size: 32px;
+  font-size: 1.5rem;
   color: #F15523;
 }
 
@@ -1880,7 +1887,7 @@ body {
   width: 100%;
   position: sticky;
   top: 0;
-  padding-top: 10px;
+  padding-top: 20px;
   background-color: #EFEFEF;
   z-index: 100;
 }
@@ -1900,7 +1907,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 40px 40px;
+  margin: 0 20px;
 }
 
 .home-courses-container h1 {
