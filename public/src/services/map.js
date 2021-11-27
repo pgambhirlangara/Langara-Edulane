@@ -5,7 +5,7 @@ let mapArea = document.getElementById('map-area');
 let currentLatLang;
 
 /* Declare an array to store friends with position attribute */
-const friendsWithPos = [];
+let friendsWithPos = [];
 
 /* Get buttons in the UI */
 const getCurrentPositionBtn = document.getElementById('getCurrentPosition')
@@ -25,15 +25,16 @@ function initMap() {
 }
 
 /* Set the position marker of the current user*/
+let myInfoWindow = [];
 const showCurrentPositionMarker = ()=> {
-  let infoWindow = new google.maps.InfoWindow();
+  myInfoWindow.push(new google.maps.InfoWindow());
   const position = {
     lat: currentLatitude,
     lng: currentLongitude,
   };
-  infoWindow.setPosition(position);
-  infoWindow.setContent("You are here!");
-  infoWindow.open(map);
+  myInfoWindow[0].setPosition(position);
+  myInfoWindow[0].setContent("You are here!");
+  myInfoWindow[0].open(map);
   map.setCenter(position);
   /* Set position data to Firebase document */
   db.collection("users").doc(auth.currentUser.uid).set({
@@ -57,16 +58,17 @@ const getFriendsInArr = async ()=> {
 }
 
 /* Set the position markers of all the friends on the map */
+let friendsInfoWindows = [];
 const showFriendsPositionMarker = ()=> {
   for (let i=0; i < friendsWithPos.length; i++) {
-    let infoWindow = new google.maps.InfoWindow();
+    friendsInfoWindows.push(new google.maps.InfoWindow());
     let position = {
       lat: friendsWithPos[i].latitude,
       lng: friendsWithPos[i].longitude,
     };
-    infoWindow.setPosition(position);
-    infoWindow.setContent(friendsWithPos[i].name);
-    infoWindow.open(map)
+    friendsInfoWindows[i].setPosition(position);
+    friendsInfoWindows[i].setContent(friendsWithPos[i].name);
+    friendsInfoWindows[i].open(map)
   }
 }
 
@@ -80,15 +82,15 @@ let watchId // Variable to store watchId, which is passed to clearWatch().
 getCurrentPositionBtn.addEventListener('click', ()=> {
   getCurrentPositionBtn.style.display = "none"
   stopSharingPositionBtn.style.display = "block"
+  getFriendsInArr().then(()=> {
+    showFriendsPositionMarker()
+  });
   if ( navigator.geolocation ) {
       	watchId = navigator.geolocation.watchPosition( 
          ( position ) => {  
             currentLatitude = position.coords.latitude;
             currentLongitude = position.coords.longitude;
             showCurrentPositionMarker();
-            getFriendsInArr().then(()=> {
-              showFriendsPositionMarker();
-            })
       	}, 
 		( error ) => {
 			if (	error.code == error.PERMISSION_DENIED ) {
@@ -105,4 +107,10 @@ stopSharingPositionBtn.addEventListener('click', ()=> {
   getCurrentPositionBtn.style.display = "block"
   stopSharingPositionBtn.style.display = "none"
   navigator.geolocation.clearWatch(watchId);
+  friendsWithPos = [];
+  myInfoWindow[0].close();
+  myInfoWindow = [];
+  for (let i=0; i < friendsInfoWindows.length; i++) {
+    friendsInfoWindows[i].close();
+  }
 })
