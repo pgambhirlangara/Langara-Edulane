@@ -1059,7 +1059,7 @@ hr {
   margin: 4px 4px 0 36px;
 }
 
-.find-my-friends .map-section .map-header p.friend-name {
+.find-my-friends .map-section .map-header p.placeholder {
   display: inline-block;
 }
 
@@ -1834,7 +1834,7 @@ body {
   margin: 4px 4px 0 36px;
 }
 
-.find-my-friends .map-section .map-header p.friend-name {
+.find-my-friends .map-section .map-header p.placeholder {
   display: inline-block;
 }
 
