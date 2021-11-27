@@ -359,7 +359,7 @@ html {
 
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .first-login-info-container .first-login-form .submitButton button {
@@ -483,7 +483,7 @@ html {
 
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .first-login-info-container .first-login-form .submitButton button {
