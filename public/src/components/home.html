@@ -10,45 +10,6 @@
 </head>
 
 <body>
-    <!-- Hamburger Menu From Here -->
-    <nav role="navigation" id="hamburgerMenu">
-        <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" id="closeBtn" onclick="closeNav()">&times;</a>
-            <div class="overlay-content">
-                <ul>
-                    <a>
-                        <img class="profile-picture" src="../images/profile-placeholder.svg">
-                        <h3>Hi, <span id="username">Jasleen</span></h3>
-                    </a>
-                    <hr>
-                    <a href="#">
-                        <li>My Courses</li>
-                    </a>
-                    <a href="#">
-                        <li>Calendar</li>
-                    </a>
-                    <a href="#">
-                        <li>Find my friends</li>
-                    </a>
-                    <a href="#">
-                        <li>Fee Information</li>
-                    </a>
-                    <a href="faq.html">
-                        <li>FAQ's</li>
-                    </a>
-                    <a onclick="logout()">
-                        <li>Logout</li>
-                    </a>
-                </ul>
-            </div>
-        </div>
-        <div id="menuToggle" onclick="openNav()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-    <!-- Hamburger Menu Ends Here -->
     <div class="home-container">
 
         <div class="home-main-heading">
@@ -62,9 +23,48 @@
                 <i class="fas fa-bell"></i>
                 <i class="fas fa-bars"></i>
             </div> -->
+            <!-- Hamburger Menu From Here -->
+            <nav role="navigation" id="hamburgerMenu">
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" id="closeBtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <ul>
+                            <a>
+                                <img id="imgInHamburgerMenu" class="profile-picture" src="../images/profile-placeholder.svg">
+                                <h3>Hi, <span id="username"></span></h3>
+                            </a>
+                            <hr>
+                            <a href="#">
+                                <li>My Courses</li>
+                            </a>
+                            <a href="#">
+                                <li>Calendar</li>
+                            </a>
+                            <a href="#">
+                                <li>Find my friends</li>
+                            </a>
+                            <a href="#">
+                                <li>Fee Information</li>
+                            </a>
+                            <a href="faq.html">
+                                <li>FAQ's</li>
+                            </a>
+                            <a onclick="logout()">
+                                <li>Logout</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div id="menuToggle" onclick="openNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <!-- Hamburger Menu Ends Here -->
 
             <div class="home-inside-container1" id="home-profile-container">
-                <div class="home-courses-profile-img"><img src="../assets/images/profile-placeholder.svg"></div>
+                <div class="home-courses-profile-img"><img id="home-inside-container-img" src="../assets/images/profile-placeholder.svg"></div>
                 <div class="home-profile-container">
                     <h4 id="userName"></h4>
                     <span id="currentDate"></span>
@@ -161,14 +161,15 @@
         <div class="find-my-friends">
             <div class="find-my-friends-header">
                 <h2>Find My Friends</h2>
-                <img src="../images/plus_button.svg" alt="plus button">
+                <!-- <img src="../images/plus_button.svg" alt="plus button"> -->
             </div>
-            <button id="getCurrentPosition">Get Current Position</button>
+            <button id="getCurrentPosition">Share Location!</button>
+            <button id="stopSharingPosition">Stop Sharing</button>
             <div class="map-section">
                 <div class="map-header">
                     <p class="map-header-title">Nearby Friends</p>
                     <img src="../images/map-pin.svg" alt="">
-                    <p class="friend-name">Poala Rubio</p>
+                    <p class="placeholder">Share Location to show friends!</p>
                 </div>
                 <div id="map-area">
                     <!-- Todo: It would be better to hide the API key! -->
@@ -183,6 +184,8 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
     <script src="../services/firebase.js"></script>
     <script src="../services/auth.js"></script>
     <script src="../services/home.js"></script>
