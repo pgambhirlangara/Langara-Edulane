@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Add or Drop Course</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+    <div class="add-drop-container">
+        <div class="add-course-logo-container">
+            <a href="home.html" class="back"> <span>
+                    < </span></a>
+            <img src="../images/edulane_horizontal_color_trimmed.svg" alt="logo">
+        </div>
+
+        <div class="add-drop-title">
+            <h2>Add / Drop Courses</h2>
+        </div>
+
+        <div id="addCourseContainer" class="add-course-container">
+
+        </div>
+
+        <div class="add-course-bottom-action">
+            <button class="tertiary-btn"> <a href="search-course.html"><span>Search
+                        Courses</span></a>
+            </button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="../services/firebase.js"></script>
+    <script src="../services/auth.js"></script>
+    <script src="../services/add-drop-course.js"></script>
+</body>
+
+</html>

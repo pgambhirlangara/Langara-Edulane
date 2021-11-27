@@ -1,0 +1,11 @@
+body,
+html {
+  margin: 0;
+}
+
+.reset-bg,
+.login-bg {
+  @include setBackground(
+    linear-gradient(33.58deg, $primary-color 26%, $secondary-color 95%)
+  );
+}

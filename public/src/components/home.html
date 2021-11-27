@@ -1,0 +1,196 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Langara EduLane</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+    <div class="home-container">
+
+        <div class="home-main-heading">
+
+            <div class="home-logo-image">
+                <img src="../assets/images/edulane_horizontal_color.svg">
+            </div>
+            <!-- Overlaps with hamburger menu, comment out -->
+            <!-- <div class="home-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-bars"></i>
+            </div> -->
+            <!-- Hamburger Menu From Here -->
+            <nav role="navigation" id="hamburgerMenu">
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" id="closeBtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <ul>
+                            <a>
+                                <img id="imgInHamburgerMenu" class="profile-picture" src="../images/profile-placeholder.svg">
+                                <h3>Hi, <span id="username"></span></h3>
+                            </a>
+                            <hr>
+                            <a href="#">
+                                <li>My Courses</li>
+                            </a>
+                            <a href="#">
+                                <li>Calendar</li>
+                            </a>
+                            <a href="#">
+                                <li>Find my friends</li>
+                            </a>
+                            <a href="#">
+                                <li>Fee Information</li>
+                            </a>
+                            <a href="faq.html">
+                                <li>FAQ's</li>
+                            </a>
+                            <a onclick="logout()">
+                                <li>Logout</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div id="menuToggle" onclick="openNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <!-- Hamburger Menu Ends Here -->
+
+            <div class="home-inside-container1" id="home-profile-container">
+                <div class="home-courses-profile-img"><img id="home-inside-container-img" src="../assets/images/profile-placeholder.svg"></div>
+                <div class="home-profile-container">
+                    <h4 id="userName"></h4>
+                    <span id="currentDate"></span>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="home-courses-container">
+            <h1>My Courses</h1>
+            <a class="home-courses-button" href="add-drop-course.html">Add/Drop Courses</a>
+        </div>
+
+        <div class="home-courses-list" id="homeCourseList">
+        </div>
+        <!-- Calendar section from here -->
+        <div class="calendar-container">
+            <div class="calendar-container__inner">
+                <div class="calendar-container__top">
+                    <div class="calendar-container__title">
+                        <h2>Calendar</h2>
+                    </div>
+                    <div class="calendar-container__menu">
+                        <select name="month" id="month">
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calendar-container__wrapper">
+                    <ul class="calendar">
+                        <li></li>
+                        <li class="weekday">Sun</li>
+                        <li class="weekday">Mon</li>
+                        <li class="weekday">Tue</li>
+                        <li class="weekday">Wed</li>
+                        <li class="weekday">Thu</li>
+                        <li class="weekday">Fri</li>
+                        <li></li>
+
+                        <li class="arrow-left"><i class="fas fa-chevron-left"></i></li>
+                        <li class="first-day">1</li>
+                        <li class='day'>2</li>
+                        <li class='day'>3</li>
+                        <li class='day'>29</li>
+                        <li class='day'>30</li>
+                        <li class='day'>31</li>
+                        <li class="arrow-right"><i class="fas fa-chevron-right"></i></li>
+                    </ul>
+                </div>
+
+                <div class="calendar-container__schedule">
+                    <div class="calendar-container__title">
+                        <h2>Schedule</h2>
+                    </div>
+                    <div class="calendar-container__button">
+                        <button class="btn" id="calendar-add-btn">+</button>
+                    </div>
+                </div>
+
+                <div class="calendar-container__event-area">
+                    <div class="calendar-container__item">
+                        <div class="calendar-container__time">
+                            9:30
+                        </div>
+                        <div class="calendar-container__event">
+                            <div class="text">
+                                test
+                            </div>
+                            <div class="calendar-container__event-type">
+                                event
+                            </div>
+                        </div>
+                        <div class="calendar-container__event-delete">
+                            <button class="btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-container__space">
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Find My Friends section from here -->
+        <div class="find-my-friends">
+            <div class="find-my-friends-header">
+                <h2>Find My Friends</h2>
+                <!-- <img src="../images/plus_button.svg" alt="plus button"> -->
+            </div>
+            <button id="getCurrentPosition">Share Location!</button>
+            <button id="stopSharingPosition">Stop Sharing</button>
+            <div class="map-section">
+                <div class="map-header">
+                    <p class="map-header-title">Nearby Friends</p>
+                    <img src="../images/map-pin.svg" alt="">
+                    <p class="placeholder">Share Location to show friends!</p>
+                </div>
+                <div id="map-area">
+                    <!-- Todo: It would be better to hide the API key! -->
+                    <script async
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt3pYgKXe6eKRw7gIC04VL4VVvPdTnnS8&callback=initMap">
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
+    <script src="../services/firebase.js"></script>
+    <script src="../services/auth.js"></script>
+    <script src="../services/home.js"></script>
+    <script src="../services/map.js"></script> -->
+    <script src="../services/calendar.js"></script>
+</body>
+
+</html>
