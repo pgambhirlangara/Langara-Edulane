@@ -1,9 +1,25 @@
+/* Get the current username and show on the top bar */
+const getCurrentUserDoc = async (userId)=> {
+  const userRef = db.collection('users').doc(userId)
+  const userDoc = await userRef.get();
+    if (userDoc.exists) {
+      /* console.log(userDoc.id)
+      console.log(userDoc.data().nickName) */
+      const currentUserName = userDoc.data().nickName
+      userName.innerHTML = `Hi, ${currentUserName} !`;
+      console.log(currentUserName);
+    } else {
+      console.log('user not find')
+    }
+}
+
 const getCurrentCourseList = () => {
   homeCourseList.innerHTML = '<div class="loader"></div>';
   auth.onAuthStateChanged((user) => {
     if (user) {
       console.log(user, "user");
-      userName.innerHTML = `Hi, ${user.email}`;
+      const currentUserId = user.uid
+      getCurrentUserDoc(currentUserId);
       currentDate.innerHTML = `${new Date().toLocaleDateString()}`;
       db.collection(user.uid).onSnapshot((snapshot) => {
         let val = snapshot.docChanges();

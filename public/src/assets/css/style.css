@@ -826,7 +826,7 @@ hr {
 #menuToggle {
   display: block;
   position: absolute;
-  top: 50px;
+  top: 20px;
   right: 30px;
   z-index: 1;
   -webkit-user-select: none;
@@ -1082,6 +1082,11 @@ hr {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  background-color: #EFEFEF;
+  z-index: 100;
 }
 
 .home-profile-container {
@@ -1099,7 +1104,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 40px;
+  padding: 0 40px 40px;
 }
 
 .home-courses-container h1 {
@@ -1109,9 +1114,11 @@ h4 {
 .home-inside-container1 {
   width: 100%;
   display: flex;
+  align-items: center;
   gap: 20px;
   border-bottom: 1px solid black;
   padding-bottom: 20px;
+  transform: translateY(-50px);
 }
 
 .home-icons {
@@ -1850,6 +1857,11 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  background-color: #EFEFEF;
+  z-index: 100;
 }
 
 .home-profile-container {
@@ -1867,7 +1879,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 40px;
+  padding: 0 40px 40px;
 }
 
 .home-courses-container h1 {
@@ -1877,9 +1889,11 @@ h4 {
 .home-inside-container1 {
   width: 100%;
   display: flex;
+  align-items: center;
   gap: 20px;
   border-bottom: 1px solid black;
   padding-bottom: 20px;
+  transform: translateY(-50px);
 }
 
 .home-icons {
