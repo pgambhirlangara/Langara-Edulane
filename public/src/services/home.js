@@ -7,6 +7,7 @@ const getCurrentUserDoc = async (userId)=> {
       console.log(userDoc.data().nickName) */
       const currentUserName = userDoc.data().nickName
       userName.innerHTML = `Hi, ${currentUserName} !`;
+      username.innerHTML = `${currentUserName} !`;
       console.log(currentUserName);
     } else {
       console.log('user not find')
