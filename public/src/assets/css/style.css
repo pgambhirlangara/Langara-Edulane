@@ -1641,11 +1641,20 @@ body {
 }
 
 .faq-main-heading {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
+  text-align: center;
   align-items: center;
   width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.faq-main-heading a.back {
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  z-index: 1;
 }
 
 .faq-logo-image img {
