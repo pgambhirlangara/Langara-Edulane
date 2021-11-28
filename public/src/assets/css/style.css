@@ -1470,7 +1470,7 @@ h4 {
 .calendar-add-container {
   margin: 20px auto;
   padding: 0;
-  width: 300px;
+  width: 310px;
   height: 550px;
   text-align: center;
   border: 1px solid #0E23AD;
@@ -1479,7 +1479,132 @@ h4 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.calendar-add-container #header {
+  padding: 10px;
+  color: #d36c6c;
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-add-container #header button {
+  border: none;
+}
+
+.calendar-add-container #container {
+  width: 310px;
+}
+
+.calendar-add-container #weekdays {
+  width: 100%;
+  display: flex;
+  color: #247BA0;
+}
+
+.calendar-add-container #weekdays div {
+  width: 43.7px;
+}
+
+.calendar-add-container #calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-add-container .day {
+  width: 43.7px;
+  height: 35px;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 3.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.calendar-add-container .day:hover {
+  background-color: #e8faed;
+}
+
+.calendar-add-container .day + #currentDay {
+  background-color: #e8f4fa;
+}
+
+.calendar-add-container .event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+
+.calendar-add-container .padding {
+  cursor: default !important;
+  box-shadow: none !important;
+}
+
+.calendar-add-container #newEventModal,
+.calendar-add-container #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+
+.calendar-add-container #eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+
+.calendar-add-container #eventTitleInput.error {
+  border: 2px solid red;
+}
+
+.calendar-add-container #cancelButton,
+.calendar-add-container #deleteButton {
+  background-color: #d36c6c;
+}
+
+.calendar-add-container #saveButton,
+.calendar-add-container #closeButton {
+  background-color: #92a1d1;
+}
+
+.calendar-add-container #eventText {
+  font-size: 14px;
+}
+
+.calendar-add-container #modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .calendar-add-container__top {
@@ -1538,47 +1663,6 @@ h4 {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-}
-
-.calendar-add-container #calendar h2 {
-  line-height: 170px;
-  margin: 0;
-  font-weight: 300;
-  color: #fff;
-  background: #60c84f;
-  text-align: center;
-}
-
-.calendar-add-container #calendar table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.calendar-add-container #calendar .week-days {
-  color: #fff;
-}
-
-.calendar-add-container #calendar .day {
-  width: 70px;
-  height: 40px;
-  text-align: center;
-}
-
-.calendar-add-container #calendar .week .day {
-  background: #eee;
-}
-
-.calendar-add-container #calendar .week .day:not(.other-month):hover {
-  color: #fff;
-  background: #60c84f;
-}
-
-.calendar-add-container #calendar .other-month {
-  opacity: 0.5;
-}
-
-.calendar-add-container p {
-  text-align: center;
 }
 
 .calendar-confirm-container {

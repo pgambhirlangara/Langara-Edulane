@@ -1,114 +1,134 @@
+let nav = 0;
+let clicked = null;
+let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
+const calendar = document.getElementById('calendar');
+const newEventModal = document.getElementById('newEventModal');
+const deleteEventModal = document.getElementById('deleteEventModal');
+const backDrop = document.getElementById('modalBackDrop');
+const eventTitleInput = document.getElementById('eventTitleInput');
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-function calendar(params) {
-    const days_labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-        months_labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+function openModal(date) {
+  clicked = date;
 
-    let days_in_month = getDaysInMonth(params.month, params.year),
-        first_day_date = new Date(params.year, params.month, 1),
-        first_day_weekday = first_day_date.getDay();
+  const eventForDay = events.find(e => e.date === clicked);
 
-    let prev_month = params.month == 0 ? 11 : params.month - 1,
-        prev_year = prev_month == 11 ? params.year - 1 : params.year,
-        prev_days = getDaysInMonth(prev_month, prev_year);
+  if (eventForDay) {
+    document.getElementById('eventText').innerText = eventForDay.title;
+    deleteEventModal.style.display = 'block';
+  } else {
+    newEventModal.style.display = 'block';
+  }
 
-    // calendar header
-    let html = `
-                <div class="calendar-add-container__top">
-                <i class="fas fa-chevron-left"></i>
-                <div class="date">
-                    <span class="day"> 
-                        20th
-                    </span>
-                    <span class="month"> 
-                        September
-                    </span>
-                    <span class="year">
-                        2021
-                    </span>
-                </div>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-    `;
-
-
-    function getDaysInMonth(month, year) {
-        // 0 = last day of the previous month
-        return new Date(year, month + 1, 0).getDate();
-    }
-
-    // calendar content
-    html += '<table class="calendar-table">';
-
-    // week days labels
-    html += '<tr class="week-days">';
-    for (let i = 0; i <= 6; i++) {
-        html += '<td class="day">';
-        html += days_labels[i];
-        html += '</td>';
-    }
-    html += '</tr>';
-
-    let w = 0; // week day
-    let n = 1; // next days date
-    let c = 1; // current date
-
-    // dates loop
-    for (let i = 0; i < 6 * days_labels.length; i++) {
-        if (w == 0) {
-            // first week's day
-            html += '<tr class="week">';
-        }
-
-        if (i < new Date(params.year, params.month, 1).getDay()) {
-            // previous month's day
-            html += '<td class="day other-month">' + (prev_days - first_day_weekday + i + 1) + '</td>';
-        } else if (c > days_in_month) {
-            // next month's day
-            html += '<td class="day other-month">' + n + '</td>';
-            n++;
-        } else {
-            // current month's day
-            let options = {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric"
-            };
-            let display_date = new Date(params.year, params.month, c);
-            html += '<td class="day" title="' + display_date.toLocaleDateString('en-GB', options) + '">' + c + '</td>';
-            c++;
-        }
-
-        if (w == days_labels.length - 1) {
-            // last week's day
-            html += '</tr>';
-            w = 0;
-        } else {
-            w++;
-        }
-    }
-
-    html += '</tr>';
-    return html;
+  backDrop.style.display = 'block';
 }
 
-let now = new Date();
-let params = {
-    month: now.getMonth(),
-    year: now.getFullYear()
-};
-// document.getElementById('calendar').innerHTML = calendar(params);
+function load() {
+  const dt = new Date();
 
-document.getElementById('calendar-add-btn').addEventListener('click', function (event) {
+  if (nav !== 0) {
+    dt.setMonth(new Date().getMonth() + nav);
+  }
 
-	// If the clicked element doesn't have the right selector, bail
-	if (!event.target.matches('.click-me')) return;
+  const day = dt.getDate();
+  const month = dt.getMonth();
+  const year = dt.getFullYear();
 
-	// Don't follow the link
-	event.preventDefault();
+  const firstDayOfMonth = new Date(year, month, 1);
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  
+  const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  });
+  const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
 
-	// Log the clicked element in the console
-	console.log(event.target);
+  document.getElementById('monthDisplay').innerText = 
+    `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
 
-}, false);
+  calendar.innerHTML = '';
+
+  for(let i = 1; i <= paddingDays + daysInMonth; i++) {
+    const daySquare = document.createElement('div');
+    daySquare.classList.add('day');
+
+    const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+
+    if (i > paddingDays) {
+      daySquare.innerText = i - paddingDays;
+      const eventForDay = events.find(e => e.date === dayString);
+
+      if (i - paddingDays === day && nav === 0) {
+        daySquare.id = 'currentDay';
+      }
+
+      if (eventForDay) {
+        const eventDiv = document.createElement('div');
+        eventDiv.classList.add('event');
+        eventDiv.innerText = eventForDay.title;
+        daySquare.appendChild(eventDiv);
+      }
+
+      daySquare.addEventListener('click', () => openModal(dayString));
+    } else {
+      daySquare.classList.add('padding');
+    }
+
+    calendar.appendChild(daySquare);    
+  }
+}
+
+function closeModal() {
+  eventTitleInput.classList.remove('error');
+  newEventModal.style.display = 'none';
+  deleteEventModal.style.display = 'none';
+  backDrop.style.display = 'none';
+  eventTitleInput.value = '';
+  clicked = null;
+  load();
+}
+
+function saveEvent() {
+  if (eventTitleInput.value) {
+    eventTitleInput.classList.remove('error');
+
+    events.push({
+      date: clicked,
+      title: eventTitleInput.value,
+    });
+
+    localStorage.setItem('events', JSON.stringify(events));
+    closeModal();
+  } else {
+    eventTitleInput.classList.add('error');
+  }
+}
+
+function deleteEvent() {
+  events = events.filter(e => e.date !== clicked);
+  localStorage.setItem('events', JSON.stringify(events));
+  closeModal();
+}
+
+function initButtons() {
+  document.getElementById('nextButton').addEventListener('click', () => {
+    nav++;
+    load();
+  });
+
+  document.getElementById('backButton').addEventListener('click', () => {
+    nav--;
+    load();
+  });
+
+//   document.getElementById('saveButton').addEventListener('click', saveEvent);
+//   document.getElementById('cancelButton').addEventListener('click', closeModal);
+//   document.getElementById('deleteButton').addEventListener('click', deleteEvent);
+//   document.getElementById('closeButton').addEventListener('click', closeModal);
+}
+
+initButtons();
+load();
