@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <title>Sign up</title>
+    <title>Add Course</title>
 </head>
 
 <body>
@@ -33,6 +33,21 @@
             <div class="first-login-form-row">
                 <label for="courseDescription">Description</label>
                 <input type="text" name="courseDescription" id="courseDescription" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="instructorName">Instructor</label>
+                <input type="text" name="instructorName" id="instructorName" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="courseSection">Section</label>
+                <input type="text" name="courseSection" id="courseSection" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="classTiming">Class Timing</label>
+                <input type="time" name="classTiming" id="classTiming" placeholder="Required" required>
                 <div class="form-required-circle"></div>
             </div>
             <div class="first-login-form-row">
@@ -68,11 +83,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="../../services/firebase.js"></script>
     <script src="../../services/auth.js"></script>
-<<<<<<< HEAD
-    <script src="../../services/course.js"></script>
-=======
     <script src="../../services/search-course.js"></script>
->>>>>>> a42fdcc6c8aed6887c5056498b1571d8245670fa
 </body>
 
 </html>

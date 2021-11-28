@@ -31,6 +31,20 @@ const login = (event) => {
   });
 }
 
+const resetPasswordEmail = (event) => {
+    event.preventDefault();
+    auth.sendPasswordResetEmail(
+        resetEmail.value)
+        .then(function() {
+          // Password reset email sent.
+          alert("Reset Link sent to your email succesfully");
+        })
+        .catch(function(error) {
+          // Error occurred. Inspect error.code.
+          alert(error.message);
+        });
+}
+
 const logout = () => {
     auth.signOut();
     alert("User Logged Out!");

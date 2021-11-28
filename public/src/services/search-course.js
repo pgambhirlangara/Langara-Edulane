@@ -17,6 +17,9 @@ const addCourseToCollege = (e) => {
       crn: courseCRN.value,
       endDate: courseEndDate.value,
       description: courseDescription.value,
+      instructor: instructorName.value,
+      section: courseSection.value,
+      timing: classTiming.value,
     })
     .then(() => {
       alert("Course succesfully Created");
@@ -144,6 +147,7 @@ const selectCourse = (courseItem) => {
     (course) => course.crn === courseItem.crn
   );
   if (index === -1) {
+    courseItem.completed = 0;
     selectedCourses.push(courseItem);
   } else {
     selectedCourses.splice(index, 1);
