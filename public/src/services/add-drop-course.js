@@ -49,7 +49,7 @@ const deleteCourseFromUser = (id) => {
     auth.onAuthStateChanged(user => {
         if (user) {
             db.collection(user.uid).doc(id).delete();
-            alert('successfullt deleted');
+            alert('successfully deleted');
         }
     })
 }

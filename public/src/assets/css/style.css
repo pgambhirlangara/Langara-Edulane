@@ -275,7 +275,7 @@ html {
 
 .first-login-info-container .first-login-info-header {
   text-align: center;
-  padding-top: 8px;
+  margin-top: 40px;
 }
 
 .first-login-info-container .first-login-info-header img {
@@ -359,6 +359,7 @@ html {
 
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .first-login-info-container .first-login-form .submitButton button {
@@ -398,7 +399,7 @@ html {
 
 .first-login-info-container .first-login-info-header {
   text-align: center;
-  padding-top: 8px;
+  margin-top: 40px;
 }
 
 .first-login-info-container .first-login-info-header img {
@@ -482,6 +483,7 @@ html {
 
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .first-login-info-container .first-login-form .submitButton button {
@@ -2161,6 +2163,7 @@ h4 {
     display: flex;
     justify-content: space-between;
     padding: 0;
+    margin-top: 0px;
   }
   .first-login-info-container .first-login-info-header img {
     margin: 5px 0 5px 11px;
