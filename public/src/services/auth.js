@@ -28,7 +28,10 @@ const login = (event) => {
   auth.signInWithEmailAndPassword(studentEmail.value, studentPassword.value).then((cred) => {
         alert("User Logged In!");
         window.location = "../home.html";
-  });
+  })
+  .catch((error) => {
+      alert(error.message);
+  })
 }
 
 const resetPasswordEmail = (event) => {
