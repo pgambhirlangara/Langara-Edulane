@@ -275,7 +275,7 @@ html {
 
 .first-login-info-container .first-login-info-header {
   text-align: center;
-  padding-top: 8px;
+  margin-top: 40px;
 }
 
 .first-login-info-container .first-login-info-header img {
@@ -359,6 +359,7 @@ html {
 
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .first-login-info-container .first-login-form .submitButton button {
@@ -398,7 +399,7 @@ html {
 
 .first-login-info-container .first-login-info-header {
   text-align: center;
-  padding-top: 8px;
+  margin-top: 40px;
 }
 
 .first-login-info-container .first-login-info-header img {
@@ -482,6 +483,7 @@ html {
 
 .first-login-info-container .first-login-form .submitButton {
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .first-login-info-container .first-login-form .submitButton button {
@@ -838,7 +840,7 @@ hr {
 #menuToggle {
   display: block;
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 20px;
   z-index: 1;
   -webkit-user-select: none;
@@ -987,16 +989,17 @@ hr {
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px 20px 20px;
 }
 
 .home-container h1 {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0 20px;
 }
 
 /* Styling for Find My Friends section */
@@ -1012,7 +1015,7 @@ hr {
 }
 
 .find-my-friends .find-my-friends-header h2 {
-  font-size: 32px;
+  font-size: 1.5rem;
   color: #F15523;
 }
 
@@ -1096,7 +1099,7 @@ hr {
   width: 100%;
   position: sticky;
   top: 0;
-  padding-top: 10px;
+  padding-top: 20px;
   background-color: #EFEFEF;
   z-index: 100;
 }
@@ -1116,7 +1119,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 40px 40px;
+  margin: 0 20px;
 }
 
 .home-courses-container h1 {
@@ -1324,14 +1327,13 @@ h4 {
 }
 
 .calendar-container {
-  margin: 0;
+  margin: 30px 0 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
 
 .calendar-container__inner {
-  padding: 10px;
   min-width: 20rem;
   height: 100%;
 }
@@ -1344,7 +1346,7 @@ h4 {
 
 .calendar-container__title h2 {
   color: #F15523;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -1641,11 +1643,20 @@ body {
 }
 
 .faq-main-heading {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
+  text-align: center;
   align-items: center;
   width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.faq-main-heading a.back {
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  z-index: 1;
 }
 
 .faq-logo-image img {
@@ -1690,59 +1701,65 @@ body {
   margin-right: 16px;
 }
 
+.faq-container hr {
+  width: 90%;
+  margin: 5px auto 10px;
+}
+
 .faq-container h1 {
   color: #F15523;
-  width: 100%;
+  width: 90%;
   margin-left: 16px;
   margin-bottom: 20px;
 }
 
 .faq-container i {
   color: #F15523;
+  font-weight: bold;
 }
 
-.faq-container .accordian-question {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-.faq-container .accordion {
+.faq-container button.accordion {
+  margin-top: 10px;
   padding: 8px 0px;
-  width: 100%;
-}
-
-.faq-container .accordion i {
-  border: 1px solid #F15523;
-  border-radius: 5px;
-  padding: 5px;
-  color: #F15523;
-  margin-right: 4px;
-}
-
-.faq-container .accordion .accordion {
-  padding: 8px 0px;
-  border: none !important;
   background-color: transparent;
   color: #F15523;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
 }
 
-.faq-container .accordion .accordion i {
+.faq-container button.accordion i {
   border: 1px solid #F15523;
   border-radius: 5px;
   padding: 5px;
   color: #F15523;
   margin-right: 4px;
+  margin-right: 15px;
 }
 
-.faq-container .accordion .panel p {
+.faq-container .panel {
+  display: none;
+}
+
+.faq-container .panel p {
   padding: 8px 30px;
-  border-bottom: 1px solid black;
-  margin-bottom: 16px;
+  width: 80%;
+  margin: 5px auto 16px;
+}
+
+.faq-container .panel.active {
+  display: block;
 }
 
 /* Mobile */
-.reset-bg, .login-bg {
+body,
+html {
+  margin: 0;
+}
+
+.reset-bg,
+.login-bg {
   background: linear-gradient(33.58deg, #F15523 26%, #0E23AD 95%);
 }
 
@@ -1762,16 +1779,17 @@ body {
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px 20px 20px;
 }
 
 .home-container h1 {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0 20px;
 }
 
 /* Styling for Find My Friends section */
@@ -1787,7 +1805,7 @@ body {
 }
 
 .find-my-friends .find-my-friends-header h2 {
-  font-size: 32px;
+  font-size: 1.5rem;
   color: #F15523;
 }
 
@@ -1871,7 +1889,7 @@ body {
   width: 100%;
   position: sticky;
   top: 0;
-  padding-top: 10px;
+  padding-top: 20px;
   background-color: #EFEFEF;
   z-index: 100;
 }
@@ -1891,7 +1909,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 40px 40px;
+  margin: 0 20px;
 }
 
 .home-courses-container h1 {
@@ -2061,6 +2079,7 @@ h4 {
     display: flex;
     justify-content: space-between;
     padding: 0;
+    margin-top: 0px;
   }
   .first-login-info-container .first-login-info-header img {
     margin: 5px 0 5px 11px;
