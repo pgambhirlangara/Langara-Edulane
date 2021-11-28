@@ -8,7 +8,7 @@ const getCurrentCourseList = () => {
             db.collection(user.uid).onSnapshot((snapshot) => {
                 let val = snapshot.docChanges();
                 addCourseContainer.innerHTML = "";
-                userCourses = val[0].doc.data().courses;
+                userCourses = val.length > 0 ? val[0].doc.data().courses : [];
                 userCourseID = val.length > 0 ? val[0].doc.id: "";
                 generateAddDropCourseHTML(userCourses)
             })
