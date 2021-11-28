@@ -20,7 +20,6 @@ const getCurrentCourseList = () => {
 
 
 const generateAddDropCourseHTML = (data) => {
-    console.log(userCourses, "USER COURSSES");
     if (data.length === 0) {
         addCourseContainer.innerHTML = "You currently have no courses";
     } else {
