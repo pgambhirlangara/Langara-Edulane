@@ -12,7 +12,7 @@
 <body>
     <div class="main-bg">
         <div class="back-container">
-            <a href="login.html" class="back"> <span>
+            <a href="../home.html" class="back"> <span>
                     < </span> <span class="back-text">BACK</span></a>
         </div>
         <div class="reset-pass-container">
@@ -24,23 +24,34 @@
                 <h3> Reset Your Password</h3>
                 <p>Please choose a new password</p>
             </div>
-            <div class="reset-pass-input-container">
-                <div class="reset-pass-sub-container">
-                    <label for="new-pass"><sup>*</sup> New Password</label>
-                    <input type="text" name="new-pass" placeholder="*******">
+            <form onsubmit="resetPassword(event)">
+                <div class="reset-pass-input-container">
+                    <div class="reset-pass-sub-container">
+                        <label for="new-pass"><sup>*</sup> New Password</label>
+                        <input type="password" name="new-pass" id="newPassword" placeholder="*******">
+                    </div>
+                    <div class="reset-pass-sub-container">
+                        <label for="re-enter-new-pass"><sup>*</sup>Re-Enter New Password</label>
+                        <input type="password" name="re-enter-new-pass" id="matchPassword" placeholder="*******">
+                    </div>
                 </div>
-                <div class="reset-pass-sub-container">
-                    <label for="re-enter-new-pass"><sup>*</sup>Re-Enter New Password</label>
-                    <input type="text" name="re-enter-new-pass" placeholder="*******">
+                <p class="reset-pass-info">Your password must be at least six characters and cannot contain spaces or
+                    match
+                    your e-mail address.</p>
+                <div class="reset-pass-login">
+                    <button class="primary-btn" type="submit">Reset</button>
                 </div>
-            </div>
-            <p class="reset-pass-info">Your password must be at least six characters and cannot contain spaces or match
-                your e-mail address.</p>
-            <div class="reset-pass-login">
-                <button class="primary-btn">Reset</button>
-            </div>
+            </form>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
+    <script src="../../services/firebase.js"></script>
+    <script src="../../services/auth.js"></script>
+
 </body>
 
 </html>
