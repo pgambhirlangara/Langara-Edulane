@@ -82,25 +82,3 @@ const logout = () => {
   alert("User Logged Out!");
   window.location = "../auth/login.html";
 };
-
-const validateEmail = (email) => {
-  let expression = /^[^@]+@\w+(\.\w+)+\w$/;
-  if (expression.test(email)) {
-    return true;
-  }
-  return false;
-};
-
-const validatePassword = (password) => {
-  if (password.length < 6) {
-    return false;
-  }
-  return true;
-};
-
-const validateField = (field) => {
-  if (!field) {
-    return false;
-  }
-  return true;
-};

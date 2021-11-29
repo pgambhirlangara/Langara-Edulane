@@ -69,3 +69,8 @@ h3 {
 #courseDays {
     height: 100px;
 }
+
+#myProfileId, #myProfileDepartment, #myProfileEmail {
+    background: #d7d5d5;
+    cursor: not-allowed;
+}
