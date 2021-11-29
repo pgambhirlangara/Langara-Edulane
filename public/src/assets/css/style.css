@@ -155,6 +155,7 @@ label {
 .reset-pass-form {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .reset-pass-input-container {
