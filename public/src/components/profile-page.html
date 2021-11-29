@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>My Profile</title>
+</head>
+<body>
+    <div class="first-login-profile-container" id="picUploadOverlay"> <!-- overlay container starts here-->
+        <div class="first-login-profile-title">
+            <h2>Welcome!</h2>
+            <span>Update your profile picture</span>
+        </div>
+        <div class="first-login-profile-img">
+            <img src="../assets/images/profile-placeholder.svg" id="profilePicPlaceholder" alt="placeholder">
+            <video id="profilePicFinder" width="150" height="150" autoplay></video>
+            <canvas id="profilePicCanvas" width="150" height="150"></canvas>
+        </div>
+        <div class="first-login-profile-btn">
+            <button class="accent-btn" id="takePic">Take a picture</button>
+            <button class="accent-btn" id="snap">Snap!</button>
+            <button class="accent-btn" id="takePicAgain">Once Again</button>
+            <label for="ProfilePicForm" class="accent-btn" id="cameraRoll">Camera Roll</label>
+            <button class="tertiary-btn set-profile-btn" id="setProfilePic">Set profile picture</button>
+        </div>
+        <p id="overlayCloseTxt">close</p>
+    </div>
+
+    <div class="first-login-info-container">
+        <div class="first-login-info-header">
+            <img src="../images/edulane_horizontal_color_trimmed.svg">
+        </div>
+        <div class="profile-header-image-container">
+        </div>
+       
+        <form class="first-login-form" id="myProfileForm" onsubmit="updateUserProfile(event)">
+           
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
+    <script src="../services/firebase.js"></script>
+    <script src="../services/auth.js"></script>
+    <script src="../services/myprofile.js"></script>
+</body>
+</html>
