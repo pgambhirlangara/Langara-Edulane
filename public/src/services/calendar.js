@@ -122,5 +122,10 @@ if (calendarDeleteBtn) {
 // Add event logic
 //----------------------------------------------------  
   calendarAddBtn.addEventListener('click', () => {
-    window.location = '../calendar/calendar-add.html';
+      console.log(window.location);
+    // window.location = '../components/calendar/calendar-add.html';
+    if (window.location.pathname == '/public/src/components/home.html') {
+        window.location = '../components/calendar/calendar-add.html';
+    }
+        
   });
