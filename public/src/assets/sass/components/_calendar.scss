@@ -4,6 +4,141 @@
     width: 100%;
     height: 100%;
 
+    #header {
+        padding: 10px;
+        /* color: #d36c6c; */
+        font-size: 17px;
+        /* font-family: sans-serif; */
+        display: flex;
+        justify-content: space-around;
+        font-weight: 700;
+    }
+
+    #header button {
+        border: none;
+    }
+
+    #container {
+        width: 310px;
+        height: 310px;
+    }
+
+    #weekdays {
+        width: 100%;
+        display: flex;
+        color: #717171;
+        margin-bottom: 10px;
+    }
+
+    #weekdays div {
+        width: 42.5px;
+        // padding: 4px;
+    }
+
+    #calendar {
+        width: 2000px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        transform: translate(10px, 0);
+    }
+
+    .day {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        box-sizing: border-box;
+        margin: 2px 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    .day:hover {
+        background-color: #e8faed;
+    }
+
+    .day+#currentDay {
+        background-color: $secondary-color;
+        color: white;
+    }
+
+    .event {
+        font-size: 10px;
+        padding: 3px;
+        background-color: #58bae4;
+        color: white;
+        border-radius: 5px;
+        max-height: 55px;
+        overflow: hidden;
+    }
+
+    .padding {
+        cursor: default !important;
+        // background-color: #FFFCFF !important;
+        box-shadow: none !important;
+    }
+
+    #newEventModal,
+    #deleteEventModal {
+        display: none;
+        z-index: 20;
+        padding: 25px;
+        background-color: #e8f4fa;
+        box-shadow: 0px 0px 3px black;
+        border-radius: 5px;
+        width: 350px;
+        top: 100px;
+        left: calc(50% - 175px);
+        position: absolute;
+        font-family: sans-serif;
+    }
+
+    #eventTitleInput {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 25px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        box-shadow: 0px 0px 3px gray;
+    }
+
+    #eventTitleInput.error {
+        border: 2px solid red;
+    }
+
+    #cancelButton,
+    #deleteButton {
+        background-color: #d36c6c;
+    }
+
+    #saveButton,
+    #closeButton {
+        background-color: #92a1d1;
+    }
+
+    #eventText {
+        font-size: 14px;
+    }
+
+    #modalBackDrop {
+        display: none;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
     // .calendar-container__inner
 
     &__inner {
@@ -175,25 +310,26 @@
 
 .calendar-add-container {
     margin: 20px auto;
-    padding: 0;
     width: 310px;
     height: 550px;
     text-align: center;
     border: 1px solid $secondary-color;
     border-radius: 20px;
-    padding: 25px 20px;
+    padding: 15px 20px;
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
 
 
     #header {
         padding: 10px;
-        color: #d36c6c;
-        font-size: 26px;
-        font-family: sans-serif;
+        /* color: #d36c6c; */
+        font-size: 17px;
+        /* font-family: sans-serif; */
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        font-weight: 700;
     }
 
     #header button {
@@ -202,16 +338,18 @@
 
     #container {
         width: 310px;
+        height: 310px;
     }
 
     #weekdays {
         width: 100%;
         display: flex;
-        color: #247BA0;
+        color: #717171;
+        margin-bottom: 10px;
     }
 
     #weekdays div {
-        width: 43.7px;
+        width: 42.5px;
         // padding: 4px;
     }
 
@@ -223,13 +361,11 @@
     }
 
     .day {
-        width: 43.7px;
-        // padding: 5px;
+        width: 35px;
         height: 35px;
         cursor: pointer;
         box-sizing: border-box;
-        margin: 3.5px;
-        // box-shadow: 0px 0px 3px #CBD4C2;
+        margin: 2px 4px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -243,7 +379,8 @@
     }
 
     .day+#currentDay {
-        background-color: #e8f4fa;
+        background-color: $secondary-color;
+        color: white;
     }
 
     .event {
@@ -318,63 +455,109 @@
     }
 
 
-    &__top {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
     &__form {
-        .switch {
+        margin-top: 10px;
+
+        .time-add-btn {
+            margin: 0;
+        }
+
+        .time-container {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+
+            #time {
+                width: 90px;
+            }
+        }
+
+        input {
+            background-color: #EFEFEF;
+            color: black;
+            border-top: 1px solid $secondary-color;
+            border-radius: 0;
+            padding: 0;
+            width: 300px;
+
+            &::placeholder {
+                color: #525252;
+                font-size: 14px;
+            }
+        }
+
+        #title {
+            margin-top: 20px;
+        }
+
+        .switch-button {
+            background: rgba(118, 118, 128, 0.12);
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            color: black;
             position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
 
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: 0.4s;
-            transition: 0.4s;
-        }
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: 0.4s;
-            transition: 0.4s;
-        }
+            &:before {
+                content: "PM";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 3;
+                pointer-events: none;
+            }
 
-        input:checked+.slider {
-            background-color: #2196f3;
-        }
+            &-checkbox {
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                z-index: 2;
 
-        input:focus+.slider {
-            box-shadow: 0 0 1px #2196f3;
-        }
+                &:checked+.switch-button-label:before {
+                    transform: translateX(120px);
+                    transition: transform 300ms linear;
+                }
 
-        input:checked+.slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
+                &+.switch-button-label {
+                    position: relative;
+                    padding: 15px 0;
+                    display: block;
+                    user-select: none;
+                    pointer-events: none;
+
+                    &:before {
+                        content: "";
+                        background: #fff;
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-radius: 5px;
+                        transform: translateX(0);
+                        transition: transform 300ms;
+                    }
+
+                    .switch-button-label-span {
+                        position: relative;
+                        text-align: center;
+                    }
+                }
+            }
         }
     }
 }

@@ -19,7 +19,6 @@
                     <button id="backButton"><i class="fas fa-chevron-left"></i></button>
                     <div id="monthDisplay"></div>
                     <button id="nextButton"><i class="fas fa-chevron-right"></i></button>
-
                 </div>
 
                 <div id="weekdays">
@@ -35,45 +34,31 @@
                 <div id="calendar"></div>
             </div>
 
-            <!-- <div id="newEventModal">
-                <h2>New Event</h2>
-
-                <input id="eventTitleInput" placeholder="Event Title" />
-
-                <button id="saveButton">Save</button>
-                <button id="cancelButton">Cancel</button>
-            </div>
-
-            <div id="deleteEventModal">
-                <h2>Event</h2>
-
-                <p id="eventText"></p>
-
-                <button id="deleteButton">Delete</button>
-                <button id="closeButton">Close</button>
-            </div>
-
-            <div id="modalBackDrop"></div> -->
-
-
-
-
             <form class="calendar-add-container__form" action="">
-                <label for="title">Title</label><br>
-                <input type="text" id="title" name="title"><br>
-                <label for="location">Location</label><br>
-                <input type="text" id="location" name="location"><br><br>
-                <div class="time">
-                    <label for="time">Time</label>
-                    <input type="time" id="time" name="time">
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider"></span>
-                    </label>
+
+                <input type="text" id="title" name="title" placeholder="Title"><br>
+                <input type="text" id="location" name="location" placeholder="Location">
+
+                <div class="time-container">
+                    <div class="time-text">
+                        Time
+                    </div>
+                    <div class="time-box">
+                        <input type="time" id="time">
+                    </div>
+                    <div class="switch-button">
+                        <input class="switch-button-checkbox" type="checkbox"></input>
+                        <label class="switch-button-label" for="">
+                            <span class="switch-button-label-span">AM</span>
+                        </label>
+                    </div>
+
                 </div>
 
 
-                <input type="submit" value="Add">
+                <button value="Add" class='tertiary-btn time-add-btn'>Add</button> <br>
+
+                <a href=""> Cancel </a>
             </form>
         </div>
     </div>
@@ -85,7 +70,6 @@
     
     <script src="../../services/firebase.js"></script>
     <script src="../../services/auth.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
     <script src="../../services/calendar.js"></script>
 </body>
 
