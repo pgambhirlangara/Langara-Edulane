@@ -10,6 +10,11 @@ const calendar = document.getElementById('calendar');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const nextButton = document.getElementById('nextButton');
 const backButton = document.getElementById('backButton');
+const calendarDeleteBtn = document.getElementById('calendar-delete');
+const modalWindow = document.getElementById('calendar-modal');
+const calendarAddBtn = document.getElementById('calendar-add');
+const calendarConfirmDelete = document.getElementById('calendar-confirm-delete');
+const calendarDeleteCancel = document.getElementById('calendar-cancel');
 
 function openModal(date) {
   clicked = date;
@@ -107,21 +112,15 @@ if (nextButton && backButton){
 //---------------------------------------------------- 
 // Delete event logic
 //----------------------------------------------------  
-
-const calendarDeleteBtn = document.getElementById('calendar-delete');
 if (calendarDeleteBtn) {
     calendarDeleteBtn.addEventListener('click', () => {
-    console.log('delete');
+       modalWindow.style.display = 'block';
   });
 }
   
 //---------------------------------------------------- 
 // Add event logic
 //----------------------------------------------------  
-
-const calendarAddBtn = document.getElementById('calendar-add');
-
   calendarAddBtn.addEventListener('click', () => {
-    console.log('add');
-
+    window.location = '../calendar/calendar-add.html';
   });
