@@ -19,7 +19,10 @@ const register = (e) => {
     }).then(() => {
         alert("Account successfully Created");
         window.location = "login.html";
-    });
+    })
+    .catch((error) => {
+        alert(error.message);
+    })
 
 }
 
