@@ -53,6 +53,30 @@ const resetPasswordEmail = (event) => {
     });
 };
 
+const resetPassword = (event) => {
+  event.preventDefault();
+
+  if (newPassword.value !== matchPassword.value) {
+    alert("Password don't match");
+    return;
+  }
+  
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      user
+        .updatePassword(newPassword.value)
+        .then(function () {
+          alert("Password Changed!")
+          window.location = "../home.html";
+        })
+        .catch(function (error) {
+          // An error happened.
+          alert(error.message);
+        });
+    }
+  });
+};
+
 const logout = () => {
   auth.signOut();
   alert("User Logged Out!");
