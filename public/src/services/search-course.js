@@ -3,6 +3,7 @@ let tempCourseList = [];
 let selectedCourses = [];
 let currentUser;
 let currentUserDOCID = null;
+let selectedDays = [];
 
 const addCourseToCollege = (e) => {
   e.preventDefault();
@@ -20,6 +21,7 @@ const addCourseToCollege = (e) => {
       instructor: instructorName.value,
       section: courseSection.value,
       timing: classTiming.value,
+      days: selectedDays
     })
     .then(() => {
       alert("Course succesfully Created");
@@ -180,6 +182,11 @@ const getCurrentCourseList = () => {
     }
   });
 };
+
+
+const setDays = (e) => {
+  selectedDays = Array.from(courseDays.selectedOptions).map(({ value }) => value);
+}
 
 getCurrentCourseList();
 
