@@ -41,7 +41,34 @@ const getCourseList = (e) => {
 
 const generateSearchCourseHTML = (data) => {
    searchCourseContainer.innerHTML = "";
+
   data.forEach((val) => {
+    searchCourseContainer.innerHTML += `
+    <!-- The Modal -->
+ <div id="${val.crn}" class="modal">
+ 
+   <!-- Modal content -->
+   <div class="modal-content">
+     <span style="float:right" class="close" id="courseOverviewClose" onclick="closeDialog(document.getElementById(${val.crn}))">&times;</span>
+     <h3>
+         ${val.crn} ${val.name}
+     </h3>
+     <div>
+         <div class="courseOverviewContainer">
+             <h4>Hours</h4>
+             <span>${val.days}</span>
+         </div>
+         <div class="courseOverviewContainer">
+             <h4>Teacher</h4>
+             <span>${val.instructor}</span>
+         </div>
+         <p>${val.description}</p>
+     </div>
+    </div>
+ 
+ </div>
+    `;
+  
     let courseSubContainer = document.createElement("div");
     let searchCourseImageContainer = document.createElement("div");
     let searchCourseImage = document.createElement("img");
@@ -52,11 +79,12 @@ const generateSearchCourseHTML = (data) => {
     let searchCourseDescriptionContainer = document.createElement("div");
     let description = document.createElement("span");
     let plusContainer = document.createElement("div");
-    let plusIcon = document.createElement("i");
+    // let plusIcon = document.createElement("i");
 
     // checkBox.type = "checkbox";
-    plusIcon.classList.add("fas", "fa-plus");
+    // plusIcon.classList.add("fas", "fa-plus");
     let isTaken = selectedCourses.find((item) => item.crn === val.crn);
+    let plusIcon = `<i class="fas fa-plus" onclick="openCourseOverviewDialog(document.getElementById(${val.crn}))"></i>`;
     let checkBox = `<input type='checkbox' ${isTaken ? 'checked' : null} onclick='selectCourse(${JSON.stringify(
       val
     )
@@ -72,17 +100,16 @@ const generateSearchCourseHTML = (data) => {
     );
     description.classList.add("text-ellipses-2");
     plusContainer.classList.add("plus-course-container");
+    plusContainer.innerHTML = plusIcon;
 
     courseSubContainer.appendChild(searchCourseImageContainer);
     courseSubContainer.appendChild(searchCourseContent);
 
     courseTitle.textContent = `${val.crn} ${val.name}`;
-    searchCourseNameContainer.appendChild(courseTitle);
+    searchCourseNameContainer.appendChild(courseTitle); 
     searchCourseNameContainer.innerHTML += checkBox;
-    // searchCourseNameContainer.appendChild(checkBox);
 
     searchCourseDescriptionContainer.appendChild(description);
-    plusContainer.appendChild(plusIcon);
     searchCourseDescriptionContainer.appendChild(plusContainer);
     searchCourseContent.appendChild(searchCourseNameContainer);
     searchCourseContent.appendChild(searchCourseDescriptionContainer);
@@ -96,7 +123,17 @@ const generateSearchCourseHTML = (data) => {
     description.textContent = val.description;
 
     searchCourseContainer.appendChild(courseSubContainer);
+
     });
+}
+
+const openCourseOverviewDialog = (id) => {
+  console.log(id, "ID");
+  id.style.display = "block";
+}
+
+const closeDialog = (id) => {
+  id.style.display = "none";
 }
 
 const searchCourses = (event) => {
@@ -187,6 +224,8 @@ const getCurrentCourseList = () => {
 const setDays = (e) => {
   selectedDays = Array.from(courseDays.selectedOptions).map(({ value }) => value);
 }
+
+
 
 getCurrentCourseList();
 
