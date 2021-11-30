@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <title>Course Information</title>
+    <title>Add Course</title>
 </head>
 
 <body>
@@ -30,9 +30,37 @@
                 <input type="text" name="courseDepartment" id="courseDepartment" placeholder="Required" required>
                 <div class="form-required-circle"></div>
             </div>
+
             <div class="first-login-form-row">
                 <label for="courseDescription">Description</label>
                 <input type="text" name="courseDescription" id="courseDescription" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="instructorName">Instructor</label>
+                <input type="text" name="instructorName" id="instructorName" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="courseSection">Section</label>
+                <input type="text" name="courseSection" id="courseSection" placeholder="Required" required>
+                <div class="form-required-circle"></div>
+            </div>
+            <div class="first-login-form-row">
+                <label for="courseDays">Course Days</label>
+                <select multiple name="courseDays" id="courseDays" required onchange="setDays(event)">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </div>
+            <div class="first-login-form-row">
+                <label for="classTiming">Class Timing</label>
+                <input type="time" name="classTiming" id="classTiming" placeholder="Required" required>
                 <div class="form-required-circle"></div>
             </div>
             <div class="first-login-form-row">

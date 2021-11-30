@@ -1,20 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Add or Drop Course</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>My Profile</title>
 </head>
-
 <body>
-    <div class="add-drop-container">
-        <div class="add-course-logo-container">
-            <a href="home.html" class="back"> <span>
-                    < </span></a>
-            <img src="../images/edulane_horizontal_color_trimmed.svg" alt="logo">
+    <div class="first-login-profile-container" id="picUploadOverlay"> <!-- overlay container starts here-->
+        
+        <div class="first-login-profile-title">
+            <h2>Welcome!</h2>
+            <span>Update your profile picture</span>
+        </div>
+        <div class="first-login-profile-img">
+            <img src="../assets/images/profile-placeholder.svg" id="profilePicPlaceholder" alt="placeholder">
+            <video id="profilePicFinder" width="150" height="150" autoplay></video>
+            <canvas id="profilePicCanvas" width="150" height="150"></canvas>
+        </div>
+        <div class="first-login-profile-btn">
+            <button class="accent-btn" id="takePic">Take a picture</button>
+            <button class="accent-btn" id="snap">Snap!</button>
+            <button class="accent-btn" id="takePicAgain">Once Again</button>
+            <label for="ProfilePicForm" class="accent-btn" id="cameraRoll">Camera Roll</label>
+            <button class="tertiary-btn set-profile-btn" id="setProfilePic">Set profile picture</button>
+        </div>
+        <p id="overlayCloseTxt">close</p>
+    </div>
+
+    <div class="first-login-info-container">
+        <div class="first-login-info-header">
+            <img src="../images/edulane_horizontal_color_trimmed.svg">
         </div>
 
                     <!-- Hamburger Menu From Here -->
@@ -53,20 +70,12 @@
                         </div>
                     </nav>
                     <!-- Hamburger Menu Ends Here -->
-                    
-        <div class="add-drop-title">
-            <h2>Add / Drop Courses</h2>
+        <div class="profile-header-image-container">
         </div>
-
-        <div id="addCourseContainer" class="add-course-container">
-
-        </div>
-
-        <div class="add-course-bottom-action">
-            <button class="tertiary-btn"> <a href="search-course.html"><span>Search
-                        Courses</span></a>
-            </button>
-        </div>
+       
+        <form class="first-login-form" id="myProfileForm" onsubmit="updateUserProfile(event)">
+           
+        </form>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
@@ -74,7 +83,6 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
     <script src="../services/firebase.js"></script>
     <script src="../services/auth.js"></script>
-    <script src="../services/add-drop-course.js"></script>
+    <script src="../services/myprofile.js"></script>
 </body>
-
 </html>

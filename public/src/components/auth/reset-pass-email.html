@@ -12,7 +12,7 @@
 <body>
     <div class="main-bg">
         <div class="back-container">
-            <a href="../home.html" class="back"> <span>
+            <a href="login.html" class="back"> <span>
                     < </span> <span class="back-text">BACK</span></a>
         </div>
         <div class="reset-pass-container">
@@ -20,28 +20,15 @@
             <div class="logo-container">
                 <img class="logo" src="../../assets/images/edulane_horizontal_white.svg" alt="logo">
             </div>
-
-            
-            <div class="text-container">
-                <h3> Reset Your Password</h3>
-                <p>Please choose a new password</p>
-            </div>
-            <form onsubmit="resetPassword(event)">
+            <form onsubmit="resetPasswordEmail(event)" class="reset-pass-form">
                 <div class="reset-pass-input-container">
                     <div class="reset-pass-sub-container">
-                        <label for="new-pass"><sup>*</sup> New Password</label>
-                        <input type="password" name="new-pass" id="newPassword" placeholder="*******">
-                    </div>
-                    <div class="reset-pass-sub-container">
-                        <label for="re-enter-new-pass"><sup>*</sup>Re-Enter New Password</label>
-                        <input type="password" name="re-enter-new-pass" id="matchPassword" placeholder="*******">
+                        <label for="resetEmail"><sup>*</sup> Email</label>
+                        <input type="email" name="resetEmail" id="resetEmail" placeholder="Enter your email here" required>
                     </div>
                 </div>
-                <p class="reset-pass-info">Your password must be at least six characters and cannot contain spaces or
-                    match
-                    your e-mail address.</p>
                 <div class="reset-pass-login">
-                    <button class="primary-btn" type="submit">Reset</button>
+                    <button class="primary-btn">Reset</button>
                 </div>
             </form>
         </div>
@@ -49,11 +36,9 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
     <script src="../../services/firebase.js"></script>
     <script src="../../services/auth.js"></script>
-
 </body>
 
 </html>

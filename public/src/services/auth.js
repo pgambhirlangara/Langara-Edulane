@@ -1,10 +1,9 @@
-
-
-  
 const register = (e) => {
-    e.preventDefault();
-    // sign up the user & add firestore data
-    auth.createUserWithEmailAndPassword(studentEmail.value, studentPassword.value).then(cred => {
+  e.preventDefault();
+  // sign up the user & add firestore data
+  auth
+    .createUserWithEmailAndPassword(studentEmail.value, studentPassword.value)
+    .then((cred) => {
       return db.collection("users").doc(cred.user.uid).set({
         name: studentName.value,
         email: studentEmail.value,
@@ -12,50 +11,89 @@ const register = (e) => {
         nickName: studentNickName.value,
         department: studentDepartment.value,
       });
-    }).then(() => {
-        /* Added by Hiroshi on Nov 21, to upload profile pic (Variables refer to "firstTimeLogin.js") */
-        let newUid = auth.currentUser.uid;
-        return storage.ref(`profilePics/${newUid}.jpg`).put(files);
-    }).then(() => {
-        alert("Account successfully Created");
-        window.location = "login.html";
+    })
+    .then(() => {
+      /* Added by Hiroshi on Nov 21, to upload profile pic (Variables refer to "firstTimeLogin.js") */
+      let newUid = auth.currentUser.uid;
+      return storage.ref(`profilePics/${newUid}.jpg`).put(files);
+    })
+    .then(() => {
+      alert("Account successfully Created");
+      window.location = "login.html";
+    })
+    .catch((error) => {
+      alert(error.message);
     });
-
-}
+};
 
 const login = (event) => {
-    event.preventDefault();
-  auth.signInWithEmailAndPassword(studentEmail.value, studentPassword.value).then((cred) => {
-        alert("User Logged In!");
-        window.location = "../home.html";
+  event.preventDefault();
+  auth
+    .signInWithEmailAndPassword(studentEmail.value, studentPassword.value)
+    .then((cred) => {
+      alert("User Logged In!");
+      window.location = "../home.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+};
+
+const resetPasswordEmail = (event) => {
+  event.preventDefault();
+  auth
+    .sendPasswordResetEmail(resetEmail.value)
+    .then(function () {
+      // Password reset email sent.
+      alert("Reset Link sent to your email succesfully");
+    })
+    .catch(function (error) {
+      // Error occurred. Inspect error.code.
+      alert(error.message);
+    });
+};
+
+const resetPassword = (event) => {
+  event.preventDefault();
+
+  if (newPassword.value !== matchPassword.value) {
+    alert("Password don't match");
+    return;
+  }
+  
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      user
+        .updatePassword(newPassword.value)
+        .then(function () {
+          alert("Password Changed!")
+          window.location = "../home.html";
+        })
+        .catch(function (error) {
+          // An error happened.
+          alert(error.message);
+        });
+    }
   });
-}
+};
 
 const logout = () => {
-    auth.signOut();
-    alert("User Logged Out!");
-    window.location = "../auth/login.html";
+  auth.signOut();
+  alert("User Logged Out!");
+  window.location = "../auth/login.html";
+};
+
+
+
+/* Script to toggle the hamburger menu: configured by Tainara on Nov. 25 */
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+  document.getElementById("menuToggle").style.display = "none";
+  document.getElementById("closeBtn").style.display = "block";
 }
 
-
-const validateEmail = (email) => {
-    let expression = /^[^@]+@\w+(\.\w+)+\w$/;
-    if (expression.test(email)) {
-        return true;
-    }
-    return false;
-}
-
-const validatePassword = (password) => {
-    if (password.length < 6) {
-        return false;
-    }
-    return true;
-}
-
-const validateField = (field) => {
-    if (!field) {
-        return false;
-    }
-    return true;
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+  document.getElementById("menuToggle").style.display = "block";
+  document.getElementById("closeBtn").style.display = "none";
 }

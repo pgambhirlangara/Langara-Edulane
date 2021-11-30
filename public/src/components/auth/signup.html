@@ -69,7 +69,7 @@
             </div>
             <div class="first-login-form-row">
                 <label for="studentPassword">Password</label>
-                <input type="password" name="studentPassword" id="studentPassword" placeholder="Required" required>
+                <input minlength="6" type="password" name="studentPassword" id="studentPassword" placeholder="Required" required>
                 <div class="form-required-circle"></div>
             </div>
             <div class="first-login-form-row">
@@ -80,6 +80,7 @@
             <input type="file" name="ProfilePicForm" id="ProfilePicForm" onchange="imagePreview(event);"> <!-- Hidden input -->
             <div class="submitButton" id="firstLoginSubmitBtn">
                 <button class="primary-btn" type="submit">Sign up</button>
+                <a id="signup-account" href="login.html">Have an account ?</a>
             </div>
         </form>
     </div>
