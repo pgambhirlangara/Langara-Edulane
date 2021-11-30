@@ -18,8 +18,8 @@
                 <div class="calendar-container__title">
                     <h2>Calendar</h2>
                 </div>
-                <div class="calendar-container__menu" id="monthDisplay">
-                    <select name="month" id="month">
+                <div class="calendar-container__menu" id="monthSmallDisplay">
+                    <select name="month" id="monthSmall">
                         <option value="0">January</option>
                         <option value="1">February</option>
                         <option value="2">March</option>
@@ -37,9 +37,9 @@
             </div>
 
             <div class="calendar-container__wrapper">
-                <div id="header">
-                    <button id="backButton"><i class="fas fa-chevron-left"></i></button>
-                    <div id="weekdays">
+                <div id="headerSmall">
+                    <button id="backButtonSmall"><i class="fas fa-chevron-left"></i></button>
+                    <div id="weekdaysSmall">
                         <div>Sun</div>
                         <div>Mon</div>
                         <div>Tue</div>
@@ -48,9 +48,9 @@
                         <div>Fri</div>
                         <div>Sat</div>
                     </div>
-                    <button id="nextButton"><i class="fas fa-chevron-right"></i></button>
+                    <button id="nextButtonSmall"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div id="calendar"></div>
+                <div id="calendarSmall"></div>
 
             </div>
 
@@ -122,6 +122,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="../../services/firebase.js"></script>
     <script src="../../services/auth.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
     <script src="../../services/calendar.js"></script>
 </body>
 

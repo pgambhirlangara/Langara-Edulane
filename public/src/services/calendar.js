@@ -4,7 +4,6 @@
 
 let nav = 0;
 let clicked = null;
-let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 const calendar = document.getElementById('calendar');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -17,115 +16,181 @@ const calendarConfirmDelete = document.getElementById('calendar-confirm-delete')
 const calendarDeleteCancel = document.getElementById('calendar-cancel');
 
 function openModal(date) {
-  clicked = date;
-  console.log(clicked);
-
-//   const eventForDay = events.find(e => e.date === clicked);
-
-//   if (eventForDay) {
-//     document.getElementById('eventText').innerText = eventForDay.title;
-//     deleteEventModal.style.display = 'block';
-//   } else {
-//     newEventModal.style.display = 'block';
-//   }
-
-//   backDrop.style.display = 'block';
+    clicked = date;
+    console.log(clicked);
 }
 
 function load() {
-  const dt = new Date();
+    const dt = new Date();
 
-  if (nav !== 0) {
-    dt.setMonth(new Date().getMonth() + nav);
-  }
-
-  const day = dt.getDate();
-  const month = dt.getMonth();
-  const year = dt.getFullYear();
-
-  const firstDayOfMonth = new Date(year, month, 1);
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  
-  const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-  });
-  const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
-
-  document.getElementById('monthDisplay').innerText = 
-    `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
-
-  calendar.innerHTML = '';
-
-  for(let i = 1; i <= paddingDays + daysInMonth; i++) {
-    const daySquare = document.createElement('div');
-    daySquare.classList.add('day');
-
-    const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
-    if (i > paddingDays) {
-      daySquare.innerText = i - paddingDays;
-      const eventForDay = events.find(e => e.date === dayString);
-
-      if (i - paddingDays === day && nav === 0) {
-        daySquare.id = 'currentDay';
-      }
-
-      if (eventForDay) {
-        const eventDiv = document.createElement('div');
-        eventDiv.classList.add('event');
-        eventDiv.innerText = eventForDay.title;
-        daySquare.appendChild(eventDiv);
-      }
-
-      daySquare.addEventListener('click', () => openModal(dayString));
-    } else {
-      daySquare.classList.add('padding');
+    if (nav !== 0) {
+        dt.setMonth(new Date().getMonth() + nav);
     }
 
-    calendar.appendChild(daySquare);    
-  }
+    const day = dt.getDate();
+    const month = dt.getMonth();
+    const year = dt.getFullYear();
+
+    const firstDayOfMonth = new Date(year, month, 1);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+    });
+    const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+
+    document.getElementById('monthDisplay').innerText =
+        `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
+
+    calendar.innerHTML = '';
+
+    for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+        const daySquare = document.createElement('div');
+        daySquare.classList.add('day');
+
+        const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+
+        if (i > paddingDays) {
+            daySquare.innerText = i - paddingDays;
+
+            if (i - paddingDays === day && nav === 0) {
+                daySquare.id = 'currentDay';
+            }
+
+        } else {
+            daySquare.classList.add('padding');
+        }
+
+        calendar.appendChild(daySquare);
+    }
 }
 
 
 
 function initButtons() {
-  document.getElementById('nextButton').addEventListener('click', () => {
-    nav++;
-    load();
-  });
+    nextButton.addEventListener('click', () => {
+        nav++;
+        load();
+    });
 
-  document.getElementById('backButton').addEventListener('click', () => {
-    nav--;
-    load();
-  });
+    backButton.addEventListener('click', () => {
+        nav--;
+        load();
+    });
 
 }
-if (nextButton && backButton){
+if (nextButton && backButton) {
     initButtons();
     load();
 }
-    
+
+
+
+
 
 //---------------------------------------------------- 
 // Delete event logic
 //----------------------------------------------------  
 if (calendarDeleteBtn) {
     calendarDeleteBtn.addEventListener('click', () => {
-       modalWindow.style.display = 'block';
-  });
+        modalWindow.style.display = 'block';
+    });
 }
-  
+
 //---------------------------------------------------- 
 // Add event logic
 //----------------------------------------------------  
-  calendarAddBtn.addEventListener('click', () => {
-      console.log(window.location);
-    // window.location = '../components/calendar/calendar-add.html';
-    if (window.location.pathname == '/public/src/components/home.html') {
-        window.location = '../components/calendar/calendar-add.html';
-    }
-        
-  });
+if (calendarAddBtn) {
+    calendarAddBtn.addEventListener('click', () => {
+        console.log(window.location);
+        if (window.location.pathname == '/public/src/components/home.html') {
+            window.location = '../components/calendar/calendar-add.html';
+        } else {
+            window.location = '../calendar/calendar-add.html';
+        }
+
+    });
+}
+
+// if (window.location.pathname == '/public/src/components/home.html' || window.location.pathname == '/public/src/components/calendar/calendar.html') {
+
+
+//     const calendarSmall = document.getElementById('calendarSmall');
+
+//     const monthSmall = document.getElementById('monthSmall');
+//     let monthNumber = monthSmall.value;
+
+
+//     monthSmall.addEventListener('change', function () {
+//         monthNumber = this.value;
+//     });
+
+
+//     function loadSmall() {
+//         const dt = new Date();
+
+//         const day = dt.getDate();
+//         const month = dt.getMonth();
+//         const year = dt.getFullYear();
+
+//         const firstDayOfMonth = new Date(year, monthNumber, 1);
+//         console.log(firstDayOfMonth);
+//         const daysInMonth = new Date(year, monthNumber + 1, 0).getDate();
+//         console.log(daysInMonth);
+//         const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+//             weekday: 'long',
+//             year: 'numeric',
+//             month: 'numeric',
+//             day: 'numeric',
+//         });
+//         const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+
+//         //   document.getElementById('monthSmallDisplay').innerText = 
+//         //     `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
+
+//         calendarSmall.innerHTML = '';
+
+//         for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+//             const daySquare = document.createElement('div');
+//             daySquare.classList.add('day');
+
+//             const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+
+//             if (i > paddingDays) {
+//                 daySquare.innerText = i - paddingDays;
+
+//                 if (i - paddingDays === day && nav === 0) {
+//                     daySquare.id = 'currentDay';
+//                 }
+
+//             } else {
+//                 daySquare.classList.add('padding');
+//             }
+
+//             calendarSmall.appendChild(daySquare);
+//         }
+//     }
+
+//     const nextSmallButton = document.getElementById('nextButtonSmall');
+//     const backSmallButton = document.getElementById('backButtonSmall');
+
+//     function initSmallButtons() {
+//         nextSmallButton.addEventListener('click', () => {
+//             nav++;
+//             loadSmall();
+//         });
+
+//         backSmallButton.addEventListener('click', () => {
+//             nav--;
+//             loadSmall();
+//         });
+
+//     }
+//     if (nextSmallButton && backSmallButton) {
+//         initSmallButtons();
+//         loadSmall();
+//     }
+// }
