@@ -18,8 +18,8 @@
                 <div class="calendar-container__title">
                     <h2>Calendar</h2>
                 </div>
-                <div class="calendar-container__menu" id="monthSmallDisplay">
-                    <select name="month" id="monthSmall">
+                <div class="calendar-container__menu">
+                    <select name="month" id="month">
                         <option value="0">January</option>
                         <option value="1">February</option>
                         <option value="2">March</option>
@@ -37,54 +37,46 @@
             </div>
 
             <div class="calendar-container__wrapper">
-                <div id="headerSmall">
-                    <button id="backButtonSmall"><i class="fas fa-chevron-left"></i></button>
-                    <div id="weekdaysSmall">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div>
-                    <button id="nextButtonSmall"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div id="calendarSmall"></div>
+                <div class="calendar" id='calendar'>
+                    <div></div>
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                    <div></div>
 
+                    <div class="arrow-left" id="back"><i class="fas fa-chevron-left"></i></div>
+                    <div class="days" id="days">
+                        <!-- <div class="day"></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div> -->
+                    </div>
+
+                    <div class="arrow-right" id="next"><i class="fas fa-chevron-right"></i></div>
+                </div>
             </div>
 
             <div class="calendar-container__schedule">
                 <div class="calendar-container__title">
                     <h2>Schedule</h2>
                 </div>
-                <div class="calendar-container__button">
-                    <button class="btn" id="calendar-add">+</button>
-                </div>
             </div>
 
             <div class="calendar-container__event-area">
-                <!-- <div class="calendar-container__item">
-                    <div class="calendar-container__time">
-                        9:30
-                    </div>
-                    <div class="calendar-container__event">
-                        <div class="text">
-                            test
-                        </div>
-                        <div class="calendar-container__event-type">
-                            event
-                        </div>
-                        <div class="calendar-container__event-delete">
-                            <button class="btn" id="calendar-delete"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </div>
-                </div> -->
+            </div>
+
+            <div class="calendar-container__event-area" id="scheduleContent">
+
             </div>
         </div>
     </div>
-
-
     <div class="calendar-confirm-container" id="calendar-modal">
         <div class="calendar-confirm-container__inner">
             <div class="calendar-confirm-container__icon">

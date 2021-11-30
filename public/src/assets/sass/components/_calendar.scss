@@ -4,76 +4,6 @@
     width: 100%;
     height: 100%;
 
-    #headerSmall {
-        padding: 10px;
-        /* color: #d36c6c; */
-        font-size: 17px;
-        /* font-family: sans-serif; */
-        display: flex;
-        justify-content: space-around;
-        font-weight: 700;
-    }
-
-    #headerSmall button {
-        border: none;
-    }
-
-    #containerSmall {
-        width: 310px;
-        height: 310px;
-    }
-
-    #weekdaysSmall {
-        width: 100%;
-        display: flex;
-        color: #717171;
-    }
-
-    #weekdaysSmall div {
-        width: 42.5px;
-        // padding: 4px;
-    }
-
-    #calendarSmall {
-        width: 2000px;
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        transform: translate(10px, 0);
-    }
-
-    .day {
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        box-sizing: border-box;
-        margin: 2px 4px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        border-radius: 50%;
-    }
-
-    .day:hover {
-        background-color: #e8faed;
-    }
-
-    .day+#currentDay {
-        background-color: $secondary-color;
-        color: white;
-    }
-
-
-    .padding {
-        cursor: default !important;
-        // background-color: #FFFCFF !important;
-        box-shadow: none !important;
-    }
-
-
     // .calendar-container__inner
 
     &__inner {
@@ -122,7 +52,7 @@
         .calendar {
             list-style-type: none;
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
+            grid-template-columns: repeat(9, 1fr);
             grid-template-rows: repeat(2, 1fr);
             row-gap: 10px;
 
@@ -132,8 +62,22 @@
             }
 
             .arrow-right {
-                grid-column: 8 / 8;
+                grid-column: 9 / 9;
                 grid-row: 2/2;
+            }
+
+            .weekday,
+            .first-day,
+            .day {
+                justify-items: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .days {
+                grid-column: 2 / 9;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
             }
         }
     }
@@ -277,197 +221,6 @@
     }
 }
 
-.calendar-add-container {
-    margin: 20px auto;
-    width: 310px;
-    height: 550px;
-    text-align: center;
-    border: 1px solid $secondary-color;
-    border-radius: 20px;
-    padding: 15px 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-
-    #header {
-        padding: 10px;
-        /* color: #d36c6c; */
-        font-size: 17px;
-        /* font-family: sans-serif; */
-        display: flex;
-        justify-content: space-around;
-        font-weight: 700;
-    }
-
-    #header button {
-        border: none;
-    }
-
-    #container {
-        width: 310px;
-        height: 310px;
-    }
-
-    #weekdays {
-        width: 100%;
-        display: flex;
-        color: #717171;
-        margin-bottom: 10px;
-    }
-
-    #weekdays div {
-        width: 42.5px;
-        // padding: 4px;
-    }
-
-    #calendar {
-        width: 100%;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .day {
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        box-sizing: border-box;
-        margin: 2px 4px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        border-radius: 50%;
-    }
-
-    .day:hover {
-        background-color: #e8faed;
-    }
-
-    .day+#currentDay {
-        background-color: $secondary-color;
-        color: white;
-    }
-
-
-    .padding {
-        cursor: default !important;
-        // background-color: #FFFCFF !important;
-        box-shadow: none !important;
-    }
-
-
-
-
-    &__form {
-        margin-top: 10px;
-
-        .time-add-btn {
-            margin: 0;
-        }
-
-        .time-container {
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
-
-            #time {
-                width: 90px;
-            }
-        }
-
-        input {
-            background-color: #EFEFEF;
-            color: black;
-            border-top: 1px solid $secondary-color;
-            border-radius: 0;
-            padding: 0;
-            width: 300px;
-
-            &::placeholder {
-                color: #525252;
-                font-size: 14px;
-            }
-        }
-
-        #title {
-            margin-top: 20px;
-        }
-
-        .switch-button {
-            background: rgba(118, 118, 128, 0.12);
-            border-radius: 5px;
-            overflow: hidden;
-            width: 100px;
-            height: 40px;
-            text-align: center;
-            color: black;
-            position: relative;
-
-
-
-            &:before {
-                content: "PM";
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                width: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 3;
-                pointer-events: none;
-            }
-
-            &-checkbox {
-                cursor: pointer;
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                z-index: 2;
-
-                &:checked+.switch-button-label:before {
-                    transform: translateX(120px);
-                    transition: transform 300ms linear;
-                }
-
-                &+.switch-button-label {
-                    position: relative;
-                    padding: 15px 0;
-                    display: block;
-                    user-select: none;
-                    pointer-events: none;
-
-                    &:before {
-                        content: "";
-                        background: #fff;
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        border-radius: 5px;
-                        transform: translateX(0);
-                        transition: transform 300ms;
-                    }
-
-                    .switch-button-label-span {
-                        position: relative;
-                        text-align: center;
-                    }
-                }
-            }
-        }
-    }
-}
 
 //-------------------------------------
 //   Calendar Confirm

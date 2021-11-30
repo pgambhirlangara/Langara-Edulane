@@ -107,33 +107,35 @@
                 </div>
 
                 <div class="calendar-container__wrapper">
-                    <ul class="calendar">
-                        <li></li>
-                        <li class="weekday">Sun</li>
-                        <li class="weekday">Mon</li>
-                        <li class="weekday">Tue</li>
-                        <li class="weekday">Wed</li>
-                        <li class="weekday">Thu</li>
-                        <li class="weekday">Fri</li>
-                        <li></li>
+                    <div class="calendar" id='calendar'>
+                        <div></div>
+                        <div class="weekday">Sun</div>
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+                        <div></div>
 
-                        <li class="arrow-left"><i class="fas fa-chevron-left"></i></li>
-                        <li class="first-day">1</li>
-                        <li class='day'>2</li>
-                        <li class='day'>3</li>
-                        <li class='day'>29</li>
-                        <li class='day'>30</li>
-                        <li class='day'>31</li>
-                        <li class="arrow-right"><i class="fas fa-chevron-right"></i></li>
-                    </ul>
+                        <div class="arrow-left" id="back"><i class="fas fa-chevron-left"></i></div>
+                        <div class="days" id="days">
+                            <!-- <div class="day"></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div>
+                            <div class='day'></div> -->
+                        </div>
+
+                        <div class="arrow-right" id="next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
                 </div>
 
                 <div class="calendar-container__schedule">
                     <div class="calendar-container__title">
                         <h2>Schedule</h2>
-                    </div>
-                    <div class="calendar-container__button">
-                        <button class="btn" id="calendar-add">+</button>
                     </div>
                 </div>
 
@@ -204,7 +206,7 @@
         </div>
 
     </div>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
@@ -212,7 +214,7 @@
     <script src="../services/firebase.js"></script>
     <script src="../services/auth.js"></script>
     <script src="../services/home.js"></script>
-    <script src="../services/map.js"></script> -->
+    <script src="../services/map.js"></script>
     <script src="../services/calendar.js"></script>
 </body>
 
