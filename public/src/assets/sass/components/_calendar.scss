@@ -164,7 +164,41 @@
         }
     }
 
-    // .calendar-container__event-area
+    &__event-type {
+        display: flex;
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        background: $primary-color;
+        color: white;
+        padding: 5 7px;
+        height: 20px;
+        border: 1px solid $primary-color;
+        border-radius: 8px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // .calendar-container__event-delete
+
+    &__event-delete {
+        button {
+            height: 54px;
+            width: 54px;
+            border: 1px solid $secondary-color;
+            border-radius: 10px;
+            color: $secondary-color;
+            font-size: 20px;
+            background: white;
+        }
+    }
+
+    &__space {
+        width: 50%;
+        height: 100%;
+    }
+
 
     &__event-area {
         margin-top: 30px;
@@ -505,4 +539,14 @@
             border: 1px solid $secondary-color;
         }
     }
+}
+
+
+
+.calendar-container__event {
+    width: 80% !important;
+}
+
+.calendar-container__time {
+    width: 20% !important;
 }

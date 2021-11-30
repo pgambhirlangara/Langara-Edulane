@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="first-login-profile-container" id="picUploadOverlay"> <!-- overlay container starts here-->
+        
         <div class="first-login-profile-title">
             <h2>Welcome!</h2>
             <span>Update your profile picture</span>
@@ -32,6 +33,43 @@
         <div class="first-login-info-header">
             <img src="../images/edulane_horizontal_color_trimmed.svg">
         </div>
+
+                    <!-- Hamburger Menu From Here -->
+                    <nav role="navigation" id="hamburgerMenu">
+                        <div id="myNav" class="overlay">
+                            <a href="javascript:void(0)" class="closebtn" id="closeBtn" onclick="closeNav()">&times;</a>
+                            <div class="overlay-content">
+                                <ul>
+                                    <a>
+                                        <img id="imgInHamburgerMenu" class="profile-picture" src="../images/profile-placeholder.svg">
+                                        <h3>Hi, <span id="username"></span></h3>
+                                    </a>
+                                    <hr>
+                                    <a href="profile-page.html">
+                                        <li>My Profile</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>Fee Information</li>
+                                    </a>
+                                    <a href="auth/reset-pass.html">
+                                        <li>Change Password</li>
+                                    </a>
+                                    <a href="faq.html">
+                                        <li>FAQ's</li>
+                                    </a>
+                                    <a onclick="logout()">
+                                        <li>Logout</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="menuToggle" onclick="openNav()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </nav>
+                    <!-- Hamburger Menu Ends Here -->
         <div class="profile-header-image-container">
         </div>
        

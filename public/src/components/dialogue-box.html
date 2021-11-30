@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../services/dialogue-box.js" defer></script>
+    <title>Dialogue Box</title>
+</head>
+
+<body>
+    
+    <button id="myBtn">Open Dialogue Box</button>
+
+    <!-- Dialogue Box -->
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <!-- <span class="close">&times;</span> -->
+            <div><img src="../images/info-icon.svg"></div>
+            <h3 class="dialogue-txt">Are you sure?</h3>
+            <h4 class="dialogue-txt">Confirm that you want to drop this</h4>
+            <div class="btns-dialogue">
+                <span class="cancel"><button class="primary-btn"><a href="#">Cancel</a></button></span>
+                <button id="delete-course" class="tertiary-btn"><a href="#">Yes, delete it!</a></button>
+            </div>
+        </div>
+    
+    </div>    
+
+    <!-- <div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+
+    </div> -->
+
+</body>
+</html>

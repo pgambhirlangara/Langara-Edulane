@@ -164,6 +164,10 @@ label {
 .reset-pass-form {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
+=======
+  flex-direction: column;
+>>>>>>> a9b3c5526e9b079fd9e5e2d2e0624c7c9159e827
 }
 
 .reset-pass-input-container {
@@ -259,6 +263,65 @@ label {
 
 .tertiary-btn:hover {
   background-color: #0A1B89;
+}
+
+.dialogue-txt {
+  color: #717171;
+}
+
+.btns-dialogue {
+  margin-top: 30px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #E7CDA7;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #F9B959;
+  width: 60%;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* The Close Button */
+.cancel {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
+.cancel:hover,
+.cancel:focus {
+  color: #717171;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 body,
@@ -1363,6 +1426,76 @@ h4 {
   gap: 10px;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-content p {
+  text-align: start;
+}
+
+.modal-content h3 {
+  color: #F15523;
+  text-transform: uppercase;
+  margin-top: 30px;
+  text-align: left;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.courseOverviewContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.courseOverviewContainer h4 {
+  color: black;
+  margin: 0;
+}
+
 .calendar-container {
   margin: 30px 0 0;
   padding: 0;
@@ -1548,7 +1681,8 @@ h4 {
   top: -10px;
   left: 20px;
   background: #F15523;
-  padding: 0 5px;
+  color: white;
+  padding: 5 7px;
   height: 20px;
   border: 1px solid #F15523;
   border-radius: 8px;
@@ -1809,6 +1943,14 @@ h4 {
   margin: 0;
   font-size: 12px;
   border: 1px solid #0E23AD;
+}
+
+.calendar-container__event {
+  width: 80% !important;
+}
+
+.calendar-container__time {
+  width: 20% !important;
 }
 
 body {
