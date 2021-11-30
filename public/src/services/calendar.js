@@ -29,6 +29,12 @@ if (calendarDeleteBtn) {
 
 
 
+document.querySelectorAll('.day').forEach(item => {
+    item.addEventListener('click', event => {
+        console.log('clicked');
+    })
+})
+
 month.addEventListener('change', function () {
     monthNumber = this.value;
     load();
@@ -82,7 +88,7 @@ function load() {
 
 function initButtons() {
     next.addEventListener('click', () => {
-        if (nav < 35) {
+        if (nav < 28) {
             nav += 7;
             load();
         } else {
@@ -93,7 +99,7 @@ function initButtons() {
     });
 
     back.addEventListener('click', () => {
-        if (nav >= 7 && nav < 35) {
+        if (nav >= 7 && nav < 28) {
             nav -= 7;
             load();
         } else {
