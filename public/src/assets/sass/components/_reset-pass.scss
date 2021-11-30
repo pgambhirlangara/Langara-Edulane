@@ -23,12 +23,17 @@ label {
   color: $white;
 }
 
+.reset-pass-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .reset-pass-input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin-top: 32px;
 }
 
 .reset-pass-sub-container {

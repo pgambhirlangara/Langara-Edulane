@@ -64,7 +64,7 @@ const generateHomeHTML = (data) => {
                             <span class="home-courses-intake">${courseVal.inTake}</span>
                             <span>Ends on ${courseVal.endDate}</span>
                         </div>
-                        <div>20% Completed</div>
+                        <div>${courseVal.completed}% Completed</div>
                     </div>
                 </div>
                 `;

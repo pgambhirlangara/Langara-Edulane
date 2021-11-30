@@ -2,6 +2,8 @@ let courseList = [];
 let tempCourseList = [];
 let selectedCourses = [];
 let currentUser;
+let currentUserDOCID = null;
+let selectedDays = [];
 
 const addCourseToCollege = (e) => {
   e.preventDefault();
@@ -16,6 +18,10 @@ const addCourseToCollege = (e) => {
       crn: courseCRN.value,
       endDate: courseEndDate.value,
       description: courseDescription.value,
+      instructor: instructorName.value,
+      section: courseSection.value,
+      timing: classTiming.value,
+      days: selectedDays
     })
     .then(() => {
       alert("Course succesfully Created");
@@ -105,7 +111,21 @@ const searchCourses = (event) => {
 const addCourseToUser = (courses) => {
     auth.onAuthStateChanged((user) => {
     if (user) {
-      db.collection(user.uid)
+      if (currentUserDOCID) {
+        db.collection(user.uid)
+        .doc(currentUserDOCID)
+        .set({
+          courses,
+        })
+        .then(() => {
+          alert("Courses added to user succesfully");
+          window.location = "add-drop-course.html";
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      } else {
+        db.collection(user.uid)
         .doc()
         .set({
           courses,
@@ -117,6 +137,7 @@ const addCourseToUser = (courses) => {
         .catch((err) => {
           console.log(err.message);
         });
+      }
     } else {
       window.location = '../components/auth/login.html';
     }
@@ -128,6 +149,7 @@ const selectCourse = (courseItem) => {
     (course) => course.crn === courseItem.crn
   );
   if (index === -1) {
+    courseItem.completed = 0;
     selectedCourses.push(courseItem);
   } else {
     selectedCourses.splice(index, 1);
@@ -147,6 +169,7 @@ const getCurrentCourseList = () => {
     if (user) {
       db.collection(user.uid).onSnapshot((snapshot) => {
         let val = snapshot.docChanges();
+        currentUserDOCID = val.length > 0 ? val[0].doc.id: "";
         val.forEach((data) => {
             if (data.doc) {
                 selectedCourses = [...selectedCourses, ...data.doc.data().courses]
@@ -159,6 +182,11 @@ const getCurrentCourseList = () => {
     }
   });
 };
+
+
+const setDays = (e) => {
+  selectedDays = Array.from(courseDays.selectedOptions).map(({ value }) => value);
+}
 
 getCurrentCourseList();
 
